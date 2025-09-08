@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バスロケーションシステム - リニューアルデザイン案</title>
+    <link rel="stylesheet" href="bus_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">🚌</div>
+                <h1>バスロケーション</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">ホーム</a></li>
+                    <li><a href="#routes" class="nav-link">路線</a></li>
+                    <li><a href="#timetable" class="nav-link">時刻表</a></li>
+                    <li><a href="#map" class="nav-link">地図</a></li>
+                    <li><a href="#info" class="nav-link">運行情報</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn">🔍</button>
+                <button class="menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <!-- 1. トップページ -->
+        <section id="home" class="screen active">
+            <div class="hero-section">
+                <div class="current-time">
+                    <div class="time-display">14:32</div>
+                    <div class="date-display">2024年12月19日 木曜日</div>
+                </div>
+                <div class="weather-info">
+                    <div class="weather-icon">☀️</div>
+                    <div class="weather-text">晴れ 18°C</div>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <h2 class="section-title">クイックアクセス</h2>
+                <div class="action-grid">
+                    <div class="action-card">
+                        <div class="action-icon">🚌</div>
+                        <h3>路線検索</h3>
+                        <p>行き先から路線を検索</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">⏰</div>
+                        <h3>時刻表</h3>
+                        <p>発着時刻を確認</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">🗺️</div>
+                        <h3>地図</h3>
+                        <p>バス位置を確認</p>
+                    </div>
+                    <div class="action-card">
+                        <div class="action-icon">📢</div>
+                        <h3>運行情報</h3>
+                        <p>遅延・運休情報</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="favorite-routes">
+                <h2 class="section-title">よく使う路線</h2>
+                <div class="route-list">
+                    <div class="route-item">
+                        <div class="route-number">1</div>
+                        <div class="route-info">
+                            <div class="route-name">中央線</div>
+                            <div class="route-detail">駅前 → 大学前</div>
+                        </div>
+                        <div class="route-status normal">正常運行</div>
+                    </div>
+                    <div class="route-item">
+                        <div class="route-number">2</div>
+                        <div class="route-info">
+                            <div class="route-name">東部線</div>
+                            <div class="route-detail">駅前 → 病院前</div>
+                        </div>
+                        <div class="route-status delay">5分遅延</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-section">
+                <h2 class="section-title">お知らせ</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                        <div class="news-icon">⚠️</div>
+                        <div class="news-content">
+                            <div class="news-title">工事による運行変更</div>
+                            <div class="news-date">12月20日〜25日</div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-icon">🎄</div>
+                        <div class="news-content">
+                            <div class="news-title">年末年始の運行スケジュール</div>
+                            <div class="news-date">12月29日〜1月3日</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 路線選択画面 -->
+        <section id="routes" class="screen">
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" placeholder="路線名・停留所名で検索" class="search-input">
+                    <button class="search-button">🔍</button>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-tab active">すべて</button>
+                    <button class="filter-tab">運行中</button>
+                    <button class="filter-tab">お気に入り</button>
+                </div>
+            </div>
+
+            <div class="routes-grid">
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-number-large">1</div>
+                        <div class="route-info">
+                            <h3>中央線</h3>
+                            <p>駅前 ⇄ 大学前</p>
+                        </div>
+                        <div class="route-status-badge normal">正常</div>
+                    </div>
+                    <div class="route-details">
+                        <div class="detail-item">
+                            <span class="detail-label">運行間隔</span>
+                            <span class="detail-value">15分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">所要時間</span>
+                            <span class="detail-value">25分</span>
+                        </div>
+                    </div>
+                    <div class="route-actions">
+                        <button class="btn-secondary">時刻表</button>
+                        <button class="btn-primary">地図</button>
+                    </div>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-number-large">2</div>
+                        <div class="route-info">
+                            <h3>東部線</h3>
+                            <p>駅前 ⇄ 病院前</p>
+                        </div>
+                        <div class="route-status-badge delay">遅延</div>
+                    </div>
+                    <div class="route-details">
+                        <div class="detail-item">
+                            <span class="detail-label">運行間隔</span>
+                            <span class="detail-value">20分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">所要時間</span>
+                            <span class="detail-value">30分</span>
+                        </div>
+                    </div>
+                    <div class="route-actions">
+                        <button class="btn-secondary">時刻表</button>
+                        <button class="btn-primary">地図</button>
+                    </div>
+                </div>
+
+                <div class="route-card">
+                    <div class="route-header">
+                        <div class="route-number-large">3</div>
+                        <div class="route-info">
+                            <h3>西部線</h3>
+                            <p>駅前 ⇄ ショッピングセンター</p>
+                        </div>
+                        <div class="route-status-badge normal">正常</div>
+                    </div>
+                    <div class="route-details">
+                        <div class="detail-item">
+                            <span class="detail-label">運行間隔</span>
+                            <span class="detail-value">30分</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">所要時間</span>
+                            <span class="detail-value">35分</span>
+                        </div>
+                    </div>
+                    <div class="route-actions">
+                        <button class="btn-secondary">時刻表</button>
+                        <button class="btn-primary">地図</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 時刻表画面 -->
+        <section id="timetable" class="screen">
+            <div class="timetable-header">
+                <div class="station-info">
+                    <h2>駅前停留所</h2>
+                    <p>中央線・東部線・西部線</p>
+                </div>
+                <div class="current-time-large">14:32</div>
+            </div>
+
+            <div class="timetable-content">
+                <div class="route-tabs">
+                    <button class="route-tab active">中央線</button>
+                    <button class="route-tab">東部線</button>
+                    <button class="route-tab">西部線</button>
+                </div>
+
+                <div class="timetable-list">
+                    <div class="timetable-item next">
+                        <div class="time-info">
+                            <div class="departure-time">14:35</div>
+                            <div class="time-status">3分後</div>
+                        </div>
+                        <div class="route-info">
+                            <div class="route-number-small">1</div>
+                            <div class="destination">大学前行き</div>
+                        </div>
+                        <div class="bus-info">
+                            <div class="bus-number">A-123</div>
+                            <div class="bus-status normal">正常</div>
+                        </div>
+                    </div>
+
+                    <div class="timetable-item">
+                        <div class="time-info">
+                            <div class="departure-time">14:50</div>
+                            <div class="time-status">18分後</div>
+                        </div>
+                        <div class="route-info">
+                            <div class="route-number-small">1</div>
+                            <div class="destination">大学前行き</div>
+                        </div>
+                        <div class="bus-info">
+                            <div class="bus-number">A-124</div>
+                            <div class="bus-status normal">正常</div>
+                        </div>
+                    </div>
+
+                    <div class="timetable-item delay">
+                        <div class="time-info">
+                            <div class="departure-time">15:05</div>
+                            <div class="time-status">33分後</div>
+                        </div>
+                        <div class="route-info">
+                            <div class="route-number-small">2</div>
+                            <div class="destination">病院前行き</div>
+                        </div>
+                        <div class="bus-info">
+                            <div class="bus-number">B-201</div>
+                            <div class="bus-status delay">5分遅延</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 地図画面 -->
+        <section id="map" class="screen">
+            <div class="map-header">
+                <h2>バス位置情報</h2>
+                <div class="map-controls">
+                    <button class="control-btn">📍</button>
+                    <button class="control-btn">🔍</button>
+                    <button class="control-btn">🔄</button>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <p>地図表示エリア</p>
+                    <div class="bus-markers">
+                        <div class="bus-marker bus-1">🚌</div>
+                        <div class="bus-marker bus-2">🚌</div>
+                        <div class="bus-marker bus-3">🚌</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="route-selector">
+                <h3>表示路線</h3>
+                <div class="route-checkboxes">
+                    <label class="checkbox-item">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        中央線（1番）
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                        東部線（2番）
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        西部線（3番）
+                    </label>
+                </div>
+            </div>
+
+            <div class="bus-list">
+                <h3>運行中のバス</h3>
+                <div class="bus-items">
+                    <div class="bus-item">
+                        <div class="bus-icon">🚌</div>
+                        <div class="bus-info">
+                            <div class="bus-number">A-123</div>
+                            <div class="bus-route">中央線 大学前行き</div>
+                        </div>
+                        <div class="bus-status normal">正常</div>
+                    </div>
+                    <div class="bus-item">
+                        <div class="bus-icon">🚌</div>
+                        <div class="bus-info">
+                            <div class="bus-number">B-201</div>
+                            <div class="bus-route">東部線 病院前行き</div>
+                        </div>
+                        <div class="bus-status delay">5分遅延</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 運行情報画面 -->
+        <section id="info" class="screen">
+            <div class="info-header">
+                <h2>運行情報</h2>
+                <div class="last-update">最終更新: 14:30</div>
+            </div>
+
+            <div class="info-summary">
+                <div class="summary-card normal">
+                    <div class="summary-icon">✅</div>
+                    <div class="summary-info">
+                        <div class="summary-number">8</div>
+                        <div class="summary-label">正常運行路線</div>
+                    </div>
+                </div>
+                <div class="summary-card delay">
+                    <div class="summary-icon">⚠️</div>
+                    <div class="summary-info">
+                        <div class="summary-number">2</div>
+                        <div class="summary-label">遅延路線</div>
+                    </div>
+                </div>
+                <div class="summary-card cancel">
+                    <div class="summary-icon">❌</div>
+                    <div class="summary-info">
+                        <div class="summary-number">0</div>
+                        <div class="summary-label">運休路線</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-details">
+                <h3>詳細情報</h3>
+                <div class="info-list">
+                    <div class="info-item delay">
+                        <div class="info-icon">⚠️</div>
+                        <div class="info-content">
+                            <div class="info-title">東部線（2番）遅延</div>
+                            <div class="info-description">道路工事の影響により約5分遅延しています</div>
+                            <div class="info-time">14:25 更新</div>
+                        </div>
+                    </div>
+                    <div class="info-item notice">
+                        <div class="info-icon">📢</div>
+                        <div class="info-content">
+                            <div class="info-title">工事による運行変更</div>
+                            <div class="info-description">12月20日〜25日、中央通りで工事のため迂回運行</div>
+                            <div class="info-time">12月19日 更新</div>
+                        </div>
+                    </div>
+                    <div class="info-item normal">
+                        <div class="info-icon">✅</div>
+                        <div class="info-content">
+                            <div class="info-title">中央線（1番）正常運行</div>
+                            <div class="info-description">通常通り運行しています</div>
+                            <div class="info-time">14:30 更新</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#help">ヘルプ</a>
+                <a href="#contact">お問い合わせ</a>
+                <a href="#privacy">プライバシーポリシー</a>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2024 バスロケーションシステム</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bus_script.js"></script>
+</body>
+</html>
