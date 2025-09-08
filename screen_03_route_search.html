@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バスロケーションシステム - 路線検索・ルート案内</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563EB;
+            --secondary-blue: #1E40AF;
+            --light-blue: #DBEAFE;
+            --accent-orange: #F97316;
+            --accent-green: #16A34A;
+            --accent-red: #DC2626;
+            --dark-gray: #1F2937;
+            --medium-gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+            
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            
+            --font-h1: 32px;
+            --font-h2: 24px;
+            --font-h3: 20px;
+            --font-h4: 18px;
+            --font-body: 16px;
+            --font-small: 14px;
+            --font-caption: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+        
+        .page-title {
+            font-size: var(--font-h1);
+            margin-bottom: var(--spacing-lg);
+            color: var(--dark-gray);
+        }
+        
+        .search-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto;
+            gap: var(--spacing-md);
+            align-items: end;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .form-input {
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .swap-btn {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border: none;
+            padding: var(--spacing-md);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .swap-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .search-btn {
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .search-btn:hover {
+            background: #EA580C;
+        }
+        
+        .search-options {
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .option-label {
+            font-size: var(--font-small);
+            color: var(--medium-gray);
+        }
+        
+        .option-select {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: var(--font-small);
+            background: var(--white);
+        }
+        
+        .results-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .results-title {
+            font-size: var(--font-h2);
+            color: var(--dark-gray);
+        }
+        
+        .results-count {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        .route-card {
+            border: 2px solid var(--border-gray);
+            border-radius: 16px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .route-card:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+        }
+        
+        .route-card.recommended {
+            border-color: var(--accent-orange);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(249, 115, 22, 0.02));
+        }
+        
+        .route-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .route-title {
+            font-size: var(--font-h4);
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .route-badge {
+            background: var(--accent-orange);
+            color: var(--white);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 12px;
+            font-size: var(--font-caption);
+            font-weight: 500;
+        }
+        
+        .route-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .info-icon {
+            color: var(--primary-blue);
+        }
+        
+        .info-text {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        .info-value {
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .route-steps {
+            margin-top: var(--spacing-md);
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .step-item:last-child {
+            border-bottom: none;
+        }
+        
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--white);
+        }
+        
+        .step-icon.start {
+            background: var(--accent-green);
+        }
+        
+        .step-icon.bus {
+            background: var(--primary-blue);
+        }
+        
+        .step-icon.walk {
+            background: var(--medium-gray);
+        }
+        
+        .step-icon.end {
+            background: var(--accent-red);
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .step-details {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        .route-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .action-btn {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: var(--font-small);
+            transition: background-color 0.2s ease;
+        }
+        
+        .action-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .map-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-placeholder {
+            background: var(--light-gray);
+            border-radius: 12px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium-gray);
+            font-size: var(--font-h4);
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                padding: var(--spacing-md);
+            }
+            
+            .search-form {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .search-options {
+                flex-direction: column;
+            }
+            
+            .route-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .route-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+            
+            .route-actions {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="material-icons">directions_bus</span>
+                バスロケーション
+            </div>
+            <button class="back-btn">
+                <span class="material-icons">arrow_back</span>
+                戻る
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <h1 class="page-title">路線検索・ルート案内</h1>
+        
+        <!-- 検索セクション -->
+        <section class="search-section">
+            <form class="search-form">
+                <div class="form-group">
+                    <label class="form-label">出発地</label>
+                    <input type="text" class="form-input" placeholder="出発地を入力" value="中央駅前">
+                </div>
+                
+                <button type="button" class="swap-btn">
+                    <span class="material-icons">swap_vert</span>
+                </button>
+                
+                <div class="form-group">
+                    <label class="form-label">目的地</label>
+                    <input type="text" class="form-input" placeholder="目的地を入力" value="市役所前">
+                </div>
+                
+                <button type="submit" class="search-btn">
+                    <span class="material-icons">search</span>
+                    検索
+                </button>
+            </form>
+            
+            <div class="search-options">
+                <div class="option-group">
+                    <label class="option-label">出発時刻</label>
+                    <select class="option-select">
+                        <option>現在時刻</option>
+                        <option>06:00</option>
+                        <option>07:00</option>
+                        <option>08:00</option>
+                        <option>09:00</option>
+                    </select>
+                </div>
+                
+                <div class="option-group">
+                    <label class="option-label">乗り換え回数</label>
+                    <select class="option-select">
+                        <option>制限なし</option>
+                        <option>1回まで</option>
+                        <option>2回まで</option>
+                    </select>
+                </div>
+                
+                <div class="option-group">
+                    <label class="option-label">優先条件</label>
+                    <select class="option-select">
+                        <option>所要時間</option>
+                        <option>運賃</option>
+                        <option>乗り換え回数</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- 検索結果 -->
+        <section class="results-section">
+            <div class="results-header">
+                <h2 class="results-title">検索結果</h2>
+                <span class="results-count">3件のルートが見つかりました</span>
+            </div>
+            
+            <!-- ルート1（推奨） -->
+            <div class="route-card recommended">
+                <div class="route-header">
+                    <h3 class="route-title">ルート1（推奨）</h3>
+                    <span class="route-badge">最適</span>
+                </div>
+                
+                <div class="route-info">
+                    <div class="info-item">
+                        <span class="material-icons info-icon">schedule</span>
+                        <span class="info-text">所要時間</span>
+                        <span class="info-value">25分</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">attach_money</span>
+                        <span class="info-text">運賃</span>
+                        <span class="info-value">220円</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">transfer_within_a_station</span>
+                        <span class="info-text">乗り換え</span>
+                        <span class="info-value">1回</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">directions_walk</span>
+                        <span class="info-text">徒歩</span>
+                        <span class="info-value">5分</span>
+                    </div>
+                </div>
+                
+                <div class="route-steps">
+                    <div class="step-item">
+                        <div class="step-icon start">
+                            <span class="material-icons">place</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">中央駅前</div>
+                            <div class="step-details">徒歩2分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon bus">
+                            <span class="material-icons">directions_bus</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">路線A 中央駅前 → 市役所前</div>
+                            <div class="step-details">08:15発 → 08:35着（20分）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon walk">
+                            <span class="material-icons">directions_walk</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所前から目的地まで</div>
+                            <div class="step-details">徒歩3分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon end">
+                            <span class="material-icons">flag</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所</div>
+                            <div class="step-details">到着</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="route-actions">
+                    <button class="action-btn">
+                        <span class="material-icons">favorite_border</span>
+                        お気に入り
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">share</span>
+                        共有
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">map</span>
+                        地図で見る
+                    </button>
+                </div>
+            </div>
+            
+            <!-- ルート2 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <h3 class="route-title">ルート2</h3>
+                </div>
+                
+                <div class="route-info">
+                    <div class="info-item">
+                        <span class="material-icons info-icon">schedule</span>
+                        <span class="info-text">所要時間</span>
+                        <span class="info-value">35分</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">attach_money</span>
+                        <span class="info-text">運賃</span>
+                        <span class="info-value">180円</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">transfer_within_a_station</span>
+                        <span class="info-text">乗り換え</span>
+                        <span class="info-value">2回</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">directions_walk</span>
+                        <span class="info-text">徒歩</span>
+                        <span class="info-value">8分</span>
+                    </div>
+                </div>
+                
+                <div class="route-steps">
+                    <div class="step-item">
+                        <div class="step-icon start">
+                            <span class="material-icons">place</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">中央駅前</div>
+                            <div class="step-details">徒歩3分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon bus">
+                            <span class="material-icons">directions_bus</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">路線B 中央駅前 → 東口</div>
+                            <div class="step-details">08:20発 → 08:30着（10分）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon bus">
+                            <span class="material-icons">directions_bus</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">路線C 東口 → 市役所前</div>
+                            <div class="step-details">08:35発 → 08:45着（10分）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon walk">
+                            <span class="material-icons">directions_walk</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所前から目的地まで</div>
+                            <div class="step-details">徒歩5分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon end">
+                            <span class="material-icons">flag</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所</div>
+                            <div class="step-details">到着</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="route-actions">
+                    <button class="action-btn">
+                        <span class="material-icons">favorite_border</span>
+                        お気に入り
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">share</span>
+                        共有
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">map</span>
+                        地図で見る
+                    </button>
+                </div>
+            </div>
+            
+            <!-- ルート3 -->
+            <div class="route-card">
+                <div class="route-header">
+                    <h3 class="route-title">ルート3</h3>
+                </div>
+                
+                <div class="route-info">
+                    <div class="info-item">
+                        <span class="material-icons info-icon">schedule</span>
+                        <span class="info-text">所要時間</span>
+                        <span class="info-value">45分</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">attach_money</span>
+                        <span class="info-text">運賃</span>
+                        <span class="info-value">150円</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">transfer_within_a_station</span>
+                        <span class="info-text">乗り換え</span>
+                        <span class="info-value">0回</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="material-icons info-icon">directions_walk</span>
+                        <span class="info-text">徒歩</span>
+                        <span class="info-value">15分</span>
+                    </div>
+                </div>
+                
+                <div class="route-steps">
+                    <div class="step-item">
+                        <div class="step-icon start">
+                            <span class="material-icons">place</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">中央駅前</div>
+                            <div class="step-details">徒歩5分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon bus">
+                            <span class="material-icons">directions_bus</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">路線D 中央駅前 → 市役所前</div>
+                            <div class="step-details">08:25発 → 08:55着（30分）</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon walk">
+                            <span class="material-icons">directions_walk</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所前から目的地まで</div>
+                            <div class="step-details">徒歩10分</div>
+                        </div>
+                    </div>
+                    
+                    <div class="step-item">
+                        <div class="step-icon end">
+                            <span class="material-icons">flag</span>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-title">市役所</div>
+                            <div class="step-details">到着</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="route-actions">
+                    <button class="action-btn">
+                        <span class="material-icons">favorite_border</span>
+                        お気に入り
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">share</span>
+                        共有
+                    </button>
+                    <button class="action-btn">
+                        <span class="material-icons">map</span>
+                        地図で見る
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 地図セクション -->
+        <section class="map-section">
+            <h3 class="timetable-title">ルート地図</h3>
+            <div class="map-placeholder">
+                <span class="material-icons" style="font-size: 48px; margin-right: 16px;">map</span>
+                地図表示エリア
+            </div>
+        </section>
+    </main>
+</body>
+</html>
