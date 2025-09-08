@@ -242,5 +242,171 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // お気に入り機能
+    const favoriteButtons = document.querySelectorAll('.btn-favorite');
+    favoriteButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const routeCard = this.closest('.route-card');
+            const routeName = routeCard.querySelector('h3').textContent.trim();
+            
+            if (this.textContent === '⭐') {
+                this.textContent = '★';
+                this.style.backgroundColor = '#F59E0B';
+                this.style.color = 'white';
+                console.log('お気に入りに追加:', routeName);
+            } else {
+                this.textContent = '⭐';
+                this.style.backgroundColor = 'transparent';
+                this.style.color = '#6B7280';
+                console.log('お気に入りから削除:', routeName);
+            }
+        });
+    });
+
+    // 方向選択機能
+    const directionButtons = document.querySelectorAll('.direction-btn');
+    directionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const parent = this.closest('.timetable-section');
+            const buttons = parent.querySelectorAll('.direction-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const direction = this.textContent.trim();
+            console.log('方向切り替え:', direction);
+        });
+    });
+
+    // 地図コントロール機能
+    const mapControlButtons = document.querySelectorAll('.map-controls-buttons .control-btn');
+    mapControlButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.textContent.trim();
+            console.log('地図操作:', action);
+            
+            switch(action) {
+                case '📍':
+                    // 現在地表示
+                    alert('現在地を表示します');
+                    break;
+                case '🔍':
+                    // ズーム
+                    alert('ズーム機能');
+                    break;
+                case '🔄':
+                    // 更新
+                    alert('地図を更新します');
+                    break;
+                case '📱':
+                    // フルスクリーン
+                    alert('フルスクリーンモード');
+                    break;
+            }
+        });
+    });
+
+    // 設定機能
+    const settingSelects = document.querySelectorAll('.setting-select');
+    settingSelects.forEach(select => {
+        select.addEventListener('change', function() {
+            const settingName = this.closest('.setting-item').querySelector('.setting-title').textContent.trim();
+            const value = this.value;
+            console.log('設定変更:', settingName, value);
+        });
+    });
+
+    const toggleSwitches = document.querySelectorAll('.toggle-switch input');
+    toggleSwitches.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const settingName = this.closest('.setting-item').querySelector('.setting-title').textContent.trim();
+            const isEnabled = this.checked;
+            console.log('設定変更:', settingName, isEnabled);
+        });
+    });
+
+    // お気に入り削除機能
+    const removeButtons = document.querySelectorAll('.remove-btn');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const favoriteItem = this.closest('.favorite-item');
+            const routeName = favoriteItem.querySelector('.route-name').textContent.trim();
+            
+            if (confirm(`${routeName}をお気に入りから削除しますか？`)) {
+                favoriteItem.remove();
+                console.log('お気に入り削除:', routeName);
+            }
+        });
+    });
+
+    // 設定保存機能
+    const saveButton = document.querySelector('.settings-footer .btn-primary');
+    if (saveButton) {
+        saveButton.addEventListener('click', function() {
+            alert('設定を保存しました');
+            console.log('設定保存完了');
+        });
+    }
+
+    // 設定リセット機能
+    const resetButton = document.querySelector('.settings-footer .btn-secondary');
+    if (resetButton) {
+        resetButton.addEventListener('click', function() {
+            if (confirm('設定をリセットしますか？')) {
+                // 設定をデフォルトに戻す
+                settingSelects.forEach(select => {
+                    select.selectedIndex = 1; // デフォルト値
+                });
+                toggleSwitches.forEach(toggle => {
+                    toggle.checked = true; // デフォルト値
+                });
+                alert('設定をリセットしました');
+                console.log('設定リセット完了');
+            }
+        });
+    }
+
+    // 停留所詳細画面の機能
+    const stationActionButtons = document.querySelectorAll('.station-actions button');
+    stationActionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const action = this.textContent.trim();
+            console.log('停留所操作:', action);
+            
+            if (action === '地図で見る') {
+                showScreen('map');
+            } else if (action === 'お気に入り') {
+                alert('お気に入りに追加しました');
+            }
+        });
+    });
+
+    // 運行情報の詳細表示
+    const infoItems = document.querySelectorAll('.info-item');
+    infoItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const title = this.querySelector('.info-title').textContent.trim();
+            const description = this.querySelector('.info-description').textContent.trim();
+            
+            // 詳細モーダル表示（簡易版）
+            alert(`${title}\n\n${description}`);
+            console.log('運行情報詳細:', title);
+        });
+    });
+
+    // 緊急連絡先のクリック機能
+    const contactItems = document.querySelectorAll('.contact-item');
+    contactItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const title = this.querySelector('.contact-title').textContent.trim();
+            const number = this.querySelector('.contact-number').textContent.trim();
+            
+            if (confirm(`${title}\n${number}\n\nこの番号に電話をかけますか？`)) {
+                // 実際の実装では電話アプリを起動
+                console.log('電話発信:', number);
+            }
+        });
+    });
+
     console.log('バスロケーションシステムが初期化されました');
 });

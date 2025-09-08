@@ -994,6 +994,863 @@ body {
     font-size: 0.9rem;
 }
 
+/* ページヘッダー */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 1rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: #6B7280;
+}
+
+/* 路線選択画面 */
+.routes-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-item {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.summary-icon {
+    font-size: 2.5rem;
+}
+
+.summary-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.summary-label {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.route-stops {
+    color: #6B7280;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+.btn-favorite {
+    background-color: transparent;
+    color: #6B7280;
+    padding: 0.5rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.btn-favorite:hover {
+    background-color: #F59E0B;
+    color: white;
+    border-color: #F59E0B;
+}
+
+.route-info-panel {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.route-info-panel h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-icon {
+    font-size: 2rem;
+}
+
+.info-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+/* 時刻表画面 */
+.station-selector {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.station-search {
+    display: flex;
+    background-color: #F8FAFC;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.station-search .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    background: transparent;
+}
+
+.station-search .search-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.current-station {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.station-icon {
+    font-size: 2rem;
+}
+
+.station-info h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+}
+
+.station-info p {
+    color: #6B7280;
+}
+
+.current-time-large {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #2563EB;
+    margin-left: auto;
+}
+
+.direction-selector {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.direction-btn {
+    background-color: #F8FAFC;
+    border: 2px solid #E5E7EB;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.direction-btn:hover,
+.direction-btn.active {
+    background-color: #2563EB;
+    color: white;
+    border-color: #2563EB;
+}
+
+.timetable-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.info-card {
+    background-color: #F8FAFC;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-card .info-icon {
+    font-size: 2rem;
+}
+
+.info-card .info-title {
+    font-size: 0.9rem;
+    color: #6B7280;
+    margin-bottom: 0.25rem;
+}
+
+.info-card .info-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1E3A8A;
+}
+
+.timetable-notes {
+    background-color: #FFFBEB;
+    border: 1px solid #F59E0B;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.timetable-notes h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #92400E;
+    margin-bottom: 1rem;
+}
+
+.timetable-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timetable-notes li {
+    color: #92400E;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.timetable-notes li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #F59E0B;
+}
+
+/* 地図画面 */
+.map-controls {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1E3A8A;
+}
+
+.map-controls-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-btn {
+    background-color: #F8FAFC;
+    border: 2px solid #E5E7EB;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #2563EB;
+    color: white;
+    border-color: #2563EB;
+}
+
+.route-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.route-line {
+    position: absolute;
+    height: 3px;
+    background-color: #2563EB;
+    opacity: 0.3;
+}
+
+.route-line.route-1 {
+    top: 30%;
+    left: 10%;
+    width: 30%;
+    transform: rotate(15deg);
+}
+
+.route-line.route-2 {
+    top: 60%;
+    right: 20%;
+    width: 25%;
+    transform: rotate(-20deg);
+}
+
+.route-line.route-3 {
+    bottom: 20%;
+    left: 30%;
+    width: 35%;
+    transform: rotate(45deg);
+}
+
+.route-line.route-4 {
+    top: 40%;
+    left: 50%;
+    width: 20%;
+    transform: rotate(-30deg);
+}
+
+.route-line.route-5 {
+    top: 70%;
+    left: 20%;
+    width: 25%;
+    transform: rotate(60deg);
+}
+
+.bus-4 {
+    top: 40%;
+    left: 50%;
+}
+
+.bus-5 {
+    top: 70%;
+    left: 20%;
+}
+
+.map-info-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bus-location {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    margin-top: 0.25rem;
+}
+
+.map-legend {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-legend h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1rem;
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-icon {
+    font-size: 1.5rem;
+}
+
+.legend-icon.normal {
+    color: #10B981;
+}
+
+.legend-icon.delay {
+    color: #F59E0B;
+}
+
+.legend-icon.cancel {
+    color: #EF4444;
+}
+
+.legend-icon.station {
+    color: #2563EB;
+}
+
+/* 運行情報画面 */
+.info-summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-summary-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1E3A8A;
+}
+
+.last-update {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.info-details-extended {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.detail-label {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.detail-value {
+    color: #1F2937;
+    font-weight: 500;
+}
+
+.emergency-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.emergency-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+.emergency-contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #F8FAFC;
+    border-radius: 10px;
+}
+
+.contact-icon {
+    font-size: 2rem;
+}
+
+.contact-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.contact-number {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.weather-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.weather-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+.weather-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: #F0FDF4;
+    border-radius: 10px;
+}
+
+.weather-icon {
+    font-size: 3rem;
+}
+
+.weather-main {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.weather-temp {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.weather-desc {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+/* 停留所詳細画面 */
+.station-header {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.station-icon-large {
+    font-size: 4rem;
+}
+
+.station-info-large {
+    flex: 1;
+}
+
+.station-info-large h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+}
+
+.station-info-large p {
+    color: #6B7280;
+    margin-bottom: 0.5rem;
+}
+
+.station-code {
+    background-color: #F8FAFC;
+    color: #6B7280;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.station-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.station-timetable {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.station-timetable h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+.timetable-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.time-column,
+.bus-column,
+.status-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-header,
+.bus-header,
+.status-header {
+    background-color: #F8FAFC;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1E3A8A;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.time-item,
+.bus-item,
+.status-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #E5E7EB;
+    text-align: center;
+}
+
+.time-item {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+
+.status-item.next {
+    background-color: #EFF6FF;
+    color: #2563EB;
+    font-weight: 600;
+}
+
+.station-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.station-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+/* 設定画面 */
+.settings-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.settings-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.settings-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 1.5rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.setting-item:last-child {
+    border-bottom: none;
+}
+
+.setting-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.setting-icon {
+    font-size: 1.5rem;
+}
+
+.setting-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.setting-description {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.setting-control {
+    min-width: 150px;
+}
+
+.setting-select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+}
+
+.setting-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #2563EB;
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.favorite-routes {
+    margin-bottom: 1.5rem;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #F8FAFC;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.favorite-item .route-info {
+    flex: 1;
+}
+
+.route-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1E3A8A;
+    margin-bottom: 0.25rem;
+}
+
+.route-detail {
+    color: #6B7280;
+    font-size: 0.9rem;
+}
+
+.remove-btn {
+    background-color: #EF4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     .header-content {
