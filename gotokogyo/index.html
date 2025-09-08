@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>後藤工業 | トップ</title>
+    <meta name="description" content="株式会社後藤工業の公式サイト。事業内容、施工実績、会社情報、お問い合わせ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">メインへ移動</a>
+
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a class="brand" href="./">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span class="brand-text">株式会社後藤工業</span>
+        </a>
+        <nav class="top-nav" aria-label="クイックナビ">
+          <a class="icon-link" href="./services.html">
+            <img src="./assets/icons/wrench.svg" alt="事業内容">
+            <span>事業内容</span>
+          </a>
+          <a class="icon-link" href="./projects.html">
+            <img src="./assets/icons/building.svg" alt="施工実績">
+            <span>施工実績</span>
+          </a>
+          <a class="icon-link" href="./company.html">
+            <img src="./assets/icons/info.svg" alt="会社情報">
+            <span>会社情報</span>
+          </a>
+          <a class="icon-link cta" href="./contact.html">
+            <img src="./assets/icons/mail.svg" alt="お問い合わせ">
+            <span>お問い合わせ</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1 class="hero-title">
+              必要な情報へ、
+              <span class="hero-em">最短で。</span>
+            </h1>
+            <p class="hero-subtitle">文字を最小限に、直感的に辿れるトップページ。</p>
+          </div>
+          <div class="card-grid" aria-label="主要メニュー">
+            <a class="nav-card" href="./services.html">
+              <img class="nav-icon" src="./assets/icons/wrench.svg" alt="">
+              <span class="nav-title">事業内容</span>
+              <span class="nav-desc">施工・保全・設備工事</span>
+            </a>
+            <a class="nav-card" href="./projects.html">
+              <img class="nav-icon" src="./assets/icons/building.svg" alt="">
+              <span class="nav-title">施工実績</span>
+              <span class="nav-desc">代表事例と写真</span>
+            </a>
+            <a class="nav-card" href="./company.html">
+              <img class="nav-icon" src="./assets/icons/info.svg" alt="">
+              <span class="nav-title">会社情報</span>
+              <span class="nav-desc">ご挨拶・沿革・拠点</span>
+            </a>
+            <a class="nav-card cta" href="./contact.html">
+              <img class="nav-icon" src="./assets/icons/mail.svg" alt="">
+              <span class="nav-title">お問い合わせ</span>
+              <span class="nav-desc">ご相談・お見積り</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlights" aria-label="お知らせ・ハイライト">
+        <div class="container">
+          <ul class="highlights-list">
+            <li>
+              <span class="pill">ニュース</span>
+              <span class="hl-text">サイトデザインを刷新しました。</span>
+            </li>
+            <li>
+              <span class="pill">採用</span>
+              <span class="hl-text">現場管理スタッフを募集しています。</span>
+            </li>
+            <li>
+              <span class="pill">安全</span>
+              <span class="hl-text">無事故記録を更新しました。</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <nav class="dock" aria-label="固定クイックナビ">
+      <a class="dock-item" href="./services.html" aria-label="事業内容">
+        <img src="./assets/icons/wrench.svg" alt="">
+        <span>事業</span>
+      </a>
+      <a class="dock-item" href="./projects.html" aria-label="施工実績">
+        <img src="./assets/icons/building.svg" alt="">
+        <span>実績</span>
+      </a>
+      <a class="dock-item" href="./company.html" aria-label="会社情報">
+        <img src="./assets/icons/info.svg" alt="">
+        <span>会社</span>
+      </a>
+      <a class="dock-item cta" href="./contact.html" aria-label="お問い合わせ">
+        <img src="./assets/icons/mail.svg" alt="">
+        <span>問合せ</span>
+      </a>
+    </nav>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container footer-inner">
+        <small>© <span id="year"></span> 株式会社後藤工業</small>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
