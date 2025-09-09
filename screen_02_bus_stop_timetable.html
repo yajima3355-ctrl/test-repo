@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バスロケーションシステム - バス停検索・時刻表</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563EB;
+            --secondary-blue: #1E40AF;
+            --light-blue: #DBEAFE;
+            --accent-orange: #F97316;
+            --accent-green: #16A34A;
+            --accent-red: #DC2626;
+            --dark-gray: #1F2937;
+            --medium-gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+            
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            
+            --font-h1: 32px;
+            --font-h2: 24px;
+            --font-h3: 20px;
+            --font-h4: 18px;
+            --font-body: 16px;
+            --font-small: 14px;
+            --font-caption: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+        
+        .page-title {
+            font-size: var(--font-h1);
+            margin-bottom: var(--spacing-lg);
+            color: var(--dark-gray);
+        }
+        
+        .search-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .search-form {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            transition: border-color 0.2s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .search-btn {
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .search-btn:hover {
+            background: #EA580C;
+        }
+        
+        .current-location-btn {
+            background: var(--accent-green);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .current-location-btn:hover {
+            background: #15803D;
+        }
+        
+        .bus-stop-info {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .bus-stop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .bus-stop-name {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+        
+        .favorite-btn {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .favorite-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .bus-stop-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--medium-gray);
+        }
+        
+        .detail-item .material-icons {
+            color: var(--primary-blue);
+        }
+        
+        .routes-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .route-badge {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: 20px;
+            font-size: var(--font-small);
+            font-weight: 500;
+        }
+        
+        .timetable-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timetable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .timetable-title {
+            font-size: var(--font-h3);
+            color: var(--dark-gray);
+        }
+        
+        .refresh-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .refresh-btn:hover {
+            background: var(--secondary-blue);
+        }
+        
+        .route-tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 2px solid var(--border-gray);
+        }
+        
+        .route-tab {
+            background: none;
+            border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            cursor: pointer;
+            font-size: var(--font-body);
+            color: var(--medium-gray);
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        
+        .route-tab.active {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+        
+        .timetable-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .time-column {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+        }
+        
+        .time-column h4 {
+            font-size: var(--font-h4);
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-gray);
+            text-align: center;
+        }
+        
+        .time-list {
+            list-style: none;
+        }
+        
+        .time-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .time-item:last-child {
+            border-bottom: none;
+        }
+        
+        .time {
+            font-family: 'Roboto', sans-serif;
+            font-size: var(--font-h4);
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .destination {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        .status-badge {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 12px;
+            font-size: var(--font-caption);
+            font-weight: 500;
+        }
+        
+        .status-normal {
+            background: var(--accent-green);
+            color: var(--white);
+        }
+        
+        .status-delayed {
+            background: var(--accent-red);
+            color: var(--white);
+        }
+        
+        .realtime-info {
+            background: var(--light-blue);
+            border-radius: 12px;
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .realtime-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .next-bus {
+            font-size: var(--font-h3);
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                padding: var(--spacing-md);
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .bus-stop-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-md);
+            }
+            
+            .bus-stop-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .timetable-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .route-tabs {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="material-icons">directions_bus</span>
+                バスロケーション
+            </div>
+            <button class="back-btn">
+                <span class="material-icons">arrow_back</span>
+                戻る
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <h1 class="page-title">バス停検索・時刻表</h1>
+        
+        <!-- 検索セクション -->
+        <section class="search-section">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="バス停名を入力してください" aria-label="バス停検索">
+                <button type="submit" class="search-btn">
+                    <span class="material-icons">search</span>
+                    検索
+                </button>
+            </form>
+            <button class="current-location-btn">
+                <span class="material-icons">my_location</span>
+                現在地から最寄りバス停を検索
+            </button>
+        </section>
+
+        <!-- バス停情報 -->
+        <section class="bus-stop-info">
+            <div class="bus-stop-header">
+                <h2 class="bus-stop-name">中央駅前</h2>
+                <button class="favorite-btn">
+                    <span class="material-icons">favorite_border</span>
+                    お気に入り
+                </button>
+            </div>
+            
+            <div class="bus-stop-details">
+                <div class="detail-item">
+                    <span class="material-icons">place</span>
+                    <span>埼玉県所沢市中央1-1-1</span>
+                </div>
+                <div class="detail-item">
+                    <span class="material-icons">phone</span>
+                    <span>04-2999-0000</span>
+                </div>
+                <div class="detail-item">
+                    <span class="material-icons">accessibility</span>
+                    <span>車椅子対応</span>
+                </div>
+            </div>
+            
+            <div class="routes-list">
+                <span class="route-badge">路線A</span>
+                <span class="route-badge">路線B</span>
+                <span class="route-badge">路線C</span>
+                <span class="route-badge">路線D</span>
+            </div>
+        </section>
+
+        <!-- 時刻表セクション -->
+        <section class="timetable-section">
+            <div class="timetable-header">
+                <h3 class="timetable-title">時刻表</h3>
+                <button class="refresh-btn">
+                    <span class="material-icons">refresh</span>
+                    更新
+                </button>
+            </div>
+            
+            <div class="route-tabs">
+                <button class="route-tab active">路線A</button>
+                <button class="route-tab">路線B</button>
+                <button class="route-tab">路線C</button>
+                <button class="route-tab">路線D</button>
+            </div>
+            
+            <div class="timetable-content">
+                <div class="time-column">
+                    <h4>平日</h4>
+                    <ul class="time-list">
+                        <li class="time-item">
+                            <span class="time">07:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">07:45</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-delayed">遅延</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">08:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">08:15</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">08:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="time-column">
+                    <h4>土曜日</h4>
+                    <ul class="time-list">
+                        <li class="time-item">
+                            <span class="time">08:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">08:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">09:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">09:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">10:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="time-column">
+                    <h4>日曜・祝日</h4>
+                    <ul class="time-list">
+                        <li class="time-item">
+                            <span class="time">09:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">09:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">10:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">10:30</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                        <li class="time-item">
+                            <span class="time">11:00</span>
+                            <span class="destination">駅前方面</span>
+                            <span class="status-badge status-normal">正常</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="realtime-info">
+                <h4>リアルタイム情報</h4>
+                <div class="next-bus">次のバス: 08:15到着予定（遅延5分）</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

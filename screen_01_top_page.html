@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バスロケーションシステム - トップページ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            /* カラーパレット */
+            --primary-blue: #2563EB;
+            --secondary-blue: #1E40AF;
+            --light-blue: #DBEAFE;
+            --accent-orange: #F97316;
+            --accent-green: #16A34A;
+            --accent-red: #DC2626;
+            --dark-gray: #1F2937;
+            --medium-gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+            
+            /* スペーシング */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            
+            /* フォントサイズ */
+            --font-h1: 32px;
+            --font-h2: 24px;
+            --font-h3: 20px;
+            --font-h4: 18px;
+            --font-body: 16px;
+            --font-small: 14px;
+            --font-caption: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        /* ヘッダー */
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .nav {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+        
+        .nav-item {
+            color: var(--white);
+            text-decoration: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* メインコンテンツ */
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: var(--font-h1);
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-gray);
+        }
+        
+        .hero p {
+            font-size: var(--font-h4);
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .search-form {
+            display: flex;
+            gap: var(--spacing-md);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            transition: border-color 0.2s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .search-btn {
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .search-btn:hover {
+            background: #EA580C;
+        }
+        
+        /* クイックアクセス */
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .quick-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .quick-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        
+        .quick-card-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            font-size: 32px;
+            color: var(--primary-blue);
+        }
+        
+        .quick-card h3 {
+            font-size: var(--font-h4);
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-gray);
+        }
+        
+        .quick-card p {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        /* お知らせセクション */
+        .news-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .news-section h2 {
+            font-size: var(--font-h2);
+            margin-bottom: var(--spacing-lg);
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .news-list {
+            list-style: none;
+        }
+        
+        .news-item {
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--border-gray);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-badge {
+            background: var(--accent-red);
+            color: var(--white);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 12px;
+            font-size: var(--font-caption);
+            font-weight: 500;
+        }
+        
+        .news-content {
+            flex: 1;
+        }
+        
+        .news-title {
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .news-date {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+        }
+        
+        /* フッター */
+        .footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-3xl);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .quick-access {
+                grid-template-columns: 1fr;
+            }
+            
+            .main {
+                padding: var(--spacing-md);
+            }
+            
+            .hero {
+                padding: var(--spacing-lg);
+            }
+            
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+        
+        /* アクセシビリティ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* フォーカス表示 */
+        .nav-item:focus,
+        .search-input:focus,
+        .search-btn:focus,
+        .quick-card:focus {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="material-icons">directions_bus</span>
+                バスロケーション
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-item">ホーム</a>
+                <a href="#" class="nav-item">時刻表</a>
+                <a href="#" class="nav-item">路線検索</a>
+                <a href="#" class="nav-item">運行状況</a>
+                <a href="#" class="nav-item">お知らせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <h1>バスロケーションシステム</h1>
+            <p>最寄りのバス停や路線を簡単に検索できます</p>
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="バス停名や路線名を入力してください" aria-label="バス停検索">
+                <button type="submit" class="search-btn">
+                    <span class="material-icons">search</span>
+                    検索
+                </button>
+            </form>
+        </section>
+
+        <!-- クイックアクセス -->
+        <section class="quick-access">
+            <div class="quick-card" tabindex="0">
+                <div class="quick-card-icon">
+                    <span class="material-icons">schedule</span>
+                </div>
+                <h3>時刻表</h3>
+                <p>バス停の時刻表を確認</p>
+            </div>
+            
+            <div class="quick-card" tabindex="0">
+                <div class="quick-card-icon">
+                    <span class="material-icons">route</span>
+                </div>
+                <h3>路線検索</h3>
+                <p>出発地から目的地を検索</p>
+            </div>
+            
+            <div class="quick-card" tabindex="0">
+                <div class="quick-card-icon">
+                    <span class="material-icons">map</span>
+                </div>
+                <h3>運行状況</h3>
+                <p>リアルタイムの運行状況</p>
+            </div>
+            
+            <div class="quick-card" tabindex="0">
+                <div class="quick-card-icon">
+                    <span class="material-icons">notifications</span>
+                </div>
+                <h3>お知らせ</h3>
+                <p>運行情報とお知らせ</p>
+            </div>
+        </section>
+
+        <!-- お知らせセクション -->
+        <section class="news-section">
+            <h2>
+                <span class="material-icons">notifications</span>
+                お知らせ
+            </h2>
+            <ul class="news-list">
+                <li class="news-item">
+                    <span class="news-badge">重要</span>
+                    <div class="news-content">
+                        <div class="news-title">路線A 運休のお知らせ</div>
+                        <div class="news-date">2024年1月15日</div>
+                    </div>
+                </li>
+                <li class="news-item">
+                    <span class="news-badge">遅延</span>
+                    <div class="news-content">
+                        <div class="news-title">路線B 遅延発生中</div>
+                        <div class="news-date">2024年1月15日</div>
+                    </div>
+                </li>
+                <li class="news-item">
+                    <span class="news-badge">情報</span>
+                    <div class="news-content">
+                        <div class="news-title">新路線の運行開始</div>
+                        <div class="news-date">2024年1月10日</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 バスロケーションシステム. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

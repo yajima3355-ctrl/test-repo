@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バスロケーションシステム - ヘルプ・お問い合わせ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #2563EB;
+            --secondary-blue: #1E40AF;
+            --light-blue: #DBEAFE;
+            --accent-orange: #F97316;
+            --accent-green: #16A34A;
+            --accent-red: #DC2626;
+            --dark-gray: #1F2937;
+            --medium-gray: #6B7280;
+            --light-gray: #F3F4F6;
+            --border-gray: #E5E7EB;
+            --white: #FFFFFF;
+            
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            
+            --font-h1: 32px;
+            --font-h2: 24px;
+            --font-h3: 20px;
+            --font-h4: 18px;
+            --font-body: 16px;
+            --font-small: 14px;
+            --font-caption: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: var(--font-body);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: var(--font-h2);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .back-btn {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            transition: background-color 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+        }
+        
+        .page-title {
+            font-size: var(--font-h1);
+            margin-bottom: var(--spacing-lg);
+            color: var(--dark-gray);
+        }
+        
+        .help-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: var(--font-h2);
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .search-box {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .search-input {
+            flex: 1;
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: var(--font-body);
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .search-btn {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .faq-categories {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            background: var(--light-gray);
+            color: var(--medium-gray);
+            border: none;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: var(--font-small);
+            transition: all 0.2s ease;
+        }
+        
+        .category-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .faq-item {
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-blue);
+        }
+        
+        .faq-question {
+            background: var(--light-gray);
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--light-blue);
+        }
+        
+        .faq-question-text {
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .faq-question-icon {
+            color: var(--primary-blue);
+            transition: transform 0.2s ease;
+        }
+        
+        .faq-item.active .faq-question-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: var(--spacing-lg);
+            background: var(--white);
+            border-top: 1px solid var(--border-gray);
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .faq-answer-text {
+            color: var(--medium-gray);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .faq-answer-steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .faq-answer-steps li {
+            counter-increment: step-counter;
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-xl);
+            position: relative;
+        }
+        
+        .faq-answer-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-blue);
+            color: var(--white);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-caption);
+            font-weight: 500;
+        }
+        
+        .guide-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .guide-item {
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .guide-item:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+        }
+        
+        .guide-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            font-size: 24px;
+            color: var(--primary-blue);
+        }
+        
+        .guide-title {
+            font-size: var(--font-h4);
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .guide-description {
+            color: var(--medium-gray);
+            font-size: var(--font-small);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .guide-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-size: var(--font-small);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .contact-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+        
+        .form-input,
+        .form-textarea,
+        .form-select {
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            transition: border-color 0.2s ease;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .submit-btn {
+            background: var(--accent-orange);
+            color: var(--white);
+            border: none;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 12px;
+            font-size: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            justify-content: center;
+        }
+        
+        .submit-btn:hover {
+            background: #EA580C;
+        }
+        
+        .contact-info {
+            background: var(--light-blue);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+        
+        .contact-info-title {
+            font-size: var(--font-h4);
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--medium-gray);
+        }
+        
+        .contact-info-item .material-icons {
+            color: var(--primary-blue);
+        }
+        
+        .feedback-section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: var(--spacing-xl);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .rating-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .star {
+            font-size: 32px;
+            color: var(--border-gray);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .star.active {
+            color: var(--accent-orange);
+        }
+        
+        @media (max-width: 768px) {
+            .main {
+                padding: var(--spacing-md);
+            }
+            
+            .search-box {
+                flex-direction: column;
+            }
+            
+            .faq-categories {
+                justify-content: center;
+            }
+            
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="material-icons">directions_bus</span>
+                バスロケーション
+            </div>
+            <button class="back-btn">
+                <span class="material-icons">arrow_back</span>
+                戻る
+            </button>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+        <h1 class="page-title">ヘルプ・お問い合わせ</h1>
+        
+        <!-- FAQセクション -->
+        <section class="help-section">
+            <h2 class="section-title">
+                <span class="material-icons">help</span>
+                よくある質問
+            </h2>
+            
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="質問を検索してください">
+                <button class="search-btn">
+                    <span class="material-icons">search</span>
+                    検索
+                </button>
+            </div>
+            
+            <div class="faq-categories">
+                <button class="category-btn active">すべて</button>
+                <button class="category-btn">基本操作</button>
+                <button class="category-btn">時刻表</button>
+                <button class="category-btn">路線検索</button>
+                <button class="category-btn">運行状況</button>
+                <button class="category-btn">アカウント</button>
+                <button class="category-btn">トラブル</button>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">バス停の時刻表はどこで確認できますか？</span>
+                        <span class="material-icons faq-question-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-text">バス停の時刻表は以下の方法で確認できます：</div>
+                        <ol class="faq-answer-steps">
+                            <li>トップページの検索ボックスにバス停名を入力</li>
+                            <li>「時刻表」メニューから直接検索</li>
+                            <li>地図上でバス停をタップして詳細表示</li>
+                            <li>お気に入りに登録したバス停から確認</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">リアルタイムの運行状況はどのくらいの頻度で更新されますか？</span>
+                        <span class="material-icons faq-question-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-text">運行状況は30秒ごとに自動更新されます。手動で更新したい場合は、画面の「更新」ボタンをタップしてください。</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">お気に入りのバス停や路線を登録するには？</span>
+                        <span class="material-icons faq-question-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-text">お気に入り登録は以下の手順で行えます：</div>
+                        <ol class="faq-answer-steps">
+                            <li>登録したいバス停や路線の詳細画面を開く</li>
+                            <li>「お気に入り」ボタンをタップ</li>
+                            <li>マイページの「お気に入り」セクションで確認</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">通知設定を変更するには？</span>
+                        <span class="material-icons faq-question-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-text">通知設定はマイページの「設定」セクションから変更できます。プッシュ通知、メール通知、SMS通知の各設定を個別に調整可能です。</div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-question-text">アプリが正常に動作しない場合はどうすればよいですか？</span>
+                        <span class="material-icons faq-question-icon">expand_more</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-text">以下の手順をお試しください：</div>
+                        <ol class="faq-answer-steps">
+                            <li>アプリを一度終了して再起動</li>
+                            <li>スマートフォンの再起動</li>
+                            <li>アプリの更新（最新版の確認）</li>
+                            <li>それでも解決しない場合はお問い合わせください</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 利用ガイドセクション -->
+        <section class="guide-section">
+            <h2 class="section-title">
+                <span class="material-icons">menu_book</span>
+                利用ガイド
+            </h2>
+            
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">schedule</span>
+                    </div>
+                    <h3 class="guide-title">時刻表の見方</h3>
+                    <p class="guide-description">バス停の時刻表の読み方と、平日・土曜・日曜の違いについて説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">route</span>
+                    </div>
+                    <h3 class="guide-title">路線検索の使い方</h3>
+                    <p class="guide-description">出発地と目的地を指定して、最適なルートを検索する方法を説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">map</span>
+                    </div>
+                    <h3 class="guide-title">地図機能の活用</h3>
+                    <p class="guide-description">リアルタイム地図でバスの位置を確認し、運行状況を把握する方法を説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">notifications</span>
+                    </div>
+                    <h3 class="guide-title">通知機能の設定</h3>
+                    <p class="guide-description">遅延や運休情報をいち早く知るための通知設定方法を説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">favorite</span>
+                    </div>
+                    <h3 class="guide-title">お気に入り機能</h3>
+                    <p class="guide-description">よく利用するバス停や路線をお気に入りに登録して、素早くアクセスする方法を説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+                
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <span class="material-icons">settings</span>
+                    </div>
+                    <h3 class="guide-title">設定のカスタマイズ</h3>
+                    <p class="guide-description">アプリの表示設定や通知設定を自分好みにカスタマイズする方法を説明します。</p>
+                    <a href="#" class="guide-link">
+                        詳細を見る
+                        <span class="material-icons">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせセクション -->
+        <section class="contact-section">
+            <h2 class="section-title">
+                <span class="material-icons">mail</span>
+                お問い合わせ
+            </h2>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label class="form-label">お名前 *</label>
+                    <input type="text" class="form-input" placeholder="お名前を入力してください">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">メールアドレス *</label>
+                    <input type="email" class="form-input" placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">電話番号</label>
+                    <input type="tel" class="form-input" placeholder="090-1234-5678">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">お問い合わせ種別 *</label>
+                    <select class="form-select">
+                        <option>選択してください</option>
+                        <option>時刻表について</option>
+                        <option>路線検索について</option>
+                        <option>運行状況について</option>
+                        <option>アプリの不具合</option>
+                        <option>その他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label class="form-label">件名 *</label>
+                    <input type="text" class="form-input" placeholder="件名を入力してください">
+                </div>
+                
+                <div class="form-group full-width">
+                    <label class="form-label">お問い合わせ内容 *</label>
+                    <textarea class="form-textarea" placeholder="お問い合わせ内容を詳しく入力してください"></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <button type="submit" class="submit-btn">
+                        <span class="material-icons">send</span>
+                        送信する
+                    </button>
+                </div>
+            </form>
+            
+            <div class="contact-info">
+                <h3 class="contact-info-title">連絡先情報</h3>
+                <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <span class="material-icons">phone</span>
+                        <span>04-2999-0000</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="material-icons">email</span>
+                        <span>support@bus-location.com</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="material-icons">schedule</span>
+                        <span>平日 9:00-18:00</span>
+                    </div>
+                    <div class="contact-info-item">
+                        <span class="material-icons">place</span>
+                        <span>埼玉県所沢市中央1-1-1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フィードバックセクション -->
+        <section class="feedback-section">
+            <h2 class="section-title">
+                <span class="material-icons">feedback</span>
+                フィードバック
+            </h2>
+            
+            <form class="feedback-form">
+                <div class="rating-section">
+                    <label class="form-label">サービス満足度</label>
+                    <div class="rating-stars">
+                        <span class="material-icons star active">star</span>
+                        <span class="material-icons star active">star</span>
+                        <span class="material-icons star active">star</span>
+                        <span class="material-icons star active">star</span>
+                        <span class="material-icons star">star</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">改善提案</label>
+                    <textarea class="form-textarea" placeholder="サービス改善のためのご提案をお聞かせください"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">
+                        <span class="material-icons">send</span>
+                        フィードバックを送信
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
