@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>診断ページ - 保存テスト</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .success { color: #28a745; font-weight: bold; }
+        .info { background: #e7f3ff; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .timestamp { color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="success">✅ ファイル保存テスト成功！</h1>
+        
+        <div class="info">
+            <h2>診断情報</h2>
+            <p><strong>ファイル名:</strong> diagnosis.html</p>
+            <p><strong>保存場所:</strong> /workspace/diagnosis.html</p>
+            <p><strong>作成日時:</strong> <span id="timestamp"></span></p>
+            <p><strong>ファイルサイズ:</strong> <span id="filesize"></span> バイト</p>
+        </div>
+
+        <h2>保存確認項目</h2>
+        <ul>
+            <li>✅ HTMLファイルの作成</li>
+            <li>✅ 日本語文字の保存</li>
+            <li>✅ CSSスタイルの保存</li>
+            <li>✅ JavaScriptの保存</li>
+            <li>✅ ファイルの読み込み</li>
+        </ul>
+
+        <div class="info">
+            <h3>このページが表示されていれば...</h3>
+            <p>ファイル保存機能は正常に動作しています。</p>
+            <p>問題は別の場所にある可能性があります。</p>
+        </div>
+
+        <h2>次のステップ</h2>
+        <ol>
+            <li>このページのキャプチャーを送信してください</li>
+            <li>どのファイルが保存されていないか具体的に教えてください</li>
+            <li>期待している保存場所を教えてください</li>
+        </ol>
+    </div>
+
+    <script>
+        // 現在時刻を表示
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('ja-JP');
+        
+        // ファイルサイズを表示（概算）
+        document.getElementById('filesize').textContent = document.documentElement.outerHTML.length;
+        
+        // ページ読み込み完了をログに記録
+        console.log('診断ページ読み込み完了:', new Date().toISOString());
+    </script>
+</body>
+</html>
