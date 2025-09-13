@@ -1,0 +1,322 @@
+%!PS-Adobe-3.0
+%%Creator: Adobe Illustrator
+%%Title: あとふる A4三つ折りチラシ
+%%DocumentData: Clean7Bit
+%%LanguageLevel: 3
+%%Pages: 1
+%%BoundingBox: 0 0 216 303
+%%HiResBoundingBox: 0 0 216 303
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentCustomColors: (atofuru_main #00A68C) (atofuru_sub1 #9EE0D5) (atofuru_sub2 #F2FDFA) (atofuru_blue #37A0BA) (atofuru_red #F44336) (atofuru_text #323232)
+%%EndComments
+
+%%BeginDocumentSetup
+%%EndDocumentSetup
+
+%%BeginProlog
+%%EndProlog
+
+%%BeginSetup
+%%EndSetup
+
+%%BeginPageSetup
+%%PageMedia: A4
+%%PageBleed: 3 3 3 3
+%%PageCropBox: 0 0 216 303
+%%PageArtBox: 0 0 216 303
+%%EndPageSetup
+
+%%BeginPage: 1
+%%PageBoundingBox: 0 0 216 303
+
+% ブランドカラー定義
+/atofuru_main {0 0.65 0.55 setrgbcolor} def
+/atofuru_sub1 {0.62 0.88 0.84 setrgbcolor} def
+/atofuru_sub2 {0.95 0.99 0.98 setrgbcolor} def
+/atofuru_blue {0.22 0.63 0.73 setrgbcolor} def
+/atofuru_red {0.96 0.26 0.21 setrgbcolor} def
+/atofuru_text {0.20 0.20 0.20 setrgbcolor} def
+
+% 折り位置ガイド（巻三つ折り）
+gsave
+0.5 setgray
+0 setlinewidth
+% 外面折り位置
+100 0 moveto 100 303 lineto stroke
+200 0 moveto 200 303 lineto stroke
+% 内面折り位置（2-3mm短縮）
+100 0 moveto 100 300 lineto stroke
+200 0 moveto 200 300 lineto stroke
+grestore
+
+% 塗り足しエリア
+gsave
+atofuru_sub2
+0 0 moveto 216 0 lineto 216 303 lineto 0 303 lineto closepath fill
+grestore
+
+% 外面レイアウト開始
+% 表紙（右パネル 100-216mm）
+gsave
+gsave
+atofuru_main
+0 0 moveto 116 0 lineto 116 303 lineto 0 303 lineto closepath fill
+grestore
+
+% 表紙タイトル
+gsave
+1 1 1 setrgbcolor
+/Times-Bold findfont 24 scalefont setfont
+20 250 moveto
+(旅の"泊・食・買"を、あとから返礼品に。) show
+grestore
+
+% サブコピー
+gsave
+atofuru_text
+/Times-Roman findfont 12 scalefont setfont
+20 220 moveto
+("あとふる" は、旅の体験をふるさと納税の返礼品に変えられる新しい仕組み。) show
+grestore
+
+% QRコードエリア
+gsave
+1 1 1 setrgbcolor
+50 50 moveto 100 0 rlineto 0 100 rlineto -100 0 rlineto closepath fill
+atofuru_text
+50 50 moveto 100 0 rlineto 0 100 rlineto -100 0 rlineto closepath stroke
+/Times-Roman findfont 8 scalefont setfont
+60 80 moveto
+(QRコード) show
+60 70 moveto
+(atofuru.jp) show
+grestore
+
+grestore
+
+% 背面（中央パネル 100-200mm）
+gsave
+gsave
+atofuru_sub1
+100 0 moveto 200 0 lineto 200 303 lineto 100 303 lineto closepath fill
+grestore
+
+% 背面タイトル
+gsave
+atofuru_text
+/Times-Bold findfont 16 scalefont setfont
+110 250 moveto
+(あとふる とは？) show
+grestore
+
+% 説明文
+gsave
+atofuru_text
+/Times-Roman findfont 10 scalefont setfont
+110 220 moveto
+(旅の後からでも、寄附→返礼品を受け取れる新しいふるさと納税体験。) show
+110 210 moveto
+(スマホ1つでかんたん手続き。) show
+grestore
+
+% 会社情報
+gsave
+atofuru_text
+/Times-Roman findfont 8 scalefont setfont
+110 50 moveto
+(© 2024 あとふる) show
+110 40 moveto
+(お問い合わせ: info@atofuru.jp) show
+grestore
+
+grestore
+
+% 折込フラップ（左パネル 0-100mm）
+gsave
+gsave
+atofuru_sub2
+0 0 moveto 100 0 lineto 100 303 lineto 0 303 lineto closepath fill
+grestore
+
+% フラップタイトル
+gsave
+atofuru_text
+/Times-Bold findfont 14 scalefont setfont
+10 250 moveto
+(こんな時に"あとふる") show
+grestore
+
+% 利用シーン
+gsave
+atofuru_text
+/Times-Roman findfont 9 scalefont setfont
+10 220 moveto
+(・宿に泊まった) show
+10 210 moveto
+(・ご当地を食べた) show
+10 200 moveto
+(・名産を買った) show
+10 190 moveto
+(→ あとから返礼品に。) show
+grestore
+
+% 対象エリア
+gsave
+atofuru_text
+/Times-Roman findfont 8 scalefont setfont
+10 50 moveto
+(対象エリアで順次展開中) show
+grestore
+
+grestore
+
+% 内面レイアウト開始
+% ステップ解説（左パネル）
+gsave
+gsave
+atofuru_sub2
+0 0 moveto 100 0 lineto 100 300 lineto 0 300 lineto closepath fill
+grestore
+
+% ステップタイトル
+gsave
+atofuru_text
+/Times-Bold findfont 14 scalefont setfont
+10 250 moveto
+(つかい方は 3 ステップ) show
+grestore
+
+% ステップ1
+gsave
+atofuru_text
+/Times-Roman findfont 9 scalefont setfont
+10 220 moveto
+(1. 旅の体験を思い出す) show
+10 210 moveto
+(   (泊・食・買)) show
+grestore
+
+% ステップ2
+gsave
+atofuru_text
+/Times-Roman findfont 9 scalefont setfont
+10 190 moveto
+(2. Webで自治体／返礼品を選ぶ) show
+grestore
+
+% ステップ3
+gsave
+atofuru_text
+/Times-Roman findfont 9 scalefont setfont
+10 160 moveto
+(3. スマホで寄附→手続き完了) show
+10 150 moveto
+(   返礼品が届く) show
+grestore
+
+grestore
+
+% 価値提案（中央パネル）
+gsave
+gsave
+atofuru_main
+100 0 moveto 200 0 lineto 200 300 lineto 100 300 lineto closepath fill
+grestore
+
+% 価値提案タイトル
+gsave
+1 1 1 setrgbcolor
+/Times-Bold findfont 16 scalefont setfont
+110 250 moveto
+("あとから" が うれしい理由) show
+grestore
+
+% 価値提案内容
+gsave
+1 1 1 setrgbcolor
+/Times-Roman findfont 10 scalefont setfont
+110 220 moveto
+(・旅の感動が冷めないうちに返礼品で記憶をカタチに) show
+110 200 moveto
+(・スマホ完結／難しい手続きはWebで案内) show
+110 180 moveto
+(・地域応援につながる新しい寄附体験) show
+grestore
+
+% CTAボタン
+gsave
+1 1 1 setrgbcolor
+120 50 moveto 80 0 rlineto 0 30 rlineto -80 0 rlineto closepath fill
+atofuru_main
+120 50 moveto 80 0 rlineto 0 30 rlineto -80 0 rlineto closepath stroke
+/Times-Bold findfont 12 scalefont setfont
+130 65 moveto
+(公式サイトへ) show
+grestore
+
+% 大型QR
+gsave
+1 1 1 setrgbcolor
+130 10 moveto 40 0 rlineto 0 40 rlineto -40 0 rlineto closepath fill
+atofuru_text
+130 10 moveto 40 0 rlineto 0 40 rlineto -40 0 rlineto closepath stroke
+/Times-Roman findfont 6 scalefont setfont
+135 25 moveto
+(QR) show
+135 20 moveto
+(atofuru.jp) show
+grestore
+
+grestore
+
+% Q&A（右パネル）
+gsave
+gsave
+atofuru_sub1
+200 0 moveto 216 0 lineto 216 300 lineto 200 300 lineto closepath fill
+grestore
+
+% Q&Aタイトル
+gsave
+atofuru_text
+/Times-Bold findfont 12 scalefont setfont
+205 250 moveto
+(Q&A) show
+grestore
+
+% Q1
+gsave
+atofuru_text
+/Times-Roman findfont 8 scalefont setfont
+205 220 moveto
+(Q1: 旅の後でも大丈夫？) show
+205 210 moveto
+(A: はい、"あとふる"は後から寄附で返礼品に。) show
+grestore
+
+% Q2
+gsave
+atofuru_text
+/Times-Roman findfont 8 scalefont setfont
+205 180 moveto
+(Q2: どこから始める？) show
+205 170 moveto
+(A: まずatofuru.jpへ) show
+grestore
+
+% Q3
+gsave
+atofuru_text
+/Times-Roman findfont 8 scalefont setfont
+205 140 moveto
+(Q3: アプリはある？) show
+205 130 moveto
+(A: Webから最新情報へ誘導) show
+grestore
+
+grestore
+
+%%EndPage
+%%Trailer
+%%Pages: 1
+%%EOF
