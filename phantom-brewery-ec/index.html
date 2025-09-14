@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Brewery - 静謐の中に宿る、和の余韻</title>
+    <meta name="description" content="Phantom Brewery - 和を纏う。語られぬ美が、ここにある。日本の心、そのひとしずく。">
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/homepage.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-text">Phantom Brewery</div>
+                <div class="logo-subtitle">静謐の中に宿る、和の余韻</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content">
+        <!-- ヘッダー -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="#" class="brand-logo">Phantom Brewery</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#story" class="nav-link">Story</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero-video">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/videos/sake-pouring.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title fade-in">
+                        <span class="title-line">和を、纏う。</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in">
+                        語られぬ美が、ここにある。<br>
+                        日本の心、そのひとしずく。
+                    </p>
+                    <div class="hero-cta fade-in">
+                        <a href="#products" class="btn btn--gold">商品を見る</a>
+                    </div>
+                </div>
+                
+                <div class="hero-scroll">
+                    <div class="scroll-indicator">
+                        <span>Scroll</span>
+                        <div class="scroll-line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ブランドストーリー -->
+        <section id="about" class="section section--story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text slide-in-left">
+                        <h2 class="section-title">静謐の中に宿る、和の余韻</h2>
+                        <p class="story-description">
+                            私たちは、伝統的な日本酒造りの技術と現代的な感性を融合させ、
+                            静けさの中に宿る美しさを追求しています。
+                        </p>
+                        <p class="story-description">
+                            一滴一滴に込められた職人の想いと、時間が生み出す深い味わい。
+                            それがPhantom Breweryの世界観です。
+                        </p>
+                        <a href="#story" class="btn">詳しく見る</a>
+                    </div>
+                    <div class="story-image slide-in-right">
+                        <div class="image-placeholder">
+                            <div class="seasonal-bg spring"></div>
+                            <div class="image-overlay">
+                                <span class="season-text">春</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品セクション -->
+        <section id="products" class="section section--products">
+            <div class="container">
+                <h2 class="section-title text-center fade-in">厳選された商品</h2>
+                <p class="section-subtitle text-center fade-in">
+                    四季の移ろいと共に生まれる、特別な味わい
+                </p>
+                
+                <div class="products-grid">
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="seasonal-bg summer"></div>
+                                <div class="product-overlay">
+                                    <span class="product-season">夏</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">清涼 純米大吟醸</h3>
+                            <p class="product-description">
+                                夏の涼しさを表現した、すっきりとした味わい
+                            </p>
+                            <div class="product-price">¥8,800</div>
+                            <a href="pages/product-detail.html" class="btn">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="seasonal-bg autumn"></div>
+                                <div class="product-overlay">
+                                    <span class="product-season">秋</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">豊穣 特別純米酒</h3>
+                            <p class="product-description">
+                                秋の実りを感じる、深みのある味わい
+                            </p>
+                            <div class="product-price">¥12,000</div>
+                            <a href="pages/product-detail.html" class="btn">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card fade-in">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="seasonal-bg winter"></div>
+                                <div class="product-overlay">
+                                    <span class="product-season">冬</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">静寂 大吟醸</h3>
+                            <p class="product-description">
+                                冬の静けさを表現した、上品な味わい
+                            </p>
+                            <div class="product-price">¥15,000</div>
+                            <a href="pages/product-detail.html" class="btn">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ストーリー詳細 -->
+        <section id="story" class="section section--story-detail">
+            <div class="container">
+                <div class="story-detail-content">
+                    <div class="story-detail-text slide-in-left">
+                        <h2 class="section-title">伝統と革新の調和</h2>
+                        <div class="story-features">
+                            <div class="feature-item">
+                                <h3>凛とした美しさ</h3>
+                                <p>飾り立てない美しさと現代的な知性の調和を追求</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>粋な技術</h3>
+                                <p>伝統的な製法と最新の技術を融合させた独自の製法</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>和とモダンの融合</h3>
+                                <p>日本の心を現代的に表現した新しい日本酒の世界</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-detail-image slide-in-right">
+                        <div class="image-placeholder">
+                            <div class="seasonal-bg winter"></div>
+                            <div class="image-overlay">
+                                <span class="craft-text">職人の技</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer id="contact" class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>Phantom Brewery</h3>
+                        <p>静謐の中に宿る、和の余韻</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>商品</h4>
+                            <ul>
+                                <li><a href="#">純米大吟醸</a></li>
+                                <li><a href="#">特別純米酒</a></li>
+                                <li><a href="#">大吟醸</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>会社情報</h4>
+                            <ul>
+                                <li><a href="#">私たちについて</a></li>
+                                <li><a href="#">工場見学</a></li>
+                                <li><a href="#">お問い合わせ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Phantom Brewery. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

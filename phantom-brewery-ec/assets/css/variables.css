@@ -1,0 +1,71 @@
+/* Phantom Brewery EC - Design System Variables */
+/* ブランドコンセプト: 「静謐の中に宿る、和の余韻」 */
+
+:root {
+  /* カラーパレット - 基調色 */
+  --color-ink: #1a1a1a;           /* 墨色 */
+  --color-deep-blue: #1e3a5f;     /* 深藍 */
+  --color-gofun-white: #fafafa;   /* 胡粉（ごふん）白 */
+  
+  /* アクセントカラー */
+  --color-gold: #d4af37;          /* 金箔 */
+  --color-vermillion: #c5282f;    /* 朱 */
+  
+  /* グラデーション */
+  --gradient-primary: linear-gradient(135deg, var(--color-ink) 0%, var(--color-deep-blue) 100%);
+  --gradient-gold: linear-gradient(45deg, var(--color-gold) 0%, #f4d03f 100%);
+  
+  /* タイポグラフィ */
+  --font-english: 'Avenir Light', 'Helvetica Neue', sans-serif;
+  --font-japanese: 'Yu Mincho', '游明朝', 'YuMincho', 'Hiragino Mincho Pro', serif;
+  --font-size-xs: 0.75rem;        /* 12px */
+  --font-size-sm: 0.875rem;       /* 14px */
+  --font-size-base: 1rem;         /* 16px */
+  --font-size-lg: 1.125rem;       /* 18px */
+  --font-size-xl: 1.25rem;        /* 20px */
+  --font-size-2xl: 1.5rem;        /* 24px */
+  --font-size-3xl: 1.875rem;      /* 30px */
+  --font-size-4xl: 2.25rem;       /* 36px */
+  --font-size-5xl: 3rem;          /* 48px */
+  
+  /* スペーシング */
+  --space-xs: 0.25rem;            /* 4px */
+  --space-sm: 0.5rem;             /* 8px */
+  --space-md: 1rem;               /* 16px */
+  --space-lg: 1.5rem;             /* 24px */
+  --space-xl: 2rem;               /* 32px */
+  --space-2xl: 3rem;              /* 48px */
+  --space-3xl: 4rem;              /* 64px */
+  --space-4xl: 6rem;              /* 96px */
+  
+  /* レイアウト */
+  --container-max-width: 1200px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  /* シャドウ */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.3);
+  
+  /* トランジション */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.6s ease-in-out;
+  
+  /* ブレークポイント */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-gofun-white: #f5f5f5;
+    --color-ink: #e5e5e5;
+  }
+}
