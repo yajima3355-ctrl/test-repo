@@ -1,0 +1,177 @@
+/* Phantom Brewery EC - Seasonal Backgrounds */
+/* ブランドコンセプト: 「静謐の中に宿る、和の余韻」 */
+
+/* 四季の背景画像 */
+.seasonal-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* 春の背景 */
+.seasonal-bg.spring {
+  background: linear-gradient(135deg, 
+    rgba(139, 195, 74, 0.1) 0%, 
+    rgba(76, 175, 80, 0.2) 50%, 
+    rgba(56, 142, 60, 0.1) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="spring-pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="%23a5d6a7" opacity="0.3"/></pattern></defs><rect width="400" height="300" fill="url(%23spring-pattern)"/></svg>');
+}
+
+/* 夏の背景 */
+.seasonal-bg.summer {
+  background: linear-gradient(135deg, 
+    rgba(255, 193, 7, 0.1) 0%, 
+    rgba(255, 152, 0, 0.2) 50%, 
+    rgba(255, 87, 34, 0.1) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="summer-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M30 10 L50 30 L30 50 L10 30 Z" fill="%23ffb74d" opacity="0.2"/></pattern></defs><rect width="400" height="300" fill="url(%23summer-pattern)"/></svg>');
+}
+
+/* 秋の背景 */
+.seasonal-bg.autumn {
+  background: linear-gradient(135deg, 
+    rgba(121, 85, 72, 0.1) 0%, 
+    rgba(141, 110, 99, 0.2) 50%, 
+    rgba(93, 64, 55, 0.1) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="autumn-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M40 20 C50 10, 60 20, 50 30 C60 40, 50 50, 40 40 C30 50, 20 40, 30 30 C20 20, 30 10, 40 20" fill="%23a1887f" opacity="0.3"/></pattern></defs><rect width="400" height="300" fill="url(%23autumn-pattern)"/></svg>');
+}
+
+/* 冬の背景 */
+.seasonal-bg.winter {
+  background: linear-gradient(135deg, 
+    rgba(96, 125, 139, 0.1) 0%, 
+    rgba(69, 90, 103, 0.2) 50%, 
+    rgba(55, 71, 79, 0.1) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><pattern id="winter-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M50 20 L60 40 L80 40 L65 55 L75 75 L50 60 L25 75 L35 55 L20 40 L40 40 Z" fill="%2390a4ae" opacity="0.2"/></pattern></defs><rect width="400" height="300" fill="url(%23winter-pattern)"/></svg>');
+}
+
+/* 商品画像用の背景 */
+.product-bg {
+  position: relative;
+  background: var(--color-gofun-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.product-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(44, 44, 44, 0.05) 0%, 
+    rgba(26, 54, 93, 0.05) 100%);
+  z-index: 1;
+}
+
+.product-bg img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 酒器のシルエット */
+.sake-vessel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    var(--color-ink) 0%, 
+    var(--color-deep-blue) 50%, 
+    var(--color-ink) 100%);
+  border-radius: 50% 50% 20% 20%;
+}
+
+.sake-vessel::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 80%;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(248, 246, 240, 0.1) 50%, 
+    transparent 100%);
+  border-radius: 50% 50% 20% 20%;
+}
+
+/* 水滴のアニメーション */
+.water-drop {
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  background: var(--color-gold);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: drop 3s ease-in-out infinite;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* 和紙テクスチャ */
+.washi-texture {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(248, 246, 240, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(44, 44, 44, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(26, 54, 93, 0.05) 0%, transparent 50%);
+  background-size: 200px 200px, 300px 300px, 150px 150px;
+}
+
+/* 墨絵風のテクスチャ */
+.ink-texture {
+  background-image: 
+    linear-gradient(45deg, rgba(44, 44, 44, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(44, 44, 44, 0.1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(44, 44, 44, 0.1) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(44, 44, 44, 0.1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+/* 金箔のテクスチャ */
+.gold-foil-texture {
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(184, 134, 11, 0.05) 0%, transparent 50%);
+  background-size: 100px 100px, 150px 150px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .seasonal-bg {
+    background-size: cover;
+  }
+  
+  .water-drop {
+    width: 3px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seasonal-bg {
+    background-size: cover;
+  }
+  
+  .water-drop {
+    width: 2px;
+    height: 4px;
+  }
+}

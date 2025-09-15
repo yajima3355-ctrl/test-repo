@@ -3,13 +3,18 @@
 
 :root {
   /* カラーパレット - 基調色 */
-  --color-ink: #1a1a1a;           /* 墨色 */
-  --color-deep-blue: #1e3a5f;     /* 深藍 */
-  --color-gofun-white: #fafafa;   /* 胡粉（ごふん）白 */
+  --color-ink: #2c2c2c;           /* 墨色 - より深みのある黒 */
+  --color-deep-blue: #1a365d;     /* 深藍 - 伝統的な藍色 */
+  --color-gofun-white: #f8f6f0;   /* 胡粉（ごふん）白 - 温かみのある白 */
   
   /* アクセントカラー */
-  --color-gold: #d4af37;          /* 金箔 */
-  --color-vermillion: #c5282f;    /* 朱 */
+  --color-gold: #b8860b;          /* 金箔 - 落ち着いた金色 */
+  --color-vermillion: #dc2626;    /* 朱 - 鮮やかな朱色 */
+  
+  /* 追加カラー */
+  --color-warm-gray: #6b7280;     /* 温かみのあるグレー */
+  --color-cream: #fef7ed;         /* クリーム色 */
+  --color-charcoal: #374151;      /* チャコールグレー */
   
   /* グラデーション */
   --gradient-primary: linear-gradient(135deg, var(--color-ink) 0%, var(--color-deep-blue) 100%);

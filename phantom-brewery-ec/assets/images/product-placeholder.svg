@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <defs>
+    <!-- グラデーション定義 -->
+    <linearGradient id="bottleGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2c2c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a365d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2c2c2c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="labelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f6f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fef7ed;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="goldAccent" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#b8860b;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:0.3" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="600" fill="#f8f6f0"/>
+  
+  <!-- ボトル本体 -->
+  <ellipse cx="200" cy="450" rx="80" ry="120" fill="url(#bottleGradient)"/>
+  <ellipse cx="200" cy="450" rx="75" ry="115" fill="none" stroke="#374151" stroke-width="2" opacity="0.3"/>
+  
+  <!-- ボトル首 -->
+  <rect x="170" y="300" width="60" height="80" rx="30" fill="url(#bottleGradient)"/>
+  
+  <!-- キャップ -->
+  <ellipse cx="200" cy="300" rx="35" ry="15" fill="#374151"/>
+  <rect x="165" y="285" width="70" height="30" rx="35" fill="#374151"/>
+  
+  <!-- ラベル -->
+  <rect x="120" y="380" width="160" height="100" rx="8" fill="url(#labelGradient)" stroke="#dc2626" stroke-width="2"/>
+  
+  <!-- ラベルデザイン - 般若の面 -->
+  <g transform="translate(200, 430)">
+    <!-- 顔の輪郭 -->
+    <ellipse cx="0" cy="0" rx="35" ry="40" fill="none" stroke="#2c2c2c" stroke-width="3"/>
+    
+    <!-- 目 -->
+    <ellipse cx="-15" cy="-10" rx="8" ry="12" fill="#2c2c2c"/>
+    <ellipse cx="15" cy="-10" rx="8" ry="12" fill="#2c2c2c"/>
+    
+    <!-- 口 -->
+    <path d="M -20 15 Q 0 25 20 15" stroke="#2c2c2c" stroke-width="3" fill="none"/>
+    
+    <!-- 角 -->
+    <path d="M -25 -25 L -20 -35 L -15 -25" stroke="#dc2626" stroke-width="2" fill="none"/>
+    <path d="M 25 -25 L 20 -35 L 15 -25" stroke="#dc2626" stroke-width="2" fill="none"/>
+    
+    <!-- 炎の装飾 -->
+    <path d="M -30 0 Q -40 -10 -30 -20 Q -20 -30 -10 -20 Q 0 -10 10 -20 Q 20 -30 30 -20 Q 40 -10 30 0" 
+          stroke="#dc2626" stroke-width="2" fill="none" opacity="0.7"/>
+  </g>
+  
+  <!-- 商品名 -->
+  <text x="200" y="520" text-anchor="middle" font-family="serif" font-size="16" fill="#2c2c2c">清涼 純米大吟醸</text>
+  <text x="200" y="540" text-anchor="middle" font-family="serif" font-size="12" fill="#6b7280">Seiryo Junmai Daiginjo</text>
+  
+  <!-- 金箔アクセント -->
+  <circle cx="80" cy="100" r="15" fill="url(#goldAccent)"/>
+  <circle cx="320" cy="150" r="12" fill="url(#goldAccent)"/>
+  <circle cx="100" cy="500" r="8" fill="url(#goldAccent)"/>
+  
+  <!-- 水滴のアニメーション用 -->
+  <circle cx="200" cy="280" r="2" fill="#b8860b" opacity="0.8">
+    <animate attributeName="cy" values="280;300;280" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>
