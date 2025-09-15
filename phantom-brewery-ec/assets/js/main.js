@@ -20,18 +20,37 @@ class PhantomBreweryApp {
     const loadingScreen = document.getElementById('loading-screen');
     const mainContent = document.getElementById('main-content');
     
+    if (!loadingScreen || !mainContent) {
+      console.log('Loading elements not found, skipping loading screen');
+      return;
+    }
+    
     // ページ読み込み完了後にローディング画面を非表示
-    window.addEventListener('load', () => {
+    const hideLoading = () => {
       setTimeout(() => {
         loadingScreen.classList.add('hidden');
         mainContent.style.opacity = '1';
+        mainContent.classList.add('loaded');
         
         // ローディング画面を完全に削除
         setTimeout(() => {
-          loadingScreen.style.display = 'none';
+          if (loadingScreen && loadingScreen.parentNode) {
+            loadingScreen.style.display = 'none';
+          }
         }, 600);
-      }, 2000);
-    });
+      }, 800); // さらに短縮
+    };
+    
+    // 複数のイベントで確実に実行
+    if (document.readyState === 'complete') {
+      hideLoading();
+    } else {
+      window.addEventListener('load', hideLoading);
+      // バックアップとして DOMContentLoaded も使用
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(hideLoading, 500);
+      });
+    }
   }
 
   // スクロール効果の設定
@@ -158,9 +177,10 @@ class PhantomBreweryApp {
     });
   }
 
-  // ビデオコントロール
+  // ビデオコントロール（現在は画像を使用）
   setupVideoControls() {
     const heroVideo = document.querySelector('.hero-video video');
+    const heroImage = document.querySelector('.hero-background');
     
     if (heroVideo) {
       // ビデオの自動再生設定
@@ -180,6 +200,10 @@ class PhantomBreweryApp {
       heroVideo.addEventListener('canplay', () => {
         heroVideo.style.opacity = '1';
       });
+    } else if (heroImage) {
+      // 画像の場合は即座に表示
+      heroImage.style.opacity = '1';
+      console.log('Hero background image loaded');
     }
   }
 
@@ -325,6 +349,23 @@ class PhantomBreweryApp {
 // アプリケーション初期化
 document.addEventListener('DOMContentLoaded', () => {
   new PhantomBreweryApp();
+  
+  // 緊急時のフォールバック - 5秒後に強制的にローディングを非表示
+  setTimeout(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const mainContent = document.getElementById('main-content');
+    
+    if (loadingScreen && !loadingScreen.classList.contains('hidden')) {
+      console.log('Emergency fallback: Force hiding loading screen');
+      loadingScreen.classList.add('hidden');
+      loadingScreen.style.display = 'none';
+      
+      if (mainContent) {
+        mainContent.style.opacity = '1';
+        mainContent.classList.add('loaded');
+      }
+    }
+  }, 5000);
 });
 
 // ページ遷移時の処理
