@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清涼 純米大吟醸 - Phantom Brewery</title>
+    <meta name="description" content="夏の涼しさを表現した、すっきりとした味わいの純米大吟醸。Phantom Breweryの職人が心を込めて造り上げた逸品です。">
+    
+    <!-- フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/seasonal-backgrounds.css">
+    <link rel="stylesheet" href="../assets/css/product-detail.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+</head>
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <div class="logo-text">Phantom Brewery</div>
+                <div class="logo-subtitle">静謐の中に宿る、和の余韻</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content">
+        <!-- ヘッダー -->
+        <header class="header">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="../index.html" class="brand-logo">Phantom Brewery</a>
+                </div>
+                <div class="nav-menu">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                    <a href="../index.html#products" class="nav-link">Products</a>
+                    <a href="../index.html#story" class="nav-link">Story</a>
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <!-- パンくずリスト -->
+        <nav class="breadcrumb">
+            <div class="container">
+                <a href="../index.html">ホーム</a>
+                <span class="separator">/</span>
+                <a href="../index.html#products">商品</a>
+                <span class="separator">/</span>
+                <span class="current">清涼 純米大吟醸</span>
+            </div>
+        </nav>
+
+        <!-- 商品詳細セクション -->
+        <section class="product-detail">
+            <div class="container">
+                <div class="product-detail-content">
+                    <!-- 商品画像 -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <div class="image-placeholder product-bg">
+                                <img src="../assets/images/product-detail-hero.svg" alt="清涼 純米大吟醸" class="product-image-main">
+                                <div class="image-overlay">
+                                    <div class="product-badge">夏限定</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumbnail-images">
+                            <div class="thumbnail active">
+                                <div class="seasonal-bg summer"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="seasonal-bg spring"></div>
+                            </div>
+                            <div class="thumbnail">
+                                <div class="seasonal-bg autumn"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 商品情報 -->
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h1 class="product-title">清涼 純米大吟醸</h1>
+                            <div class="product-subtitle">Seiryo Junmai Daiginjo</div>
+                            <div class="product-price">
+                                <span class="price-main">¥8,800</span>
+                                <span class="price-tax">（税込）</span>
+                            </div>
+                        </div>
+
+                        <div class="product-description">
+                            <p>
+                                夏の涼しさを表現した、すっきりとした味わいの純米大吟醸。
+                                厳選された山田錦を50%まで磨き上げ、低温でじっくりと醸造しました。
+                            </p>
+                            <p>
+                                口に含むと、清涼感のある香りが広がり、上品な甘みと
+                                さわやかな酸味が調和した味わいをお楽しみいただけます。
+                            </p>
+                        </div>
+
+                        <!-- 商品仕様 -->
+                        <div class="product-specs">
+                            <h3>商品仕様</h3>
+                            <div class="specs-grid">
+                                <div class="spec-item">
+                                    <span class="spec-label">原料米</span>
+                                    <span class="spec-value">山田錦（精米歩合50%）</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">アルコール度数</span>
+                                    <span class="spec-value">15度</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">容量</span>
+                                    <span class="spec-value">720ml</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">製造年月</span>
+                                    <span class="spec-value">2024年7月</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 購入フォーム -->
+                        <div class="purchase-form">
+                            <div class="quantity-selector">
+                                <label for="quantity">数量</label>
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn minus">-</button>
+                                    <input type="number" id="quantity" value="1" min="1" max="10">
+                                    <button type="button" class="quantity-btn plus">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="purchase-actions">
+                                <button class="btn btn--gold btn--large add-to-cart">
+                                    カートに追加
+                                </button>
+                                <button class="btn btn--outline btn--large buy-now">
+                                    今すぐ購入
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 配送情報 -->
+                        <div class="shipping-info">
+                            <h3>配送について</h3>
+                            <ul>
+                                <li>全国送料無料</li>
+                                <li>冷蔵配送（要冷蔵保存）</li>
+                                <li>通常2-3営業日で発送</li>
+                                <li>20歳未満の方への販売はできません</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品詳細タブ -->
+        <section class="product-tabs">
+            <div class="container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="details">詳細情報</button>
+                    <button class="tab-btn" data-tab="tasting">テイスティング</button>
+                    <button class="tab-btn" data-tab="pairing">ペアリング</button>
+                    <button class="tab-btn" data-tab="reviews">レビュー</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- 詳細情報タブ -->
+                    <div class="tab-panel active" id="details">
+                        <div class="details-content">
+                            <h3>造り手の想い</h3>
+                            <p>
+                                この「清涼」は、夏の暑さを忘れさせてくれるような
+                                清涼感を追求して造りました。山田錦の持つ上品な香りと
+                                味わいを最大限に引き出すため、精米歩合を50%まで上げ、
+                                低温でじっくりと醸造しています。
+                            </p>
+                            <p>
+                                口に含むと、まず清涼感のある香りが鼻に抜け、
+                                その後、上品な甘みとさわやかな酸味が調和した
+                                味わいが広がります。冷やして飲むことで、
+                                より一層の清涼感をお楽しみいただけます。
+                            </p>
+                            
+                            <h3>製造工程</h3>
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>原料米の選別</h4>
+                                        <p>厳選された山田錦を精米歩合50%まで磨き上げ</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>低温醸造</h4>
+                                        <p>5-8℃の低温でじっくりと醸造し、清涼感を追求</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>熟成・瓶詰め</h4>
+                                        <p>適切な温度で熟成後、丁寧に瓶詰め</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- テイスティングタブ -->
+                    <div class="tab-panel" id="tasting">
+                        <div class="tasting-content">
+                            <h3>テイスティングノート</h3>
+                            <div class="tasting-notes">
+                                <div class="tasting-item">
+                                    <h4>香り</h4>
+                                    <p>清涼感のある上品な香り。白い花の香りと淡い果実の香りが調和</p>
+                                </div>
+                                <div class="tasting-item">
+                                    <h4>味わい</h4>
+                                    <p>上品な甘みとさわやかな酸味が調和。後味はすっきりと清涼感が残る</p>
+                                </div>
+                                <div class="tasting-item">
+                                    <h4>温度</h4>
+                                    <p>冷や（5-10℃）で飲むことで、より一層の清涼感をお楽しみいただけます</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ペアリングタブ -->
+                    <div class="tab-panel" id="pairing">
+                        <div class="pairing-content">
+                            <h3>おすすめペアリング</h3>
+                            <div class="pairing-items">
+                                <div class="pairing-item">
+                                    <h4>刺身・寿司</h4>
+                                    <p>魚の旨味と清涼感が調和し、より一層美味しく</p>
+                                </div>
+                                <div class="pairing-item">
+                                    <h4>天ぷら</h4>
+                                    <p>揚げ物の油っこさを清涼感で中和</p>
+                                </div>
+                                <div class="pairing-item">
+                                    <h4>冷ややっこ</h4>
+                                    <p>豆腐の淡白な味わいと相性抜群</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- レビュータブ -->
+                    <div class="tab-panel" id="reviews">
+                        <div class="reviews-content">
+                            <h3>お客様の声</h3>
+                            <div class="reviews-list">
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-name">田中様</div>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                    <div class="review-text">
+                                        夏にぴったりの清涼感のある日本酒でした。
+                                        冷やして飲むと、とても爽やかで美味しかったです。
+                                    </div>
+                                </div>
+                                <div class="review-item">
+                                    <div class="review-header">
+                                        <div class="reviewer-name">佐藤様</div>
+                                        <div class="review-rating">★★★★☆</div>
+                                    </div>
+                                    <div class="review-text">
+                                        上品な香りと味わいで、特別な日の晩酌に最適です。
+                                        贈り物としても喜ばれました。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 関連商品 -->
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title">関連商品</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="seasonal-bg autumn"></div>
+                                <div class="product-overlay">
+                                    <span class="product-season">秋</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">豊穣 特別純米酒</h3>
+                            <p class="product-description">
+                                秋の実りを感じる、深みのある味わい
+                            </p>
+                            <div class="product-price">¥12,000</div>
+                            <a href="#" class="btn">詳細を見る</a>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <div class="image-placeholder">
+                                <div class="seasonal-bg winter"></div>
+                                <div class="product-overlay">
+                                    <span class="product-season">冬</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">静寂 大吟醸</h3>
+                            <p class="product-description">
+                                冬の静けさを表現した、上品な味わい
+                            </p>
+                            <div class="product-price">¥15,000</div>
+                            <a href="#" class="btn">詳細を見る</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <h3>Phantom Brewery</h3>
+                        <p>静謐の中に宿る、和の余韻</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>商品</h4>
+                            <ul>
+                                <li><a href="#">純米大吟醸</a></li>
+                                <li><a href="#">特別純米酒</a></li>
+                                <li><a href="#">大吟醸</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-section">
+                            <h4>会社情報</h4>
+                            <ul>
+                                <li><a href="#">私たちについて</a></li>
+                                <li><a href="#">工場見学</a></li>
+                                <li><a href="#">お問い合わせ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Phantom Brewery. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/animations.js"></script>
+    <script src="../assets/js/product-detail.js"></script>
+</body>
+</html>
