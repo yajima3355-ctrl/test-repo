@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay@Link Brochure - Front Side</title>
+    <style>
+        @page {
+            size: A3 landscape;
+            margin: 0;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            overflow: hidden;
+        }
+        
+        .brochure {
+            width: 420mm;
+            height: 297mm;
+            position: relative;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            box-sizing: border-box;
+        }
+        
+        /* Header Section */
+        .header {
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20mm 30mm;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15mm;
+        }
+        
+        .logo {
+            width: 60mm;
+            height: 20mm;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1E3A8A;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .logo::before {
+            content: "Stay@Link";
+            font-style: italic;
+        }
+        
+        .catchphrase {
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            height: 40%;
+            padding: 20mm 30mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 15mm;
+        }
+        
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 15mm;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: #60A5FA;
+            border-radius: 50%;
+            margin-bottom: 8mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .benefit-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5mm;
+        }
+        
+        .benefit-desc {
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+        
+        /* UI Showcase */
+        .ui-showcase {
+            height: 30%;
+            padding: 15mm 30mm;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .ui-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8mm;
+            text-align: center;
+        }
+        
+        .ui-mockup {
+            display: flex;
+            justify-content: center;
+            gap: 10mm;
+        }
+        
+        .ui-screen {
+            width: 80mm;
+            height: 50mm;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ui-screen::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8mm;
+            background: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .ui-content {
+            padding: 10mm 8mm;
+            color: #333;
+            font-size: 12px;
+        }
+        
+        /* Footer CTA */
+        .footer {
+            height: 10%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30mm;
+        }
+        
+        .cta-button {
+            background: #60A5FA;
+            color: white;
+            padding: 8mm 20mm;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #3B82F6;
+        }
+        
+        /* Network Graphics */
+        .network-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .network-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #60A5FA, transparent);
+            height: 2px;
+            animation: flow 3s infinite;
+        }
+        
+        @keyframes flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .network-line:nth-child(1) { top: 20%; width: 200px; animation-delay: 0s; }
+        .network-line:nth-child(2) { top: 40%; width: 150px; animation-delay: 1s; }
+        .network-line:nth-child(3) { top: 60%; width: 180px; animation-delay: 2s; }
+        .network-line:nth-child(4) { top: 80%; width: 160px; animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Network Background -->
+        <div class="network-bg">
+            <div class="network-line"></div>
+            <div class="network-line"></div>
+            <div class="network-line"></div>
+            <div class="network-line"></div>
+        </div>
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo"></div>
+                <div class="catchphrase">
+                    宿泊業務を、つなげて速く。<br>
+                    PMS「Stay@Link」
+                </div>
+            </div>
+        </div>
+        
+        <!-- Benefits -->
+        <div class="benefits">
+            <div class="benefit-card">
+                <div class="benefit-icon">📅</div>
+                <div class="benefit-title">予約・チェックインの省力化</div>
+                <div class="benefit-desc">自動化された予約管理とスムーズなチェックインで、スタッフの作業負荷を大幅に削減</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-title">リアルタイム情報共有</div>
+                <div class="benefit-desc">全スタッフが最新の宿泊状況をリアルタイムで共有し、効率的な業務運営を実現</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">集計・分析の可視化</div>
+                <div class="benefit-desc">売上データや利用状況を直感的なダッシュボードで確認し、迅速な意思決定を支援</div>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🔗</div>
+                <div class="benefit-title">周辺機器・システム連携</div>
+                <div class="benefit-desc">POS、電話交換機、清掃管理システムなど、既存システムとのシームレスな連携</div>
+            </div>
+        </div>
+        
+        <!-- UI Showcase -->
+        <div class="ui-showcase">
+            <div class="ui-title">直感的なダッシュボードで業務効率を最大化</div>
+            <div class="ui-mockup">
+                <div class="ui-screen">
+                    <div class="ui-content">
+                        <strong>予約管理</strong><br>
+                        • 新規予約: 12件<br>
+                        • チェックイン待ち: 8件<br>
+                        • 本日の売上: ¥450,000
+                    </div>
+                </div>
+                <div class="ui-screen">
+                    <div class="ui-content">
+                        <strong>客室状況</strong><br>
+                        • 空室: 15室<br>
+                        • 清掃中: 3室<br>
+                        • メンテナンス: 1室
+                    </div>
+                </div>
+                <div class="ui-screen">
+                    <div class="ui-content">
+                        <strong>売上分析</strong><br>
+                        • 月間売上: ¥12,500,000<br>
+                        • 前年比: +15%<br>
+                        • 平均単価: ¥8,500
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer CTA -->
+        <div class="footer">
+            <a href="#" class="cta-button">デモ依頼・お問い合わせ</a>
+        </div>
+    </div>
+</body>
+</html>

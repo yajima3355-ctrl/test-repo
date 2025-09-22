@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay@Link Brochure - Back Side</title>
+    <style>
+        @page {
+            size: A3 landscape;
+            margin: 0;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background: white;
+            color: #1E3A8A;
+        }
+        
+        .brochure {
+            width: 420mm;
+            height: 297mm;
+            position: relative;
+            background: white;
+            box-sizing: border-box;
+        }
+        
+        /* Header Section */
+        .header {
+            height: 15%;
+            background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 30mm;
+        }
+        
+        .header-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* Features Section */
+        .features {
+            height: 35%;
+            padding: 15mm 30mm;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10mm;
+        }
+        
+        .feature-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10mm;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-2px);
+            border-color: #3B82F6;
+        }
+        
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: #3B82F6;
+            border-radius: 50%;
+            margin: 0 auto 5mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .feature-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 3mm;
+            color: #1E3A8A;
+        }
+        
+        .feature-desc {
+            font-size: 11px;
+            line-height: 1.3;
+            color: #64748b;
+        }
+        
+        /* Workflow Section */
+        .workflow {
+            height: 25%;
+            padding: 10mm 30mm;
+            background: #f1f5f9;
+        }
+        
+        .workflow-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8mm;
+            text-align: center;
+            color: #1E3A8A;
+        }
+        
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .workflow-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-icon {
+            width: 40px;
+            height: 40px;
+            background: #3B82F6;
+            border-radius: 50%;
+            margin: 0 auto 3mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .step-title {
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 2mm;
+        }
+        
+        .step-desc {
+            font-size: 10px;
+            color: #64748b;
+        }
+        
+        .workflow-arrow {
+            position: absolute;
+            right: -15mm;
+            top: 20px;
+            color: #3B82F6;
+            font-size: 20px;
+        }
+        
+        /* Integration Section */
+        .integration {
+            height: 15%;
+            padding: 8mm 30mm;
+            background: white;
+        }
+        
+        .integration-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5mm;
+            text-align: center;
+            color: #1E3A8A;
+        }
+        
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5mm;
+        }
+        
+        .integration-item {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            padding: 3mm;
+            text-align: center;
+            font-size: 10px;
+            color: #64748b;
+        }
+        
+        /* Footer */
+        .footer {
+            height: 10%;
+            background: #1E3A8A;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30mm;
+        }
+        
+        .company-info {
+            font-size: 12px;
+        }
+        
+        .contact-info {
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .qr-code {
+            width: 20mm;
+            height: 20mm;
+            background: white;
+            border-radius: 4px;
+            margin-left: 10mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1E3A8A;
+            font-size: 10px;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            height: 15%;
+            padding: 8mm 30mm;
+            background: #f1f5f9;
+        }
+        
+        .benefits-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5mm;
+            text-align: center;
+            color: #1E3A8A;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5mm;
+        }
+        
+        .benefit-item {
+            background: white;
+            border-radius: 4px;
+            padding: 3mm;
+            text-align: center;
+            font-size: 10px;
+            color: #64748b;
+            border-left: 3px solid #3B82F6;
+        }
+    </style>
+</head>
+<body>
+    <div class="brochure">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">
+                Stay@Link システム詳細・導入メリット
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <div class="feature-title">予約管理</div>
+                <div class="feature-desc">オンライン予約サイト連携、リアルタイム在庫管理、自動確認メール送信</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🏨</div>
+                <div class="feature-title">チェックイン</div>
+                <div class="feature-desc">スムーズなチェックイン、客室キー発行、滞在中サービス管理</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">集計・分析</div>
+                <div class="feature-desc">売上レポート、利用者分析、収益予測、KPIダッシュボード</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <div class="feature-title">システム連携</div>
+                <div class="feature-desc">POS連携、電話交換機、清掃管理、会計ソフト、外部API対応</div>
+            </div>
+        </div>
+        
+        <!-- Workflow -->
+        <div class="workflow">
+            <div class="workflow-title">ホテル業務の効率化フロー</div>
+            <div class="workflow-steps">
+                <div class="workflow-step">
+                    <div class="step-icon">1</div>
+                    <div class="step-title">予約受付</div>
+                    <div class="step-desc">オンライン予約サイトから自動受付</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                
+                <div class="workflow-step">
+                    <div class="step-icon">2</div>
+                    <div class="step-title">チェックイン</div>
+                    <div class="step-desc">スムーズな到着処理</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                
+                <div class="workflow-step">
+                    <div class="step-icon">3</div>
+                    <div class="step-title">滞在管理</div>
+                    <div class="step-desc">サービス提供・課金管理</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                
+                <div class="workflow-step">
+                    <div class="step-icon">4</div>
+                    <div class="step-title">チェックアウト</div>
+                    <div class="step-desc">精算・退室処理</div>
+                </div>
+                <div class="workflow-arrow">→</div>
+                
+                <div class="workflow-step">
+                    <div class="step-icon">5</div>
+                    <div class="step-title">集計・分析</div>
+                    <div class="step-desc">データ分析・レポート生成</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Integration -->
+        <div class="integration">
+            <div class="integration-title">対応システム・機器</div>
+            <div class="integration-grid">
+                <div class="integration-item">POSシステム</div>
+                <div class="integration-item">電話交換機</div>
+                <div class="integration-item">清掃管理</div>
+                <div class="integration-item">会計ソフト</div>
+                <div class="integration-item">自動チェックイン機</div>
+                <div class="integration-item">モバイルキー</div>
+            </div>
+        </div>
+        
+        <!-- Benefits -->
+        <div class="benefits">
+            <div class="benefits-title">導入メリット</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">工数削減 30%</div>
+                <div class="benefit-item">ミス低減 90%</div>
+                <div class="benefit-item">意思決定高速化</div>
+                <div class="benefit-item">顧客体験向上</div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="company-info">
+                <strong>NAVCII 株式会社ナバック</strong><br>
+                https://www.navc2.co.jp
+            </div>
+            <div class="contact-info">
+                24時間サポート対応<br>
+                デモ依頼・お問い合わせ
+            </div>
+            <div class="qr-code">
+                QR<br>CODE
+            </div>
+        </div>
+    </div>
+</body>
+</html>
