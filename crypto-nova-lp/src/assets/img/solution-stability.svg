@@ -1,0 +1,85 @@
+<svg width="300" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="200" rx="20" fill="url(#stabilityBg)"/>
+  
+  <!-- Chart Background -->
+  <rect x="50" y="40" width="200" height="120" fill="rgba(255, 255, 255, 0.05)" rx="10"/>
+  
+  <!-- Grid Lines -->
+  <path d="M50 60 L250 60" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <path d="M50 80 L250 80" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <path d="M50 100 L250 100" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <path d="M50 120 L250 120" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <path d="M50 140 L250 140" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  
+  <!-- Volatile Market Line (Before AI) -->
+  <polyline points="50,120 70,140 90,60 110,130 130,70 150,100" 
+            fill="none" stroke="#FF4444" stroke-width="2" opacity="0.6"/>
+  <text x="150" y="35" font-family="Arial, sans-serif" font-size="8" fill="#FF4444">従来の価格変動</text>
+  
+  <!-- Stable AI Line (After AI) -->
+  <polyline points="150,100 170,95 190,105 210,98 230,102 250,100" 
+            fill="none" stroke="#00FF88" stroke-width="3"/>
+  <text x="200" y="35" font-family="Arial, sans-serif" font-size="8" fill="#00FF88">AI安定化後</text>
+  
+  <!-- AI Intervention Points -->
+  <circle cx="150" cy="100" r="4" fill="#FFD700" stroke="#FFFFFF" stroke-width="1">
+    <animate attributeName="r" values="3;6;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="150" y="185" font-family="Arial, sans-serif" font-size="8" fill="#FFD700" text-anchor="middle">AI開始</text>
+  
+  <!-- Balance Scales -->
+  <g transform="translate(80, 100)">
+    <line x1="-15" y1="0" x2="15" y2="0" stroke="#FFD700" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#FFD700"/>
+    <rect x="-20" y="-5" width="10" height="3" fill="#00FFFF" rx="1"/>
+    <rect x="10" y="-5" width="10" height="3" fill="#00FFFF" rx="1"/>
+    <line x1="-15" y1="0" x2="-15" y2="-5" stroke="#00FFFF" stroke-width="1"/>
+    <line x1="15" y1="0" x2="15" y2="-5" stroke="#00FFFF" stroke-width="1"/>
+  </g>
+  
+  <!-- Stability Indicators -->
+  <circle cx="220" cy="80" r="3" fill="#00FF88" opacity="0.8">
+    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="120" r="3" fill="#00FF88" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="240" cy="110" r="3" fill="#00FF88" opacity="0.7">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Price Labels -->
+  <text x="45" y="65" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">$50K</text>
+  <text x="45" y="85" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">$40K</text>
+  <text x="45" y="105" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">$30K</text>
+  <text x="45" y="125" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">$20K</text>
+  <text x="45" y="145" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">$10K</text>
+  
+  <!-- Time Labels -->
+  <text x="70" y="175" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">1月</text>
+  <text x="110" y="175" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">2月</text>
+  <text x="150" y="175" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">3月</text>
+  <text x="190" y="175" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">4月</text>
+  <text x="230" y="175" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC">5月</text>
+  
+  <!-- AI Logo -->
+  <circle cx="270" cy="30" r="12" fill="url(#aiGradient)"/>
+  <text x="270" y="34" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#0A0A0A" text-anchor="middle">AI</text>
+  
+  <!-- Stability Percentage -->
+  <text x="270" y="170" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#00FF88" text-anchor="middle">±2%</text>
+  <text x="270" y="185" font-family="Arial, sans-serif" font-size="6" fill="#CCCCCC" text-anchor="middle">変動幅</text>
+  
+  <defs>
+    <linearGradient id="stabilityBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(26, 26, 26, 0.9)"/>
+      <stop offset="100%" style="stop-color:rgba(10, 10, 10, 0.9)"/>
+    </linearGradient>
+    
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#00FFFF"/>
+    </linearGradient>
+  </defs>
+</svg>

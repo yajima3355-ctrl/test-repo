@@ -1,0 +1,254 @@
+<svg width="1200" height="6000" viewBox="0 0 1200 6000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="6000" fill="url(#mainBg)"/>
+  
+  <!-- Header Section -->
+  <rect x="0" y="0" width="1200" height="80" fill="rgba(10, 10, 10, 0.95)"/>
+  <rect x="0" y="80" width="1200" height="1" fill="rgba(255, 255, 255, 0.1)"/>
+  
+  <!-- Logo -->
+  <rect x="80" y="20" width="40" height="40" rx="8" fill="url(#logoGradient)"/>
+  <text x="140" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">Crypto</text>
+  <text x="140" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFD700">Nova</text>
+  
+  <!-- Navigation -->
+  <text x="800" y="45" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">機能</text>
+  <text x="860" y="45" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">料金</text>
+  <text x="920" y="45" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">FAQ</text>
+  <rect x="980" y="25" width="120" height="30" rx="15" fill="url(#ctaGradient)"/>
+  <text x="1040" y="43" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0A0A0A" text-anchor="middle">無料で始める</text>
+  
+  <!-- Hero Section -->
+  <rect x="0" y="80" width="1200" height="800" fill="url(#heroGradient)"/>
+  
+  <!-- Hero Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255, 215, 0, 0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="0" y="80" width="1200" height="800" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Hero Content -->
+  <text x="100" y="250" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="#FFFFFF">AI × 量子暗号で実現する</text>
+  <text x="100" y="310" font-family="Arial, sans-serif" font-size="48" font-weight="900" fill="url(#titleGradient)">次世代暗号通貨プラットフォーム</text>
+  
+  <text x="100" y="380" font-family="Arial, sans-serif" font-size="18" fill="#CCCCCC">従来の暗号通貨の限界を超える、革新的なテクノロジーで</text>
+  <text x="100" y="410" font-family="Arial, sans-serif" font-size="18" fill="#CCCCCC">安全性・速度・収益性を最大化</text>
+  
+  <!-- Stats -->
+  <g transform="translate(100, 460)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="32" font-weight="900" fill="#FFD700">99.9%</text>
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" fill="#999999">セキュリティ</text>
+    
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="32" font-weight="900" fill="#FFD700">0.01s</text>
+    <text x="150" y="25" font-family="Arial, sans-serif" font-size="12" fill="#999999">取引速度</text>
+    
+    <text x="300" y="0" font-family="Arial, sans-serif" font-size="32" font-weight="900" fill="#FFD700">500%</text>
+    <text x="300" y="25" font-family="Arial, sans-serif" font-size="12" fill="#999999">年間収益率</text>
+  </g>
+  
+  <!-- CTA Buttons -->
+  <rect x="100" y="550" width="180" height="50" rx="25" fill="url(#ctaGradient)"/>
+  <text x="190" y="580" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A0A0A" text-anchor="middle">今すぐ無料登録</text>
+  
+  <rect x="300" y="550" width="140" height="50" rx="25" fill="rgba(42, 42, 42, 0.8)" stroke="#C0C0C0" stroke-width="2"/>
+  <text x="370" y="580" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">デモを見る</text>
+  
+  <!-- Hero Device -->
+  <rect x="700" y="200" width="400" height="600" rx="40" fill="#1A1A1A" stroke="url(#deviceGradient)" stroke-width="2"/>
+  <rect x="720" y="260" width="360" height="480" rx="20" fill="#0A0A0A"/>
+  
+  <!-- Device Content -->
+  <rect x="730" y="280" width="340" height="60" fill="url(#cardGradient)" rx="10"/>
+  <text x="740" y="300" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF">Portfolio Balance</text>
+  <text x="740" y="320" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFD700">$125,847.92</text>
+  <text x="1020" y="320" font-family="Arial, sans-serif" font-size="10" fill="#00FF88" text-anchor="end">+12.5%</text>
+  
+  <!-- Chart -->
+  <rect x="730" y="350" width="340" height="120" fill="url(#chartGradient)" rx="10"/>
+  <polyline points="740,440 760,420 780,400 800,380 820,360 840,370 860,350 880,360 900,340 920,330 940,320 960,310 980,300 1000,290 1020,280 1040,270" 
+            fill="none" stroke="#00FFFF" stroke-width="3"/>
+  
+  <!-- Problem Section -->
+  <rect x="0" y="880" width="1200" height="600" fill="rgba(255, 68, 68, 0.05)"/>
+  <text x="600" y="980" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">従来の暗号通貨の</text>
+  <text x="600" y="1020" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="url(#accentGradient)" text-anchor="middle">3つの課題</text>
+  
+  <!-- Problem Cards -->
+  <rect x="100" y="1100" width="300" height="200" rx="15" fill="linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(26, 26, 26, 0.9))" stroke="rgba(255, 68, 68, 0.2)" stroke-width="1"/>
+  <text x="250" y="1140" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">⚠️</text>
+  <text x="250" y="1170" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">セキュリティリスク</text>
+  <text x="120" y="1200" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">ハッキングによる資産流出が</text>
+  <text x="120" y="1220" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">年間30億ドルを超える被害</text>
+  
+  <rect x="450" y="1100" width="300" height="200" rx="15" fill="linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(26, 26, 26, 0.9))" stroke="rgba(255, 68, 68, 0.2)" stroke-width="1"/>
+  <text x="600" y="1140" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">⏱️</text>
+  <text x="600" y="1170" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">取引速度の遅さ</text>
+  <text x="470" y="1200" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">ビットコインは1取引に</text>
+  <text x="470" y="1220" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">平均10分が必要</text>
+  
+  <rect x="800" y="1100" width="300" height="200" rx="15" fill="linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(26, 26, 26, 0.9))" stroke="rgba(255, 68, 68, 0.2)" stroke-width="1"/>
+  <text x="950" y="1140" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">📉</text>
+  <text x="950" y="1170" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-anchor="middle">価格の不安定性</text>
+  <text x="820" y="1200" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">1日で20%以上の価格変動</text>
+  <text x="820" y="1220" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC">により投資が困難</text>
+  
+  <!-- Solution Section -->
+  <rect x="0" y="1480" width="1200" height="800" fill="#1A1A1A"/>
+  <text x="600" y="1580" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">Crypto Novaの</text>
+  <text x="600" y="1620" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="url(#accentGradient)" text-anchor="middle">革新的ソリューション</text>
+  
+  <!-- Solution Cards -->
+  <rect x="50" y="1700" width="1100" height="150" rx="20" fill="url(#solutionGradient)" stroke="rgba(0, 255, 255, 0.2)" stroke-width="1"/>
+  <circle cx="150" cy="1775" r="40" fill="url(#shieldGradient)" stroke="#FFD700" stroke-width="2"/>
+  <text x="150" y="1785" font-family="Arial, sans-serif" font-size="16" fill="#0A0A0A" font-weight="bold" text-anchor="middle">🛡️</text>
+  
+  <text x="220" y="1740" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">量子暗号化による完全セキュリティ</text>
+  <text x="220" y="1770" font-family="Arial, sans-serif" font-size="14" fill="#CCCCCC">従来の暗号化を10,000倍上回る強度で、理論上ハッキング不可能な保護を実現</text>
+  <text x="220" y="1800" font-family="Arial, sans-serif" font-size="12" fill="#00FFFF">✓ 量子鍵配送技術採用 ✓ 多層防御システム ✓ リアルタイム脅威検知</text>
+  
+  <!-- Features Section -->
+  <rect x="0" y="2280" width="1200" height="600" fill="#0A0A0A"/>
+  <text x="600" y="2380" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">圧倒的な</text>
+  <text x="600" y="2420" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="url(#accentGradient)" text-anchor="middle">機能とメリット</text>
+  
+  <!-- Feature Grid -->
+  <g transform="translate(100, 2500)">
+    <rect x="0" y="0" width="300" height="120" rx="15" fill="url(#featureGradient)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+    <text x="150" y="40" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">🤖</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI自動取引</text>
+    <text x="150" y="90" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC" text-anchor="middle">24時間365日自動売買</text>
+    
+    <rect x="350" y="0" width="300" height="120" rx="15" fill="url(#featureGradient)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+    <text x="500" y="40" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">🔒</text>
+    <text x="500" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">量子耐性暗号</text>
+    <text x="500" y="90" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC" text-anchor="middle">最強セキュリティ</text>
+    
+    <rect x="700" y="0" width="300" height="120" rx="15" fill="url(#featureGradient)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+    <text x="850" y="40" font-family="Arial, sans-serif" font-size="32" text-anchor="middle">⚡</text>
+    <text x="850" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF" text-anchor="middle">瞬間決済</text>
+    <text x="850" y="90" font-family="Arial, sans-serif" font-size="12" fill="#CCCCCC" text-anchor="middle">0.01秒の超高速処理</text>
+  </g>
+  
+  <!-- Pricing Section -->
+  <rect x="0" y="2880" width="1200" height="800" fill="#0A0A0A"/>
+  <text x="600" y="2980" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">シンプルで</text>
+  <text x="600" y="3020" font-family="Arial, sans-serif" font-size="36" font-weight="800" fill="url(#accentGradient)" text-anchor="middle">透明な料金体系</text>
+  
+  <!-- Pricing Cards -->
+  <rect x="150" y="3100" width="280" height="400" rx="20" fill="url(#pricingGradient)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <text x="290" y="3150" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">スターター</text>
+  <text x="290" y="3200" font-family="Arial, sans-serif" font-size="36" font-weight="900" fill="#FFD700" text-anchor="middle">無料</text>
+  
+  <rect x="460" y="3050" width="280" height="450" rx="20" fill="url(#featuredPricingGradient)" stroke="#FFD700" stroke-width="2"/>
+  <rect x="550" y="3030" width="100" height="30" rx="15" fill="url(#ctaGradient)"/>
+  <text x="600" y="3048" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0A0A0A" text-anchor="middle">人気No.1</text>
+  <text x="600" y="3100" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">プロ</text>
+  <text x="600" y="3150" font-family="Arial, sans-serif" font-size="36" font-weight="900" fill="#FFD700" text-anchor="middle">¥9,800</text>
+  <text x="600" y="3175" font-family="Arial, sans-serif" font-size="16" fill="#CCCCCC" text-anchor="middle">/月</text>
+  
+  <rect x="770" y="3100" width="280" height="400" rx="20" fill="url(#pricingGradient)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  <text x="910" y="3150" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF" text-anchor="middle">エンタープライズ</text>
+  <text x="910" y="3200" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFD700" text-anchor="middle">お問い合わせ</text>
+  
+  <!-- CTA Section -->
+  <rect x="0" y="3680" width="1200" height="400" fill="url(#ctaSection)"/>
+  <text x="600" y="3780" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="#FFFFFF" text-anchor="middle">今すぐ始めて、</text>
+  <text x="600" y="3830" font-family="Arial, sans-serif" font-size="42" font-weight="900" fill="url(#accentGradient)" text-anchor="middle">未来の投資を体験しよう</text>
+  
+  <text x="600" y="3880" font-family="Arial, sans-serif" font-size="18" fill="#CCCCCC" text-anchor="middle">無料登録で今なら10,000円分のボーナスをプレゼント</text>
+  
+  <rect x="510" y="3920" width="180" height="50" rx="25" fill="url(#ctaGradient)"/>
+  <text x="600" y="3950" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A0A0A" text-anchor="middle">無料で今すぐ始める</text>
+  
+  <!-- Footer -->
+  <rect x="0" y="4080" width="1200" height="300" fill="#1A1A1A"/>
+  <line x1="0" y1="4080" x2="1200" y2="4080" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+  
+  <rect x="80" y="4120" width="40" height="40" rx="8" fill="url(#logoGradient)"/>
+  <text x="140" y="4135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">Crypto</text>
+  <text x="140" y="4155" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFD700">Nova</text>
+  
+  <text x="600" y="4350" font-family="Arial, sans-serif" font-size="12" fill="#999999" text-anchor="middle">© 2025 Crypto Nova. All rights reserved.</text>
+  
+  <!-- Gradients and Definitions -->
+  <defs>
+    <linearGradient id="mainBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="50%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </linearGradient>
+    
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0A0A0A"/>
+      <stop offset="50%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#2A2A2A"/>
+    </linearGradient>
+    
+    <linearGradient id="ctaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#00FFFF"/>
+    </linearGradient>
+    
+    <linearGradient id="titleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#00FFFF"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#00FFFF"/>
+    </linearGradient>
+    
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#2A2A2A"/>
+    </linearGradient>
+    
+    <linearGradient id="deviceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#00FFFF"/>
+    </linearGradient>
+    
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2A2A2A"/>
+      <stop offset="100%" style="stop-color:#1A1A1A"/>
+    </linearGradient>
+    
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0, 255, 255, 0.1)"/>
+      <stop offset="100%" style="stop-color:rgba(0, 255, 255, 0.01)"/>
+    </linearGradient>
+    
+    <linearGradient id="solutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(42, 42, 42, 0.8)"/>
+      <stop offset="100%" style="stop-color:rgba(26, 26, 26, 0.9)"/>
+    </linearGradient>
+    
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#DAA520"/>
+    </linearGradient>
+    
+    <linearGradient id="featureGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(42, 42, 42, 0.8)"/>
+      <stop offset="100%" style="stop-color:rgba(26, 26, 26, 0.9)"/>
+    </linearGradient>
+    
+    <linearGradient id="pricingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(42, 42, 42, 0.8)"/>
+      <stop offset="100%" style="stop-color:rgba(26, 26, 26, 0.9)"/>
+    </linearGradient>
+    
+    <linearGradient id="featuredPricingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255, 215, 0, 0.1)"/>
+      <stop offset="100%" style="stop-color:rgba(26, 26, 26, 0.9)"/>
+    </linearGradient>
+    
+    <radialGradient id="ctaSection" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:rgba(255, 215, 0, 0.1)"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </radialGradient>
+  </defs>
+</svg>

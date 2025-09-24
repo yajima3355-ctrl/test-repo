@@ -1,0 +1,56 @@
+{
+  "name": "crypto-nova-lp",
+  "version": "1.0.0",
+  "description": "Crypto Nova Landing Page - Next Generation Cryptocurrency Platform",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000 --directory src --bind 0.0.0.0",
+    "build": "npm run build:clean && npm run build:copy && npm run build:optimize",
+    "build:clean": "rm -rf dist && mkdir -p dist",
+    "build:copy": "cp -r src/* dist/",
+    "build:optimize": "npm run optimize:css && npm run optimize:js && npm run optimize:images",
+    "optimize:css": "echo 'CSS optimization would go here'",
+    "optimize:js": "echo 'JS optimization would go here'",
+    "optimize:images": "echo 'Image optimization would go here'",
+    "preview": "python3 -m http.server 8080 --directory dist --bind 0.0.0.0",
+    "lighthouse": "lighthouse http://localhost:8000 --output html --output-path ./lighthouse-report.html",
+    "a11y-test": "echo 'Accessibility testing would use tools like axe-core'",
+    "seo-audit": "echo 'SEO audit would use tools like lighthouse or SEO analyzers'",
+    "test": "echo 'Unit tests would go here'",
+    "test:e2e": "echo 'E2E tests would use Playwright or Cypress'",
+    "test:visual": "echo 'Visual regression tests would use tools like Percy or Chromatic'",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod --dir dist"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "blockchain",
+    "AI",
+    "quantum-cryptography",
+    "landing-page",
+    "fintech",
+    "trading-platform"
+  ],
+  "author": "Crypto Nova Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crypto-nova/landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-nova/landing-page/issues"
+  },
+  "homepage": "https://cryptonova.jp",
+  "devDependencies": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}

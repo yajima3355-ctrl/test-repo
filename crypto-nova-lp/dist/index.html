@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Nova - 次世代暗号通貨プラットフォーム</title>
+    <meta name="description" content="Crypto Novaは革新的なAI技術と量子暗号化を組み合わせた次世代暗号通貨プラットフォーム。安全で高速な取引を実現します。">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="Crypto Nova - 次世代暗号通貨プラットフォーム">
+    <meta property="og:description" content="AI技術と量子暗号化による革新的な暗号通貨プラットフォーム">
+    <meta property="og:image" content="./assets/img/og-image.jpg">
+    <meta property="og:url" content="https://cryptonova.jp">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crypto Nova - 次世代暗号通貨プラットフォーム">
+    <meta name="twitter:description" content="AI技術と量子暗号化による革新的な暗号通貨プラットフォーム">
+    <meta name="twitter:image" content="./assets/img/twitter-card.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/base/reset.css">
+    <link rel="stylesheet" href="./styles/base/variables.css">
+    <link rel="stylesheet" href="./styles/base/typography.css">
+    <link rel="stylesheet" href="./styles/layout/grid.css">
+    <link rel="stylesheet" href="./styles/components/buttons.css">
+    <link rel="stylesheet" href="./styles/components/cards.css">
+    <link rel="stylesheet" href="./styles/components/animations.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Crypto Nova",
+        "url": "https://cryptonova.jp",
+        "logo": "https://cryptonova.jp/assets/img/logo.png",
+        "description": "次世代暗号通貨プラットフォーム"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="nav container" role="navigation" aria-label="メインナビゲーション">
+            <div class="nav__brand">
+                <img src="./assets/img/logo.svg" alt="Crypto Nova" class="nav__logo">
+            </div>
+            <div class="nav__menu">
+                <a href="#features" class="nav__link">機能</a>
+                <a href="#pricing" class="nav__link">料金</a>
+                <a href="#faq" class="nav__link">FAQ</a>
+                <button class="btn btn--primary nav__cta" aria-label="無料で始める">
+                    無料で始める
+                </button>
+            </div>
+            <button class="nav__toggle" aria-label="メニューを開く" aria-expanded="false">
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+                <span class="nav__toggle-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main role="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__background">
+                <div class="hero__particles"></div>
+                <div class="hero__grid"></div>
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <h1 class="hero__title">
+                            <span class="hero__title-accent">AI × 量子暗号</span>で実現する<br>
+                            次世代暗号通貨プラットフォーム
+                        </h1>
+                        <p class="hero__subtitle">
+                            従来の暗号通貨の限界を超える、革新的なテクノロジーで<br>
+                            安全性・速度・収益性を最大化
+                        </p>
+                        <div class="hero__stats">
+                            <div class="stat">
+                                <span class="stat__number">99.9%</span>
+                                <span class="stat__label">セキュリティ</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">0.01s</span>
+                                <span class="stat__label">取引速度</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat__number">500%</span>
+                                <span class="stat__label">年間収益率</span>
+                            </div>
+                        </div>
+                        <div class="hero__cta">
+                            <button class="btn btn--primary btn--large" data-action="register">
+                                今すぐ無料登録
+                                <span class="btn__icon">→</span>
+                            </button>
+                            <button class="btn btn--secondary btn--large" data-action="demo">
+                                デモを見る
+                                <span class="btn__icon">▶</span>
+                            </button>
+                        </div>
+                        <div class="hero__trust">
+                            <p class="trust__text">既に<strong>50,000+</strong>のユーザーが利用中</p>
+                            <div class="trust__badges">
+                                <img src="./assets/img/badge-security.svg" alt="セキュリティ認証" class="trust__badge">
+                                <img src="./assets/img/badge-iso.svg" alt="ISO認証" class="trust__badge">
+                                <img src="./assets/img/badge-fintech.svg" alt="フィンテック賞" class="trust__badge">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__visual">
+                        <div class="hero__device">
+                            <img src="./assets/img/hero-device.svg" alt="Crypto Novaアプリ画面" class="hero__device-img">
+                            <div class="hero__device-glow"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__scroll">
+                    <span class="scroll__text">スクロールして詳細を見る</span>
+                    <div class="scroll__arrow"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem section" id="problem">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">従来の暗号通貨の<span class="text-accent">3つの課題</span></h2>
+                    <p class="section__subtitle">多くの投資家が直面している深刻な問題</p>
+                </div>
+                <div class="problem__grid">
+                    <div class="problem__card">
+                        <div class="problem__icon">⚠️</div>
+                        <h3 class="problem__title">セキュリティリスク</h3>
+                        <p class="problem__text">ハッキングによる資産流出が年間<strong>30億ドル</strong>を超える被害</p>
+                    </div>
+                    <div class="problem__card">
+                        <div class="problem__icon">⏱️</div>
+                        <h3 class="problem__title">取引速度の遅さ</h3>
+                        <p class="problem__text">ビットコインは1取引に<strong>平均10分</strong>、イーサリアムも数分が必要</p>
+                    </div>
+                    <div class="problem__card">
+                        <div class="problem__icon">📉</div>
+                        <h3 class="problem__title">価格の不安定性</h3>
+                        <p class="problem__text">1日で<strong>20%以上</strong>の価格変動により、安定した投資が困難</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution section" id="solution">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Crypto Novaの<span class="text-accent">革新的ソリューション</span></h2>
+                    <p class="section__subtitle">AI技術と量子暗号化が全ての課題を解決</p>
+                </div>
+                <div class="solution__grid">
+                    <div class="solution__card">
+                        <div class="solution__visual">
+                            <img src="./assets/img/solution-security.svg" alt="量子暗号化セキュリティ">
+                        </div>
+                        <div class="solution__content">
+                            <h3 class="solution__title">量子暗号化による完全セキュリティ</h3>
+                            <p class="solution__text">従来の暗号化を10,000倍上回る強度で、理論上ハッキング不可能な保護を実現</p>
+                            <ul class="solution__features">
+                                <li>量子鍵配送（QKD）技術採用</li>
+                                <li>多層防御システム</li>
+                                <li>リアルタイム脅威検知</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="solution__card">
+                        <div class="solution__visual">
+                            <img src="./assets/img/solution-speed.svg" alt="AI高速処理">
+                        </div>
+                        <div class="solution__content">
+                            <h3 class="solution__title">AI最適化による超高速取引</h3>
+                            <p class="solution__text">独自のAIアルゴリズムが取引を最適化し、0.01秒での即座決済を実現</p>
+                            <ul class="solution__features">
+                                <li>機械学習による予測取引</li>
+                                <li>スマートコントラクト自動実行</li>
+                                <li>ネットワーク負荷分散</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="solution__card">
+                        <div class="solution__visual">
+                            <img src="./assets/img/solution-stability.svg" alt="価格安定化システム">
+                        </div>
+                        <div class="solution__content">
+                            <h3 class="solution__title">AIによる価格安定化システム</h3>
+                            <p class="solution__text">市場分析AIが24/7で価格を監視し、自動調整により安定した投資環境を提供</p>
+                            <ul class="solution__features">
+                                <li>リアルタイム市場分析</li>
+                                <li>自動リバランス機能</li>
+                                <li>リスク管理アルゴリズム</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features section" id="features">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">圧倒的な<span class="text-accent">機能とメリット</span></h2>
+                    <p class="section__subtitle">他のプラットフォームでは実現できない独自の価値</p>
+                </div>
+                <div class="features__grid">
+                    <div class="feature__card">
+                        <div class="feature__icon">🤖</div>
+                        <h3 class="feature__title">AI自動取引</h3>
+                        <p class="feature__text">24時間365日、最適なタイミングで自動売買を実行</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">🔒</div>
+                        <h3 class="feature__title">量子耐性暗号</h3>
+                        <p class="feature__text">量子コンピューター時代でも破られない最強セキュリティ</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">⚡</div>
+                        <h3 class="feature__title">瞬間決済</h3>
+                        <p class="feature__text">0.01秒での超高速取引処理を実現</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">📊</div>
+                        <h3 class="feature__title">高度分析</h3>
+                        <p class="feature__text">AIによる市場予測と投資アドバイス</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">💰</div>
+                        <h3 class="feature__title">ステーキング報酬</h3>
+                        <p class="feature__text">年利最大15%の高収益ステーキングサービス</p>
+                    </div>
+                    <div class="feature__card">
+                        <div class="feature__icon">🌐</div>
+                        <h3 class="feature__title">グローバル対応</h3>
+                        <p class="feature__text">世界150カ国以上での利用が可能</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof section" id="social-proof">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">世界が認める<span class="text-accent">信頼と実績</span></h2>
+                </div>
+                <div class="social-proof__content">
+                    <div class="companies">
+                        <h3 class="companies__title">導入企業・パートナー</h3>
+                        <div class="companies__grid">
+                            <img src="./assets/img/company-logo-1.svg" alt="パートナー企業1" class="companies__logo">
+                            <img src="./assets/img/company-logo-2.svg" alt="パートナー企業2" class="companies__logo">
+                            <img src="./assets/img/company-logo-3.svg" alt="パートナー企業3" class="companies__logo">
+                            <img src="./assets/img/company-logo-4.svg" alt="パートナー企業4" class="companies__logo">
+                            <img src="./assets/img/company-logo-5.svg" alt="パートナー企業5" class="companies__logo">
+                            <img src="./assets/img/company-logo-6.svg" alt="パートナー企業6" class="companies__logo">
+                        </div>
+                    </div>
+                    <div class="testimonials">
+                        <h3 class="testimonials__title">ユーザーの声</h3>
+                        <div class="testimonials__grid">
+                            <div class="testimonial">
+                                <div class="testimonial__rating">★★★★★</div>
+                                <p class="testimonial__text">"3ヶ月で投資額が300%増加。AIの予測精度が驚異的です。"</p>
+                                <div class="testimonial__author">田中様 (投資家)</div>
+                            </div>
+                            <div class="testimonial">
+                                <div class="testimonial__rating">★★★★★</div>
+                                <p class="testimonial__text">"セキュリティの安心感が違う。大口投資も安心して行えます。"</p>
+                                <div class="testimonial__author">山田様 (企業経営者)</div>
+                            </div>
+                            <div class="testimonial">
+                                <div class="testimonial__rating">★★★★★</div>
+                                <p class="testimonial__text">"取引速度の速さに感動。ストレスフリーな投資体験です。"</p>
+                                <div class="testimonial__author">佐藤様 (トレーダー)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing section" id="pricing">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">シンプルで<span class="text-accent">透明な料金体系</span></h2>
+                    <p class="section__subtitle">あなたの投資スタイルに合わせた最適なプランを選択</p>
+                </div>
+                <div class="pricing__grid">
+                    <div class="pricing__card">
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">スターター</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__amount">無料</span>
+                            </div>
+                        </div>
+                        <ul class="pricing__features">
+                            <li>基本的な取引機能</li>
+                            <li>リアルタイム市場データ</li>
+                            <li>基本セキュリティ</li>
+                            <li>メールサポート</li>
+                        </ul>
+                        <button class="btn btn--outline pricing__cta">今すぐ始める</button>
+                    </div>
+                    <div class="pricing__card pricing__card--featured">
+                        <div class="pricing__badge">人気No.1</div>
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">プロ</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__amount">¥9,800</span>
+                                <span class="pricing__period">/月</span>
+                            </div>
+                        </div>
+                        <ul class="pricing__features">
+                            <li>AI自動取引機能</li>
+                            <li>高度な分析ツール</li>
+                            <li>優先サポート</li>
+                            <li>ステーキング報酬</li>
+                            <li>量子暗号化セキュリティ</li>
+                        </ul>
+                        <button class="btn btn--primary pricing__cta">プロを始める</button>
+                    </div>
+                    <div class="pricing__card">
+                        <div class="pricing__header">
+                            <h3 class="pricing__title">エンタープライズ</h3>
+                            <div class="pricing__price">
+                                <span class="pricing__amount">お問い合わせ</span>
+                            </div>
+                        </div>
+                        <ul class="pricing__features">
+                            <li>カスタムソリューション</li>
+                            <li>専任アカウントマネージャー</li>
+                            <li>API統合サポート</li>
+                            <li>24/7電話サポート</li>
+                            <li>コンプライアンス対応</li>
+                        </ul>
+                        <button class="btn btn--outline pricing__cta">お問い合わせ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="steps section" id="steps">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">簡単<span class="text-accent">3ステップ</span>で開始</h2>
+                    <p class="section__subtitle">今すぐ始めて、明日から収益を実感</p>
+                </div>
+                <div class="steps__timeline">
+                    <div class="step">
+                        <div class="step__number">01</div>
+                        <div class="step__content">
+                            <h3 class="step__title">無料アカウント作成</h3>
+                            <p class="step__text">メールアドレスだけで30秒で登録完了</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">02</div>
+                        <div class="step__content">
+                            <h3 class="step__title">本人確認・入金</h3>
+                            <p class="step__text">身分証明書をアップロードして入金</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step__number">03</div>
+                        <div class="step__content">
+                            <h3 class="step__title">AI自動取引開始</h3>
+                            <p class="step__text">設定完了後、AIが24/7自動で取引開始</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq section" id="faq">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">よくある<span class="text-accent">質問</span></h2>
+                </div>
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Crypto Novaは他の暗号通貨取引所と何が違うのですか？</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Crypto Novaは独自のAI技術と量子暗号化を組み合わせた次世代プラットフォームです。従来の取引所では実現できない0.01秒の超高速取引、99.9%のセキュリティ、AI予測による高収益を実現しています。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>初心者でも利用できますか？</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>はい、初心者の方でも安心してご利用いただけます。AIが自動で最適な取引を行うため、専門知識は不要です。また、24時間365日のサポート体制も整っています。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>資金の安全性は保証されていますか？</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>量子暗号化技術により、理論上ハッキング不可能なセキュリティを実現しています。また、顧客資産は完全分離管理され、万が一の場合も保険により保護されています。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>最低投資金額はいくらですか？</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>最低投資金額は1万円からとなっています。少額から始めて、慣れてきたら投資額を増やすことをお勧めします。</p>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>利益の出金はいつでも可能ですか？</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>はい、24時間365日いつでも出金が可能です。出金手続きは最短1時間で完了し、手数料も業界最安水準に設定しています。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section">
+            <div class="container">
+                <div class="cta__content">
+                    <h2 class="cta__title">今すぐ始めて、<br><span class="text-accent">未来の投資</span>を体験しよう</h2>
+                    <p class="cta__subtitle">無料登録で今なら<strong>10,000円分</strong>のボーナスをプレゼント</p>
+                    <div class="cta__buttons">
+                        <button class="btn btn--primary btn--large" data-action="register-final">
+                            無料で今すぐ始める
+                            <span class="btn__icon">→</span>
+                        </button>
+                    </div>
+                    <p class="cta__note">※クレジットカード不要・3分で登録完了</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="./assets/img/logo.svg" alt="Crypto Nova" class="footer__logo">
+                    <p class="footer__description">AI技術と量子暗号化による次世代暗号通貨プラットフォーム</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h4 class="footer__title">プロダクト</h4>
+                        <ul class="footer__list">
+                            <li><a href="#features" class="footer__link">機能</a></li>
+                            <li><a href="#pricing" class="footer__link">料金</a></li>
+                            <li><a href="#" class="footer__link">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__section">
+                        <h4 class="footer__title">サポート</h4>
+                        <ul class="footer__list">
+                            <li><a href="#faq" class="footer__link">FAQ</a></li>
+                            <li><a href="#" class="footer__link">お問い合わせ</a></li>
+                            <li><a href="#" class="footer__link">ヘルプセンター</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__section">
+                        <h4 class="footer__title">企業情報</h4>
+                        <ul class="footer__list">
+                            <li><a href="#" class="footer__link">会社概要</a></li>
+                            <li><a href="#" class="footer__link">プライバシーポリシー</a></li>
+                            <li><a href="#" class="footer__link">利用規約</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Crypto Nova. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts/main.js"></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
