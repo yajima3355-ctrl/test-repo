@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="750" height="3000" viewBox="0 0 750 3000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="750" height="3000" fill="#FFFFFF"/>
+  
+  <!-- Header Section -->
+  <g id="01_Header">
+    <rect x="0" y="0" width="750" height="64" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <!-- Logo -->
+    <circle cx="40" cy="32" r="12" fill="#0F62FE"/>
+    <text x="64" y="38" font-family="Noto Sans JP, sans-serif" font-size="16" font-weight="600" fill="#222222">ロコミランキング</text>
+    <!-- Menu Icon -->
+    <g transform="translate(710, 20)">
+      <line x1="0" y1="6" x2="24" y2="6" stroke="#222222" stroke-width="2"/>
+      <line x1="0" y1="12" x2="24" y2="12" stroke="#222222" stroke-width="2"/>
+      <line x1="0" y1="18" x2="24" y2="18" stroke="#222222" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Hero Section -->
+  <g id="02_Hero">
+    <defs>
+      <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#4C9AFF"/>
+        <stop offset="100%" style="stop-color:#0F62FE"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="64" width="750" height="320" fill="url(#heroGradient)"/>
+    
+    <!-- Hero Content -->
+    <text x="375" y="140" font-family="Noto Sans JP, sans-serif" font-size="28" font-weight="700" fill="white" text-anchor="middle">
+      <tspan x="375" dy="0">ファミリー工房が口コミ高評価を</tspan>
+      <tspan x="375" dy="40">獲得しているワケとは？</tspan>
+      <tspan x="375" dy="40">一暮らしを変えるリフォームを、もっと身近に。</tspan>
+    </text>
+    
+    <text x="375" y="260" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="400" fill="white" text-anchor="middle" opacity="0.9">
+      徹底解説 - ロコミ評価研究員インタビュー
+    </text>
+    
+    <!-- CTA Button -->
+    <rect x="275" y="300" width="200" height="44" rx="12" fill="white"/>
+    <text x="375" y="326" font-family="Noto Sans JP, sans-serif" font-size="16" font-weight="600" fill="#0F62FE" text-anchor="middle">
+      ファミリー工房 公式HPはこちら
+    </text>
+  </g>
+  
+  <!-- Profile Section -->
+  <g id="03_Profile">
+    <!-- Profile Card -->
+    <rect x="20" y="424" width="710" height="140" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Profile Image -->
+    <circle cx="64" cy="484" r="32" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="2"/>
+    <text x="64" y="492" font-family="Arial" font-size="24" text-anchor="middle" fill="#888888">👨‍💼</text>
+    
+    <!-- Profile Info -->
+    <text x="116" y="476" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#222222">ファミリー工房 担当者</text>
+    <text x="116" y="496" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#555555">リフォーム専門会社</text>
+    
+    <!-- Tags -->
+    <rect x="116" y="510" width="60" height="24" rx="8" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="146" y="526" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="500" fill="#555555" text-anchor="middle">リフォーム</text>
+    
+    <rect x="186" y="510" width="60" height="24" rx="8" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="216" y="526" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="500" fill="#555555" text-anchor="middle">30年実績</text>
+    
+    <rect x="256" y="510" width="50" height="24" rx="8" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="281" y="526" font-family="Noto Sans JP, sans-serif" font-size="13" font-weight="500" fill="#555555" text-anchor="middle">高評価</text>
+  </g>
+  
+  <!-- Reviews Section -->
+  <g id="04_Reviews">
+    <!-- Section Title -->
+    <text x="20" y="620" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="600" fill="#222222">この記事でわかるファミリー工房の評価・ロコミ</text>
+    <line x1="20" y1="632" x2="60" y2="632" stroke="#0F62FE" stroke-width="2"/>
+    
+    <!-- Review Card 1 -->
+    <rect x="20" y="660" width="710" height="100" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Stars -->
+    <g transform="translate(40, 680)">
+      <polygon points="8,0 9.5,5 15,5 11,8 12.5,13 8,10 3.5,13 5,8 1,5 6.5,5" fill="#FCD34D"/>
+      <polygon points="24,0 25.5,5 31,5 27,8 28.5,13 24,10 19.5,13 21,8 17,5 22.5,5" fill="#FCD34D"/>
+      <polygon points="40,0 41.5,5 47,5 43,8 44.5,13 40,10 35.5,13 37,8 33,5 38.5,5" fill="#FCD34D"/>
+      <polygon points="56,0 57.5,5 63,5 59,8 60.5,13 56,10 51.5,13 53,8 49,5 54.5,5" fill="#FCD34D"/>
+      <polygon points="72,0 73.5,5 79,5 75,8 76.5,13 72,10 67.5,13 69,8 65,5 70.5,5" fill="#FCD34D"/>
+    </g>
+    
+    <text x="670" y="690" font-family="Noto Sans JP, sans-serif" font-size="13" fill="#888888">2015/06/02</text>
+    
+    <text x="40" y="715" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">「何もわからなかったけど</text>
+    <text x="40" y="735" font-family="Noto Sans JP, sans-serif" font-size="16" font-weight="600" fill="#0F62FE">安心して進められた</text>
+    <text x="200" y="735" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">」</text>
+    
+    <rect x="40" y="745" width="60" height="20" rx="8" fill="#4C9AFF"/>
+    <text x="70" y="758" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">リフォーム</text>
+    
+    <!-- Review Card 2 -->
+    <rect x="20" y="780" width="710" height="100" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Stars -->
+    <g transform="translate(40, 800)">
+      <polygon points="8,0 9.5,5 15,5 11,8 12.5,13 8,10 3.5,13 5,8 1,5 6.5,5" fill="#FCD34D"/>
+      <polygon points="24,0 25.5,5 31,5 27,8 28.5,13 24,10 19.5,13 21,8 17,5 22.5,5" fill="#FCD34D"/>
+      <polygon points="40,0 41.5,5 47,5 43,8 44.5,13 40,10 35.5,13 37,8 33,5 38.5,5" fill="#FCD34D"/>
+      <polygon points="56,0 57.5,5 63,5 59,8 60.5,13 56,10 51.5,13 53,8 49,5 54.5,5" fill="#FCD34D"/>
+      <polygon points="72,0 73.5,5 79,5 75,8 76.5,13 72,10 67.5,13 69,8 65,5 70.5,5" fill="#FCD34D"/>
+    </g>
+    
+    <text x="670" y="810" font-family="Noto Sans JP, sans-serif" font-size="13" fill="#888888">2021/01/23</text>
+    
+    <text x="40" y="835" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">「職人さん同士の雰囲気が良く、礼儀正しかった」</text>
+    
+    <rect x="40" y="855" width="60" height="20" rx="8" fill="#4C9AFF"/>
+    <text x="70" y="868" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">リフォーム</text>
+    
+    <!-- Review Card 3 -->
+    <rect x="20" y="900" width="710" height="120" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Stars -->
+    <g transform="translate(40, 920)">
+      <polygon points="8,0 9.5,5 15,5 11,8 12.5,13 8,10 3.5,13 5,8 1,5 6.5,5" fill="#FCD34D"/>
+      <polygon points="24,0 25.5,5 31,5 27,8 28.5,13 24,10 19.5,13 21,8 17,5 22.5,5" fill="#FCD34D"/>
+      <polygon points="40,0 41.5,5 47,5 43,8 44.5,13 40,10 35.5,13 37,8 33,5 38.5,5" fill="#FCD34D"/>
+      <polygon points="56,0 57.5,5 63,5 59,8 60.5,13 56,10 51.5,13 53,8 49,5 54.5,5" fill="#FCD34D"/>
+      <polygon points="72,0 73.5,5 79,5 75,8 76.5,13 72,10 67.5,13 69,8 65,5 70.5,5" fill="#FCD34D"/>
+    </g>
+    
+    <text x="670" y="930" font-family="Noto Sans JP, sans-serif" font-size="13" fill="#888888">2020/08/15</text>
+    
+    <text x="40" y="955" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">「バリアフリー化やお風呂のユニバーサルデザインなど、</text>
+    <text x="40" y="975" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">生活に寄り添った提案をしてくれた」</text>
+    
+    <rect x="40" y="990" width="60" height="20" rx="8" fill="#4C9AFF"/>
+    <text x="70" y="1003" font-family="Noto Sans JP, sans-serif" font-size="12" font-weight="500" fill="white" text-anchor="middle">リフォーム</text>
+  </g>
+  
+  <!-- Q&A Section 1 -->
+  <g id="05_QA_Section1">
+    <!-- Section Title -->
+    <text x="20" y="1080" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="600" fill="#222222">初めてのリフォームにも寄り添える対応力</text>
+    <line x1="20" y1="1092" x2="60" y2="1092" stroke="#0F62FE" stroke-width="2"/>
+    
+    <!-- Q&A Card -->
+    <rect x="20" y="1120" width="710" height="200" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Question -->
+    <circle cx="52" cy="1148" r="12" fill="#0F62FE"/>
+    <text x="52" y="1154" font-family="Arial" font-size="12" font-weight="700" fill="white" text-anchor="middle">Q</text>
+    
+    <text x="76" y="1148" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#0F62FE">初めてのリフォームで不安を感じるお客様に対して、</text>
+    <text x="76" y="1168" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#0F62FE">どのような対応を心がけていますか？</text>
+    
+    <!-- Answer -->
+    <text x="40" y="1200" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">初めてのリフォームは確かに不安が大きいものです。私たちはまず、お客様の</text>
+    <text x="40" y="1220" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">不安を理解し、一つ一つ丁寧に説明することを心がけています。契約書も分か</text>
+    <text x="40" y="1240" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">りやすく作成し、プロセスを明確にすることで、安心して進めていただけるよう</text>
+    <text x="40" y="1260" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">努めています。</text>
+    
+    <!-- Quote Block -->
+    <rect x="20" y="1340" width="710" height="80" rx="8" fill="#F8FAFC"/>
+    <rect x="20" y="1340" width="4" height="80" fill="#0F62FE"/>
+    
+    <text x="50" y="1360" font-family="serif" font-size="48" fill="#0F62FE" opacity="0.3">"</text>
+    <text x="70" y="1375" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#222222">「何もわからなかったけど</text>
+    <text x="70" y="1395" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#0F62FE">安心して進められた</text>
+    <text x="280" y="1395" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#222222">」</text>
+    <text x="70" y="1410" font-family="Noto Sans JP, sans-serif" font-size="14" font-style="italic" fill="#555555">- お客様の声</text>
+    
+    <!-- Image Placeholder -->
+    <rect x="20" y="1440" width="710" height="200" rx="12" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"/>
+    <text x="375" y="1550" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">契約書サンプル画像</text>
+    <text x="375" y="1670" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#555555" text-anchor="middle">このような契約書を作成しております。</text>
+  </g>
+  
+  <!-- Q&A Section 2 -->
+  <g id="06_QA_Section2">
+    <!-- Section Title -->
+    <text x="20" y="1740" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="600" fill="#222222">チームワークの良さが現場の空気を変える</text>
+    <line x1="20" y1="1752" x2="60" y2="1752" stroke="#0F62FE" stroke-width="2"/>
+    
+    <!-- Q&A Card -->
+    <rect x="20" y="1780" width="710" height="180" rx="12" fill="white" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <!-- Question -->
+    <circle cx="52" cy="1808" r="12" fill="#0F62FE"/>
+    <text x="52" y="1814" font-family="Arial" font-size="12" font-weight="700" fill="white" text-anchor="middle">Q</text>
+    
+    <text x="76" y="1808" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#0F62FE">現場でのチームワークについて、</text>
+    <text x="76" y="1828" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="600" fill="#0F62FE">どのような取り組みをしていますか？</text>
+    
+    <!-- Answer -->
+    <text x="40" y="1860" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">現場の雰囲気は、お客様の満足度に大きく影響します。私たちは職人同士の連携</text>
+    <text x="40" y="1880" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">を大切にし、礼儀正しい対応を心がけています。定期的な現場確認とコミュニケ</text>
+    <text x="40" y="1900" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">ーションを重視し、チーム全体で品質向上に取り組んでいます。</text>
+    
+    <!-- Quote Block -->
+    <rect x="20" y="1980" width="710" height="60" rx="8" fill="#F8FAFC"/>
+    <rect x="20" y="1980" width="4" height="60" fill="#0F62FE"/>
+    
+    <text x="50" y="2000" font-family="serif" font-size="48" fill="#0F62FE" opacity="0.3">"</text>
+    <text x="70" y="2015" font-family="Noto Sans JP, sans-serif" font-size="18" font-weight="500" fill="#222222">「職人さん同士の雰囲気が良く、礼儀正しかった」</text>
+    <text x="70" y="2030" font-family="Noto Sans JP, sans-serif" font-size="14" font-style="italic" fill="#555555">- お客様の声</text>
+    
+    <!-- Image Placeholder -->
+    <rect x="20" y="2060" width="710" height="200" rx="12" fill="#F3F4F6" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.1))"/>
+    <text x="375" y="2170" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#6B7280" text-anchor="middle">リフォーム後のリビング画像</text>
+    <text x="375" y="2290" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#555555" text-anchor="middle">チームワークの良さが生み出す質の高い仕上がり</text>
+  </g>
+  
+  <!-- Summary Section -->
+  <g id="07_Summary">
+    <!-- Section Title -->
+    <text x="20" y="2360" font-family="Noto Sans JP, sans-serif" font-size="22" font-weight="600" fill="#222222">まとめ</text>
+    <line x1="20" y1="2372" x2="60" y2="2372" stroke="#0F62FE" stroke-width="2"/>
+    
+    <!-- Summary Card -->
+    <rect x="20" y="2400" width="710" height="120" rx="12" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1" filter="drop-shadow(0 1px 3px rgba(0,0,0,0.1))"/>
+    
+    <text x="40" y="2430" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">ファミリー工房の高評価の理由は、お客様一人ひとりに寄り添った丁寧な対応と、</text>
+    <text x="40" y="2450" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">現場でのチームワークの良さにあります。初めてのリフォームでも安心して任せ</text>
+    <text x="40" y="2470" font-family="Noto Sans JP, sans-serif" font-size="16" fill="#222222">られる信頼性と、生活に寄り添った提案力が、多くのお客様から支持されています。</text>
+  </g>
+  
+  <!-- Footer -->
+  <g id="08_Footer">
+    <rect x="0" y="2560" width="750" height="80" fill="#F8FAFC"/>
+    <line x1="0" y1="2560" x2="750" y2="2560" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="375" y="2610" font-family="Noto Sans JP, sans-serif" font-size="14" fill="#555555" text-anchor="middle">© 2024 ファミリー工房. All rights reserved.</text>
+  </g>
+  
+  <!-- Design Annotations -->
+  <g id="annotations" opacity="0.5">
+    <!-- Spacing indicators -->
+    <line x1="0" y1="20" x2="20" y2="20" stroke="red" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="10" y="16" font-family="Arial" font-size="10" fill="red" text-anchor="middle">20px</text>
+    
+    <!-- Color swatches -->
+    <g transform="translate(600, 20)">
+      <rect x="0" y="0" width="20" height="20" fill="#0F62FE"/>
+      <text x="25" y="15" font-family="Arial" font-size="10" fill="#333">#0F62FE</text>
+      <rect x="0" y="25" width="20" height="20" fill="#4C9AFF"/>
+      <text x="25" y="40" font-family="Arial" font-size="10" fill="#333">#4C9AFF</text>
+    </g>
+  </g>
+</svg>

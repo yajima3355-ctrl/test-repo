@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=375, initial-scale=1.0">
+    <title>Interview Page Design - Web Optimized</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222222;
+            background: #FFFFFF;
+            width: 375px;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: #FFFFFF;
+            padding: 16px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: #222222;
+            font-size: 16px;
+        }
+
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background: #0F62FE;
+            border-radius: 50%;
+        }
+
+        .menu-toggle {
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-lines {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .menu-line {
+            width: 24px;
+            height: 2px;
+            background: #222222;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #4C9AFF 0%, #0F62FE 100%);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0F62FE;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .container {
+            padding: 0 20px;
+        }
+
+        /* Section */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #222222;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0F62FE;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #0F62FE;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 32px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #F8FAFC;
+            border: 2px solid #E5E7EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #888888;
+            flex-shrink: 0;
+        }
+
+        .profile-info h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222222;
+            margin-bottom: 4px;
+        }
+
+        .profile-info p {
+            font-size: 14px;
+            color: #555555;
+        }
+
+        .profile-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #F8FAFC;
+            color: #555555;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid #E5E7EB;
+        }
+
+        /* Review Cards */
+        .review-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .review-rating {
+            display: flex;
+            gap: 4px;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+            background: #FCD34D;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .review-date {
+            font-size: 13px;
+            color: #888888;
+        }
+
+        .review-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222222;
+            margin-bottom: 12px;
+        }
+
+        .review-text strong {
+            color: #0F62FE;
+            font-weight: 600;
+        }
+
+        .review-tag {
+            background: #4C9AFF;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* Q&A Cards */
+        .qa-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .qa-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0F62FE;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .qa-question::before {
+            content: 'Q';
+            background: #0F62FE;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .qa-answer {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222222;
+        }
+
+        /* Quote Block */
+        .quote-block {
+            background: #F8FAFC;
+            border-left: 4px solid #0F62FE;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .quote-block::before {
+            content: '"';
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 48px;
+            color: #0F62FE;
+            opacity: 0.3;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.6;
+            color: #222222;
+            margin-left: 20px;
+        }
+
+        .quote-text strong {
+            color: #0F62FE;
+            font-weight: 600;
+        }
+
+        .quote-author {
+            font-size: 14px;
+            color: #555555;
+            margin-top: 12px;
+            margin-left: 20px;
+            font-style: italic;
+        }
+
+        /* Image Section */
+        .image-section {
+            margin: 32px 0;
+        }
+
+        .image-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: #F3F4F6;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image-container::before {
+            content: '画像プレースホルダー';
+            color: #6B7280;
+            font-size: 14px;
+        }
+
+        .image-caption {
+            font-size: 14px;
+            color: #555555;
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background: #F8FAFC;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-text {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #222222;
+        }
+
+        /* Footer */
+        .footer {
+            background: #F8FAFC;
+            padding: 32px 0;
+            border-top: 1px solid #E5E7EB;
+            text-align: center;
+        }
+
+        .footer-content {
+            font-size: 14px;
+            color: #555555;
+        }
+
+        /* Print Styles for Export */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span>ロコミランキング</span>
+            </div>
+            <button class="menu-toggle">
+                <div class="menu-lines">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">ファミリー工房が口コミ高評価を<br>獲得しているワケとは？<br>一暮らしを変えるリフォームを、もっと身近に。</h1>
+            <p class="hero-subtitle">徹底解説 - ロコミ評価研究員インタビュー</p>
+            <a href="#" class="cta-button">ファミリー工房 公式HPはこちら</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Profile Section -->
+            <section class="section">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <div class="profile-image">👨‍💼</div>
+                        <div class="profile-info">
+                            <h3>ファミリー工房 担当者</h3>
+                            <p>リフォーム専門会社</p>
+                        </div>
+                    </div>
+                    <div class="profile-tags">
+                        <span class="tag">リフォーム</span>
+                        <span class="tag">30年実績</span>
+                        <span class="tag">高評価</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section class="section">
+                <h2 class="section-title">この記事でわかるファミリー工房の評価・ロコミ</h2>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-rating">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <span class="review-date">2015/06/02</span>
+                    </div>
+                    <p class="review-text">「何もわからなかったけど<strong>安心して進められた</strong>」</p>
+                    <span class="review-tag">リフォーム</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-rating">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <span class="review-date">2021/01/23</span>
+                    </div>
+                    <p class="review-text">「職人さん同士の雰囲気が良く、礼儀正しかった」</p>
+                    <span class="review-tag">リフォーム</span>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-rating">
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                            <div class="star"></div>
+                        </div>
+                        <span class="review-date">2020/08/15</span>
+                    </div>
+                    <p class="review-text">「バリアフリー化やお風呂のユニバーサルデザインなど、生活に寄り添った提案をしてくれた」</p>
+                    <span class="review-tag">リフォーム</span>
+                </div>
+            </section>
+
+            <!-- Q&A Section 1 -->
+            <section class="section">
+                <h2 class="section-title">初めてのリフォームにも寄り添える対応力</h2>
+                
+                <div class="qa-card">
+                    <div class="qa-question">初めてのリフォームで不安を感じるお客様に対して、どのような対応を心がけていますか？</div>
+                    <div class="qa-answer">
+                        初めてのリフォームは確かに不安が大きいものです。私たちはまず、お客様の不安を理解し、一つ一つ丁寧に説明することを心がけています。契約書も分かりやすく作成し、プロセスを明確にすることで、安心して進めていただけるよう努めています。
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p class="quote-text">「何もわからなかったけど<strong>安心して進められた</strong>」</p>
+                    <p class="quote-author">- お客様の声</p>
+                </div>
+
+                <div class="image-section">
+                    <div class="image-container"></div>
+                    <p class="image-caption">このような契約書を作成しております。</p>
+                </div>
+            </section>
+
+            <!-- Q&A Section 2 -->
+            <section class="section">
+                <h2 class="section-title">チームワークの良さが現場の空気を変える</h2>
+                
+                <div class="qa-card">
+                    <div class="qa-question">現場でのチームワークについて、どのような取り組みをしていますか？</div>
+                    <div class="qa-answer">
+                        現場の雰囲気は、お客様の満足度に大きく影響します。私たちは職人同士の連携を大切にし、礼儀正しい対応を心がけています。定期的な現場確認とコミュニケーションを重視し、チーム全体で品質向上に取り組んでいます。
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <p class="quote-text">「職人さん同士の雰囲気が良く、礼儀正しかった」</p>
+                    <p class="quote-author">- お客様の声</p>
+                </div>
+
+                <div class="image-section">
+                    <div class="image-container"></div>
+                    <p class="image-caption">チームワークの良さが生み出す質の高い仕上がり</p>
+                </div>
+            </section>
+
+            <!-- Summary Section -->
+            <section class="section">
+                <h2 class="section-title">まとめ</h2>
+                <div class="summary-card">
+                    <p class="summary-text">
+                        ファミリー工房の高評価の理由は、お客様一人ひとりに寄り添った丁寧な対応と、現場でのチームワークの良さにあります。初めてのリフォームでも安心して任せられる信頼性と、生活に寄り添った提案力が、多くのお客様から支持されています。
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 ファミリー工房. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

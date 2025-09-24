@@ -1,0 +1,162 @@
+# Photoshop Layer Structure for interview_smp_v1.psd
+
+## Canvas Size: 750px x 3000px (Mobile @2x)
+## Resolution: 144 DPI
+## Color Mode: RGB
+
+### Layer Organization:
+
+## 01_Header (Group)
+├── Background (Rectangle, #FFFFFF)
+├── Border (Line, #E5E7EB, 1px)
+├── Logo (Group)
+│   ├── Icon (Circle, #0F62FE, 24px)
+│   └── Text (Text Layer, "ロコミランキング", Noto Sans JP, 16px, #222222)
+└── Menu (Group)
+    └── Hamburger (Lines, #222222, 2px stroke)
+
+## 02_Hero (Group)
+├── Background (Gradient, #4C9AFF to #0F62FE, 135°)
+├── Decorative Elements (Group)
+│   ├── Grain Texture (Overlay, 30% opacity)
+│   └── Light Spots (Radial gradients, white, 10% opacity)
+├── Title (Text Layer, Noto Sans JP, 28px, 700 weight, white)
+├── Subtitle (Text Layer, Noto Sans JP, 18px, 400 weight, white, 90% opacity)
+└── CTA Button (Group)
+    ├── Background (Rectangle, white, 12px radius)
+    ├── Shadow (Drop Shadow, 0 4px 6px rgba(0,0,0,0.1))
+    └── Text (Text Layer, Noto Sans JP, 16px, 600 weight, #0F62FE)
+
+## 03_Profile (Group)
+├── Card Background (Rectangle, white, 12px radius)
+├── Card Shadow (Drop Shadow, 0 1px 3px rgba(0,0,0,0.1))
+├── Card Border (Stroke, #E5E7EB, 1px)
+├── Profile Image (Group)
+│   ├── Background (Circle, #F8FAFC, 64px)
+│   ├── Border (Stroke, #E5E7EB, 2px)
+│   └── Icon (Text/Shape, 👨‍💼, 24px)
+├── Profile Info (Group)
+│   ├── Name (Text Layer, Noto Sans JP, 18px, 600 weight, #222222)
+│   └── Title (Text Layer, Noto Sans JP, 14px, 400 weight, #555555)
+└── Tags (Group)
+    ├── Tag 1 (Group)
+    │   ├── Background (Rectangle, #F8FAFC, 8px radius)
+    │   ├── Border (Stroke, #E5E7EB, 1px)
+    │   └── Text (Text Layer, Noto Sans JP, 13px, 500 weight, #555555)
+    ├── Tag 2 (Similar structure)
+    └── Tag 3 (Similar structure)
+
+## 04_Reviews (Group)
+├── Section Title (Group)
+│   ├── Text (Text Layer, Noto Sans JP, 22px, 600 weight, #222222)
+│   └── Underline (Rectangle, #0F62FE, 2px height, 40px width)
+├── Review Card 1 (Group)
+│   ├── Background (Rectangle, white, 12px radius)
+│   ├── Shadow (Drop Shadow, 0 1px 3px rgba(0,0,0,0.1))
+│   ├── Border (Stroke, #E5E7EB, 1px)
+│   ├── Rating (Group)
+│   │   ├── Star 1 (Shape, #FCD34D, star polygon)
+│   │   ├── Star 2 (Similar)
+│   │   ├── Star 3 (Similar)
+│   │   ├── Star 4 (Similar)
+│   │   └── Star 5 (Similar)
+│   ├── Date (Text Layer, Noto Sans JP, 13px, 400 weight, #888888)
+│   ├── Review Text (Group)
+│   │   ├── Normal Text (Text Layer, Noto Sans JP, 16px, 400 weight, #222222)
+│   │   └── Highlighted Text (Text Layer, Noto Sans JP, 16px, 600 weight, #0F62FE)
+│   └── Tag (Group)
+│       ├── Background (Rectangle, #4C9AFF, 8px radius)
+│       └── Text (Text Layer, Noto Sans JP, 12px, 500 weight, white)
+├── Review Card 2 (Similar structure)
+└── Review Card 3 (Similar structure)
+
+## 05_QA_Section1 (Group)
+├── Section Title (Group)
+│   ├── Text (Text Layer, Noto Sans JP, 22px, 600 weight, #222222)
+│   └── Underline (Rectangle, #0F62FE, 2px height, 40px width)
+├── QA Card (Group)
+│   ├── Background (Rectangle, white, 12px radius)
+│   ├── Shadow (Drop Shadow, 0 1px 3px rgba(0,0,0,0.1))
+│   ├── Border (Stroke, #E5E7EB, 1px)
+│   ├── Question (Group)
+│   │   ├── Q Icon (Group)
+│   │   │   ├── Background (Circle, #0F62FE, 24px)
+│   │   │   └── Text (Text Layer, "Q", Arial, 12px, 700 weight, white)
+│   │   └── Question Text (Text Layer, Noto Sans JP, 18px, 600 weight, #0F62FE)
+│   └── Answer (Text Layer, Noto Sans JP, 16px, 400 weight, #222222)
+├── Quote Block (Group)
+│   ├── Background (Rectangle, #F8FAFC, 8px radius)
+│   ├── Left Border (Rectangle, #0F62FE, 4px width)
+│   ├── Quote Mark (Text Layer, """, serif, 48px, #0F62FE, 30% opacity)
+│   ├── Quote Text (Group)
+│   │   ├── Normal Text (Text Layer, Noto Sans JP, 18px, 500 weight, #222222)
+│   │   └── Highlighted Text (Text Layer, Noto Sans JP, 18px, 600 weight, #0F62FE)
+│   └── Author (Text Layer, Noto Sans JP, 14px, italic, #555555)
+└── Image Section (Group)
+    ├── Image Container (Group)
+    │   ├── Background (Rectangle, #F3F4F6, 12px radius)
+    │   ├── Shadow (Drop Shadow, 0 4px 6px rgba(0,0,0,0.1))
+    │   └── Placeholder Text (Text Layer, Noto Sans JP, 14px, #6B7280)
+    └── Caption (Text Layer, Noto Sans JP, 14px, #555555)
+
+## 06_QA_Section2 (Group)
+[Similar structure to QA_Section1]
+
+## 07_Summary (Group)
+├── Section Title (Group)
+│   ├── Text (Text Layer, Noto Sans JP, 22px, 600 weight, #222222)
+│   └── Underline (Rectangle, #0F62FE, 2px height, 40px width)
+└── Summary Card (Group)
+    ├── Background (Rectangle, #F8FAFC, 12px radius)
+    ├── Border (Stroke, #E5E7EB, 1px)
+    ├── Shadow (Drop Shadow, 0 1px 3px rgba(0,0,0,0.1))
+    └── Text (Text Layer, Noto Sans JP, 16px, 400 weight, #222222)
+
+## 08_Footer (Group)
+├── Background (Rectangle, #F8FAFC)
+├── Top Border (Line, #E5E7EB, 1px)
+└── Copyright (Text Layer, Noto Sans JP, 14px, 400 weight, #555555)
+
+## Design Specifications (Group)
+├── Color Swatches (Group)
+│   ├── Primary Blue (#0F62FE)
+│   ├── Primary Light (#4C9AFF)
+│   ├── Primary Dark (#0043CE)
+│   ├── Text Primary (#222222)
+│   ├── Text Secondary (#555555)
+│   ├── Text Tertiary (#888888)
+│   ├── Background (#FFFFFF)
+│   ├── Background Light (#F8FAFC)
+│   └── Border (#E5E7EB)
+├── Typography Samples (Group)
+│   ├── H1 Sample (28px, 700 weight)
+│   ├── H2 Sample (22px, 600 weight)
+│   ├── H3 Sample (18px, 600 weight)
+│   ├── Body Sample (16px, 400 weight)
+│   └── Small Sample (14px, 400 weight)
+└── Spacing Grid (Group)
+    ├── 4px Guide
+    ├── 8px Guide
+    ├── 12px Guide
+    ├── 16px Guide
+    ├── 20px Guide
+    ├── 24px Guide
+    ├── 32px Guide
+    ├── 40px Guide
+    └── 48px Guide
+
+## Text Styles:
+- Font: Noto Sans JP (primary), Arial (fallback)
+- Weights: 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold)
+- Line Heights: 1.4 (Headings), 1.5 (Subheadings), 1.6 (Body)
+
+## Effects:
+- Drop Shadow 1: 0 1px 3px rgba(0,0,0,0.1)
+- Drop Shadow 2: 0 4px 6px rgba(0,0,0,0.1)
+- Border Radius: 8px (small), 12px (medium), 16px (large)
+
+## Export Settings:
+- PNG: 750x3000px, 144 DPI, Transparent background
+- JPG: 750x3000px, 144 DPI, 85% quality
+- Web PNG: 375x1500px, 72 DPI (50% scale)
+- Web JPG: 375x1500px, 72 DPI, 75% quality
