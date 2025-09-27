@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友達に教える - Phantom Brewery</title>
+    <meta name="description" content="Phantom Breweryを友達に教える">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../common/common.css">
+    
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="share.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../common/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../top/top.html" class="brand__link">
+                        <h1 class="brand__title">Phantom Brewery</h1>
+                        <p class="brand__subtitle">静謐の中に宿る、和の余韻</p>
+                    </a>
+                </div>
+                
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                        <a href="../product-list/product-list.html" class="nav__link">商品一覧</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../top/top.html#story" class="nav__link">ストーリー</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../top/top.html#craft" class="nav__link">職人の技</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../contact/contact.html" class="nav__link">お問い合わせ</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="商品を検索..." class="search-input">
+                        <button class="search-btn" aria-label="検索">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="btn btn--cart" aria-label="カート">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                        </svg>
+                        <span class="cart__count">0</span>
+                    </button>
+                    <a href="../account/account.html" class="btn btn--account" aria-label="アカウント">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4S8 5.79 8 8S9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li><a href="../top/top.html">ホーム</a></li>
+                    <li>友達に教える</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">友達に教える</h1>
+                <p class="page-subtitle">Phantom Breweryを大切な方にご紹介ください</p>
+            </div>
+        </section>
+
+        <!-- Share Content -->
+        <section class="share-content">
+            <div class="container">
+                <div class="share-container">
+                    <!-- Share Form -->
+                    <div class="share-form">
+                        <div class="form-card">
+                            <h2 class="form-title">友達にメールで教える</h2>
+                            <form id="share-form" class="form">
+                                <div class="form-group">
+                                    <label for="friend-name" class="form-label">友達のお名前 <span class="required">*</span></label>
+                                    <input type="text" id="friend-name" name="friend-name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="friend-email" class="form-label">友達のメールアドレス <span class="required">*</span></label>
+                                    <input type="email" id="friend-email" name="friend-email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="your-name" class="form-label">あなたのお名前 <span class="required">*</span></label>
+                                    <input type="text" id="your-name" name="your-name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="your-email" class="form-label">あなたのメールアドレス <span class="required">*</span></label>
+                                    <input type="email" id="your-email" name="your-email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">メッセージ</label>
+                                    <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Phantom Breweryについての感想やおすすめポイントを書いてください"></textarea>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn--primary btn--large">送信する</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Share Options -->
+                    <div class="share-options">
+                        <div class="options-card">
+                            <h3 class="options-title">その他の共有方法</h3>
+                            
+                            <div class="social-share">
+                                <h4 class="social-title">SNSでシェア</h4>
+                                <div class="social-buttons">
+                                    <button class="social-btn social-btn--twitter" onclick="shareToTwitter()">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                        </svg>
+                                        Twitter
+                                    </button>
+                                    
+                                    <button class="social-btn social-btn--facebook" onclick="shareToFacebook()">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        </svg>
+                                        Facebook
+                                    </button>
+                                    
+                                    <button class="social-btn social-btn--line" onclick="shareToLine()">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .63.285.63.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                                        </svg>
+                                        LINE
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="link-share">
+                                <h4 class="link-title">リンクをコピー</h4>
+                                <div class="link-container">
+                                    <input type="text" id="share-link" class="link-input" value="https://phantom-brewery.com" readonly>
+                                    <button class="btn btn--secondary btn--small" onclick="copyLink()">コピー</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">Phantom Brewery</h3>
+                    <p class="footer__tagline">静謐の中に宿る、和の余韻</p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">商品</h4>
+                        <ul class="footer__list">
+                            <li><a href="../product-list/product-list.html" class="footer__link">日本酒</a></li>
+                            <li><a href="../product-list/product-list.html?category=limited" class="footer__link">限定商品</a></li>
+                            <li><a href="../product-list/product-list.html?category=gift" class="footer__link">ギフト</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">会社情報</h4>
+                        <ul class="footer__list">
+                            <li><a href="../top/top.html#story" class="footer__link">私たちについて</a></li>
+                            <li><a href="../top/top.html#craft" class="footer__link">職人の技</a></li>
+                            <li><a href="../contact/contact.html" class="footer__link">工場見学</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">サポート</h4>
+                        <ul class="footer__list">
+                            <li><a href="../contact/contact.html" class="footer__link">お問い合わせ</a></li>
+                            <li><a href="../commercial-law/commercial-law.html" class="footer__link">特定商取引法</a></li>
+                            <li><a href="../privacy-policy/privacy-policy.html" class="footer__link">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Phantom Brewery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Common JavaScript -->
+    <script src="../common/common.js"></script>
+    
+    <!-- Page Specific JavaScript -->
+    <script src="share.js"></script>
+</body>
+</html>

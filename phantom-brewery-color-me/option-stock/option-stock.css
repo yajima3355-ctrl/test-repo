@@ -1,0 +1,228 @@
+/* ===== Option Stock Page Specific Styles ===== */
+
+/* Breadcrumb */
+.breadcrumb {
+    background: #f8f8f8;
+    padding: 1rem 0;
+    margin-top: 80px;
+}
+
+.breadcrumb__list {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.breadcrumb__list li:not(:last-child)::after {
+    content: '>';
+    margin-left: 0.5rem;
+    color: #666;
+}
+
+.breadcrumb__list a {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumb__list a:hover {
+    color: #d4af37;
+}
+
+/* Page Header */
+.page-header {
+    padding: 3rem 0;
+    background: #fafafa;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #d4af37;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 300;
+}
+
+/* Option Stock Content */
+.option-stock-content {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+.stock-table-container {
+    overflow-x: auto;
+    margin-bottom: 3rem;
+}
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #eee;
+    min-width: 800px;
+}
+
+.stock-table th {
+    background: #f8f8f8;
+    padding: 1.5rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: #1a1a1a;
+    border-bottom: 1px solid #eee;
+}
+
+.stock-table td {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.stock-table tr:hover {
+    background: #f8f8f8;
+}
+
+.product-name {
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.category {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.price {
+    font-weight: 700;
+    color: #d4af37;
+    font-size: 1.1rem;
+}
+
+.stock {
+    font-weight: 500;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.status-in-stock {
+    background: #4caf50;
+}
+
+.status-low-stock {
+    background: #ff9800;
+}
+
+.status-out-of-stock {
+    background: #f44336;
+}
+
+.status-limited {
+    background: #d4af37;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+}
+
+/* Stock Legend */
+.stock-legend {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 0;
+    text-align: center;
+}
+
+.legend-title {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.legend-items {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .stock-table {
+        font-size: 0.9rem;
+    }
+    
+    .stock-table th,
+    .stock-table td {
+        padding: 1rem 0.5rem;
+    }
+    
+    .legend-items {
+        gap: 1rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .stock-table th,
+    .stock-table td {
+        padding: 0.8rem 0.3rem;
+        font-size: 0.8rem;
+    }
+    
+    .legend-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}

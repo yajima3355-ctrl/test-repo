@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイアカウント・会員ログイン - Phantom Brewery</title>
+    <meta name="description" content="Phantom Breweryのマイアカウント・会員ログイン">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../common/common.css">
+    
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="account.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../common/favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__brand">
+                    <a href="../top/top.html" class="brand__link">
+                        <h1 class="brand__title">Phantom Brewery</h1>
+                        <p class="brand__subtitle">静謐の中に宿る、和の余韻</p>
+                    </a>
+                </div>
+                
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                        <a href="../product-list/product-list.html" class="nav__link">商品一覧</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../top/top.html#story" class="nav__link">ストーリー</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../top/top.html#craft" class="nav__link">職人の技</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../contact/contact.html" class="nav__link">お問い合わせ</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="商品を検索..." class="search-input">
+                        <button class="search-btn" aria-label="検索">
+                            <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3S3 5.91 3 9.5S5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button class="btn btn--cart" aria-label="カート">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                        </svg>
+                        <span class="cart__count">0</span>
+                    </button>
+                    <a href="account.html" class="btn btn--account btn--account--active" aria-label="アカウント">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4S8 5.79 8 8S9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb__list">
+                    <li><a href="../top/top.html">ホーム</a></li>
+                    <li>マイアカウント</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">マイアカウント</h1>
+                <p class="page-subtitle">会員登録・ログイン</p>
+            </div>
+        </section>
+
+        <!-- Account Content -->
+        <section class="account-content">
+            <div class="container">
+                <div class="account-container">
+                    <!-- Login Form -->
+                    <div class="login-section">
+                        <div class="section-card">
+                            <h2 class="section-title">ログイン</h2>
+                            <form id="login-form" class="form">
+                                <div class="form-group">
+                                    <label for="login-email" class="form-label">メールアドレス</label>
+                                    <input type="email" id="login-email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="login-password" class="form-label">パスワード</label>
+                                    <input type="password" id="login-password" name="password" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-checkbox">
+                                        <input type="checkbox" id="remember-me" name="remember">
+                                        <span class="checkmark"></span>
+                                        ログイン状態を保持する
+                                    </label>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn--primary btn--large">ログイン</button>
+                                </div>
+                                
+                                <div class="form-links">
+                                    <a href="#" class="form-link">パスワードを忘れた方</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Register Form -->
+                    <div class="register-section">
+                        <div class="section-card">
+                            <h2 class="section-title">新規会員登録</h2>
+                            <form id="register-form" class="form">
+                                <div class="form-group">
+                                    <label for="register-name" class="form-label">お名前 <span class="required">*</span></label>
+                                    <input type="text" id="register-name" name="name" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-email" class="form-label">メールアドレス <span class="required">*</span></label>
+                                    <input type="email" id="register-email" name="email" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-password" class="form-label">パスワード <span class="required">*</span></label>
+                                    <input type="password" id="register-password" name="password" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-confirm-password" class="form-label">パスワード確認 <span class="required">*</span></label>
+                                    <input type="password" id="register-confirm-password" name="confirm-password" class="form-input" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="register-phone" class="form-label">電話番号</label>
+                                    <input type="tel" id="register-phone" name="phone" class="form-input">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-checkbox">
+                                        <input type="checkbox" id="register-privacy" name="privacy" required>
+                                        <span class="checkmark"></span>
+                                        <a href="../privacy-policy/privacy-policy.html" target="_blank">プライバシーポリシー</a>に同意します
+                                    </label>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-checkbox">
+                                        <input type="checkbox" id="register-newsletter" name="newsletter">
+                                        <span class="checkmark"></span>
+                                        メールマガジンの配信を希望する
+                                    </label>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn--primary btn--large">会員登録</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Section -->
+                <div class="benefits-section">
+                    <h2 class="benefits-title">会員特典</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎁</div>
+                            <h3 class="benefit-title">会員限定商品</h3>
+                            <p class="benefit-description">会員様限定の特別な商品をご提供</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📧</div>
+                            <h3 class="benefit-title">お得な情報</h3>
+                            <p class="benefit-description">新商品やセール情報をいち早くお届け</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💝</div>
+                            <h3 class="benefit-title">誕生日特典</h3>
+                            <p class="benefit-description">誕生日月に特別なギフトをお送り</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⭐</div>
+                            <h3 class="benefit-title">ポイント制度</h3>
+                            <p class="benefit-description">お買い物でポイントを貯めてお得に</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">Phantom Brewery</h3>
+                    <p class="footer__tagline">静謐の中に宿る、和の余韻</p>
+                </div>
+                
+                <div class="footer__links">
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">商品</h4>
+                        <ul class="footer__list">
+                            <li><a href="../product-list/product-list.html" class="footer__link">日本酒</a></li>
+                            <li><a href="../product-list/product-list.html?category=limited" class="footer__link">限定商品</a></li>
+                            <li><a href="../product-list/product-list.html?category=gift" class="footer__link">ギフト</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">会社情報</h4>
+                        <ul class="footer__list">
+                            <li><a href="../top/top.html#story" class="footer__link">私たちについて</a></li>
+                            <li><a href="../top/top.html#craft" class="footer__link">職人の技</a></li>
+                            <li><a href="../contact/contact.html" class="footer__link">工場見学</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4 class="footer__section-title">サポート</h4>
+                        <ul class="footer__list">
+                            <li><a href="../contact/contact.html" class="footer__link">お問い合わせ</a></li>
+                            <li><a href="../commercial-law/commercial-law.html" class="footer__link">特定商取引法</a></li>
+                            <li><a href="../privacy-policy/privacy-policy.html" class="footer__link">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 Phantom Brewery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Common JavaScript -->
+    <script src="../common/common.js"></script>
+    
+    <!-- Page Specific JavaScript -->
+    <script src="account.js"></script>
+</body>
+</html>
