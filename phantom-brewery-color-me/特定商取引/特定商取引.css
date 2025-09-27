@@ -1,0 +1,167 @@
+/* Phantom Brewery - Commercial Law Page Styles */
+/* 静謐の中に宿る、和の余韻 - 特定商取引ページスタイル */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--color-neutral-100) 0%, var(--color-accent-light) 100%);
+    padding: var(--spacing-4xl) 0;
+    text-align: center;
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.page-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    font-style: italic;
+}
+
+/* Content */
+.content {
+    padding: var(--spacing-4xl) 0;
+    background-color: var(--color-bg-primary);
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-info {
+    background-color: var(--color-bg-primary);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-2xl);
+}
+
+.legal-info h2 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-accent-light);
+}
+
+.legal-info h3 {
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+/* Info Table */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-xl);
+}
+
+.info-table tr {
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.info-table tr:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    padding: var(--spacing-lg);
+    background-color: var(--color-neutral-100);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    width: 30%;
+    vertical-align: top;
+}
+
+.info-value {
+    padding: var(--spacing-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Notice */
+.notice {
+    background-color: var(--color-accent-light);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+    border-radius: var(--radius-md);
+}
+
+.notice h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.notice ul {
+    margin: 0;
+    padding-left: var(--spacing-lg);
+}
+
+.notice li {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .info-table {
+        font-size: var(--font-size-sm);
+    }
+    
+    .info-label {
+        width: 40%;
+        padding: var(--spacing-md);
+    }
+    
+    .info-value {
+        padding: var(--spacing-md);
+    }
+    
+    .page-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .legal-info {
+        padding: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .info-table {
+        display: block;
+    }
+    
+    .info-table tr {
+        display: block;
+        margin-bottom: var(--spacing-md);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+    }
+    
+    .info-label {
+        display: block;
+        width: 100%;
+        background-color: var(--color-primary);
+        color: white;
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-weight: var(--font-weight-bold);
+    }
+    
+    .info-value {
+        display: block;
+        width: 100%;
+        padding: var(--spacing-md);
+    }
+    
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+}
