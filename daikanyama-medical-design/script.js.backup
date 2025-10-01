@@ -1,4 +1,4 @@
-﻿// スライダー機能
+// スライダー機能
 class Slider {
     constructor() {
         this.currentSlide = 0;
