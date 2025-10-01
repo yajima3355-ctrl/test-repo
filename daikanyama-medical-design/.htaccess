@@ -1,0 +1,17 @@
+# 文字エンコーディング設定
+AddDefaultCharset UTF-8
+
+# HTMLファイルの文字エンコーディングを強制
+<Files "*.html">
+    Header set Content-Type "text/html; charset=UTF-8"
+</Files>
+
+# CSSファイルの文字エンコーディングを強制
+<Files "*.css">
+    Header set Content-Type "text/css; charset=UTF-8"
+</Files>
+
+# JavaScriptファイルの文字エンコーディングを強制
+<Files "*.js">
+    Header set Content-Type "application/javascript; charset=UTF-8"
+</Files>
