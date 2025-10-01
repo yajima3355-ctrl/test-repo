@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>文字エンコーディングテスト</title>
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; padding: 20px; }
+        .test { margin: 20px 0; padding: 10px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>文字エンコーディングテスト</h1>
+    
+    <div class="test">
+        <h2>日本語表示テスト</h2>
+        <p>医学部予備校 代官山MEDICAL</p>
+        <p>個別最適化×PDCA×伴走で、迷いのない学習を設計</p>
+        <p>累計進学者935名の実績</p>
+    </div>
+    
+    <div class="test">
+        <h2>CSS読み込みテスト</h2>
+        <p>このページが正しく表示されていれば、文字エンコーディングは正常です。</p>
+    </div>
+    
+    <div class="test">
+        <h2>JavaScript読み込みテスト</h2>
+        <button onclick="alert('JavaScript動作確認: 日本語表示テスト')">クリックしてテスト</button>
+    </div>
+    
+    <script charset="UTF-8">
+        console.log('JavaScript文字エンコーディングテスト: 日本語表示');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('ページ読み込み完了: 日本語表示テスト');
+        });
+    </script>
+</body>
+</html>
