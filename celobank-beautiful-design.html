@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整骨院サイト - 地域に根ざした安心の施術</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5a27;
+            --secondary-green: #4a7c59;
+            --light-green: #6b8e6b;
+            --accent-green: #8fbc8f;
+            --text-dark: #2c3e50;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gradient-primary: linear-gradient(135deg, #2d5a27 0%, #4a7c59 100%);
+            --gradient-light: linear-gradient(135deg, #4a7c59 0%, #6b8e6b 100%);
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(45, 90, 39, 0.8) 0%, rgba(74, 124, 89, 0.7) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 50px;
+            opacity: 0.95;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            background-color: var(--white);
+            color: var(--primary-green);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+        }
+
+        .cta-button i {
+            font-size: 1.3rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-green);
+            margin-bottom: 60px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--gradient-light);
+            margin: 25px auto;
+            border-radius: 3px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-light);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-green);
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-photo {
+            transform: scale(1.05);
+        }
+
+        /* Treatment Section */
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .treatment-card {
+            background: var(--white);
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            padding: 0;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .treatment-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .treatment-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .treatment-card:hover .treatment-photo {
+            transform: scale(1.05);
+        }
+
+        .treatment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-light);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .treatment-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .treatment-card:hover {
+            border-color: var(--secondary-green);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(74, 124, 89, 0.2);
+        }
+
+        .treatment-card h3 {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            padding: 25px 25px 0 25px;
+        }
+
+        .treatment-card p {
+            color: var(--text-light);
+            font-size: 1rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+            padding: 0 25px 25px 25px;
+        }
+
+        /* Director Section */
+        .director-section {
+            background: var(--gradient-light);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .director-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .director-image-placeholder {
+            display: flex;
+            justify-content: center;
+        }
+
+        .director-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .director-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .director-text {
+            text-align: left;
+        }
+
+        .director-text p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .director-signature {
+            font-weight: 600;
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: transform 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent-green);
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            padding-left: 40px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Access Section */
+        .access-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: start;
+        }
+
+        .access-info {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .access-info h3 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .access-info p {
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .hours-info {
+            background: var(--gradient-light);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 25px;
+        }
+
+        .hours-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hours-info p {
+            color: var(--white);
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px var(--shadow);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .final-cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .final-cta-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button.final {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-green);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .features-grid,
+            .treatment-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .access-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .final-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .director-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .director-text {
+                text-align: center;
+            }
+
+            .director-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .feature-card,
+            .treatment-card,
+            .testimonial-card {
+                padding: 25px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- ① ファーストビュー (First View) -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <img src="images/hero-main.jpg" alt="整骨院の施術風景" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>地域に根ざした安心の施術で、あなたの健康をサポートします</h1>
+                <p class="hero-subtitle">肩こり・腰痛からスポーツ障害まで。<br>国家資格者による確かな技術で、根本から改善を目指します。</p>
+                <div class="cta-buttons">
+                    <a href="tel:03-1234-5678" class="cta-button">
+                        <i class="fas fa-phone"></i>
+                        電話予約はこちら
+                    </a>
+                    <a href="#" class="cta-button">
+                        <i class="fab fa-line"></i>
+                        LINEで簡単予約
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ② 当院が選ばれる理由 (Reasons for choosing our clinic) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">当院が選ばれる理由</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>国家資格者による安心施術</h3>
+                    <p>柔道整復師の国家資格を持つ専門スタッフが、確かな技術でお身体のケアを行います。</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>根本改善を目指す丁寧なカウンセリング</h3>
+                    <p>症状の原因を詳しくお聞きし、一人ひとりに合った最適な施術プランをご提案いたします。</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>最新の施術機器を導入</h3>
+                    <p>最新の治療機器を導入し、より効果的で安全な施術を提供しています。</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-image">
+                        <img src="images/clinic-interior.jpg" alt="清潔な院内環境" class="feature-photo">
+                    </div>
+                    <h3>女性やお子様も通いやすい清潔な院内</h3>
+                    <p>清潔で明るい院内環境で、女性やお子様も安心してご来院いただけます。</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>土日も診療・駅近で通いやすい</h3>
+                    <p>平日はもちろん、土日も診療を行っており、駅から徒歩3分の好立地です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ 施術メニュー (Treatment Menu) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">施術メニュー</h2>
+            <div class="treatment-grid">
+                <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-1.jpg" alt="保険施術の様子" class="treatment-photo">
+                    </div>
+                    <h3>保険施術</h3>
+                    <p>骨折・脱臼・捻挫・打撲・挫傷などの急性外傷に対応。健康保険が適用されます。</p>
+                </div>
+                <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-2.jpg" alt="自費施術の様子" class="treatment-photo">
+                    </div>
+                    <h3>自費施術</h3>
+                    <p>肩こり・腰痛・頭痛・骨盤矯正・産後ケアなど、根本的な改善を目指す施術です。</p>
+                </div>
+                <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-1.jpg" alt="スポーツ障害対応" class="treatment-photo">
+                    </div>
+                    <h3>スポーツ障害対応</h3>
+                    <p>学生から社会人まで幅広く対応。スポーツによるケガの早期回復をサポートします。</p>
+                </div>
+                <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-2.jpg" alt="交通事故治療" class="treatment-photo">
+                    </div>
+                    <h3>交通事故治療</h3>
+                    <p>自賠責保険対応。弁護士・整形外科との連携により、安心して治療を受けられます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ 院長挨拶 (Director's Greeting) -->
+    <section class="director-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">院長挨拶</h2>
+            <div class="director-content animate-on-scroll">
+                <div class="director-image-placeholder">
+                    <div class="director-image">
+                        <img src="images/director.jpg" alt="院長の写真" class="director-photo">
+                    </div>
+                </div>
+                <div class="director-text">
+                    <p>はじめまして、院長の○○です。私たちは地域の皆様に安心して通っていただける整骨院を目指しています。患者様一人ひとりの症状に合わせた施術で、健康な毎日をサポートいたします。お気軽にご相談ください。</p>
+                    <p class="director-signature">院長 ○○</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑤ 患者様の声 (Patient Testimonials) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">患者様の声</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">「長年悩んでいた腰痛が改善し、仕事も楽になりました。先生の丁寧な説明と施術のおかげで、根本的な改善ができました。」</p>
+                    <p class="testimonial-author">40代男性</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">「産後の骨盤矯正で体調が整い、子育ても前向きにできています。女性スタッフもいて安心して通えました。」</p>
+                    <p class="testimonial-author">30代女性</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-text">「部活でのケガも早期に回復でき、大会に出場できました。スポーツ障害に詳しい先生に診てもらえて良かったです。」</p>
+                    <p class="testimonial-author">高校生男子</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑥ アクセス・診療時間 (Access / Clinic Hours) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">アクセス・診療時間</h2>
+            <div class="access-content">
+                <div class="access-info animate-on-scroll">
+                    <h3>アクセス情報</h3>
+                    <p><strong>住所：</strong>〒○○○-○○○○ 東京都○○区○○町1-2-3</p>
+                    <p><strong>アクセス：</strong>○○駅 徒歩3分</p>
+                    
+                    <div class="hours-info">
+                        <h4>診療時間</h4>
+                        <p><strong>平日：</strong>9:00〜12:30 / 15:00〜20:00</p>
+                        <p><strong>土日：</strong>9:00〜14:00</p>
+                        <p><strong>休診：</strong>祝日</p>
+                    </div>
+                </div>
+                <div class="map-container animate-on-scroll">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.123456789!2d139.123456789!3d35.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDA3JzI0LjQiTiAxMznCsDA3JzI0LjQiRQ!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ⑦ CTA（行動喚起） (Call to Action) -->
+    <section class="final-cta-section">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>お身体の不調は、我慢せず今すぐご相談ください</h2>
+                <p>お気軽にお電話またはLINEでご予約ください。WEBフォームからのお問い合わせも承っております。</p>
+                <div class="final-cta-buttons">
+                    <a href="tel:03-1234-5678" class="cta-button final">
+                        <i class="fas fa-phone"></i>
+                        電話予約はこちら
+                    </a>
+                    <a href="#" class="cta-button final">
+                        <i class="fab fa-line"></i>
+                        LINEで簡単予約
+                    </a>
+                    <a href="#" class="cta-button final secondary">
+                        <i class="fas fa-envelope"></i>
+                        WEBお問い合わせフォーム
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.feature-card, .treatment-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
