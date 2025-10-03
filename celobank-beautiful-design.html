@@ -242,6 +242,26 @@
             font-size: 1rem;
         }
 
+        .feature-image {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feature-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover .feature-photo {
+            transform: scale(1.05);
+        }
+
         /* Treatment Section */
         .treatment-grid {
             display: grid;
@@ -254,11 +274,31 @@
             background: var(--white);
             border: 2px solid #e9ecef;
             border-radius: 20px;
-            padding: 35px;
+            padding: 0;
             text-align: center;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .treatment-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .treatment-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.4s ease;
+        }
+
+        .treatment-card:hover .treatment-photo {
+            transform: scale(1.05);
         }
 
         .treatment-card::before {
@@ -290,6 +330,7 @@
             font-weight: 600;
             position: relative;
             z-index: 2;
+            padding: 25px 25px 0 25px;
         }
 
         .treatment-card p {
@@ -298,6 +339,7 @@
             line-height: 1.6;
             position: relative;
             z-index: 2;
+            padding: 0 25px 25px 25px;
         }
 
         /* Director Section */
@@ -331,25 +373,11 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .image-placeholder {
+        .director-photo {
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .image-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-
-        .image-placeholder p {
-            font-size: 1rem;
-            margin: 0;
+            object-fit: cover;
+            object-position: center;
         }
 
         .director-text {
@@ -770,8 +798,8 @@
                     <p>最新の治療機器を導入し、より効果的で安全な施術を提供しています。</p>
                 </div>
                 <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
+                    <div class="feature-image">
+                        <img src="images/clinic-interior.jpg" alt="清潔な院内環境" class="feature-photo">
                     </div>
                     <h3>女性やお子様も通いやすい清潔な院内</h3>
                     <p>清潔で明るい院内環境で、女性やお子様も安心してご来院いただけます。</p>
@@ -793,18 +821,30 @@
             <h2 class="section-title animate-on-scroll">施術メニュー</h2>
             <div class="treatment-grid">
                 <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-1.jpg" alt="保険施術の様子" class="treatment-photo">
+                    </div>
                     <h3>保険施術</h3>
                     <p>骨折・脱臼・捻挫・打撲・挫傷などの急性外傷に対応。健康保険が適用されます。</p>
                 </div>
                 <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-2.jpg" alt="自費施術の様子" class="treatment-photo">
+                    </div>
                     <h3>自費施術</h3>
                     <p>肩こり・腰痛・頭痛・骨盤矯正・産後ケアなど、根本的な改善を目指す施術です。</p>
                 </div>
                 <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-1.jpg" alt="スポーツ障害対応" class="treatment-photo">
+                    </div>
                     <h3>スポーツ障害対応</h3>
                     <p>学生から社会人まで幅広く対応。スポーツによるケガの早期回復をサポートします。</p>
                 </div>
                 <div class="treatment-card animate-on-scroll">
+                    <div class="treatment-image">
+                        <img src="images/treatment-2.jpg" alt="交通事故治療" class="treatment-photo">
+                    </div>
                     <h3>交通事故治療</h3>
                     <p>自賠責保険対応。弁護士・整形外科との連携により、安心して治療を受けられます。</p>
                 </div>
@@ -819,11 +859,7 @@
             <div class="director-content animate-on-scroll">
                 <div class="director-image-placeholder">
                     <div class="director-image">
-                        <!-- 院長の写真をここに配置 -->
-                        <div class="image-placeholder">
-                            <i class="fas fa-user-md"></i>
-                            <p>院長写真</p>
-                        </div>
+                        <img src="images/director.jpg" alt="院長の写真" class="director-photo">
                     </div>
                 </div>
                 <div class="director-text">
