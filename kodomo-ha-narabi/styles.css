@@ -55,6 +55,10 @@
     --transition-slow: 0.5s ease;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: var(--font-secondary);
     line-height: 1.6;
@@ -289,55 +293,7 @@ p {
     display: flex;
     align-items: center;
     overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.parallax-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.parallax-layer.sky {
-    background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 50%, #E0F6FF 100%);
-    z-index: 1;
-}
-
-.parallax-layer.sunrise {
-    background: linear-gradient(135deg, #FFE4B5 0%, #FFF8DC 50%, #FFFACD 100%);
-    z-index: 2;
-    opacity: 0;
-}
-
-.parallax-layer.mountains {
-    background: linear-gradient(135deg, #98FB98 0%, #F0FFF0 50%, #F5FFFA 100%);
-    z-index: 3;
-    opacity: 0;
-}
-
-.parallax-layer.city {
-    background: linear-gradient(135deg, #FFB6C1 0%, #FFC0CB 50%, #FFE4E1 100%);
-    z-index: 4;
-    opacity: 0;
-}
-
-.parallax-layer.sea {
-    background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 50%, #E0F6FF 100%);
-    z-index: 5;
-    opacity: 0;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, var(--soft-blue) 100%);
 }
 
 .hero-content {
@@ -376,6 +332,7 @@ p {
 .hero-illustration {
     position: relative;
     height: 400px;
+    text-align: center;
 }
 
 .floating-elements {
@@ -390,10 +347,6 @@ p {
     animation: float 3s ease-in-out infinite;
 }
 
-.tooth-icon {
-    animation-delay: 0s;
-}
-
 .tooth-icon.tooth-1 {
     top: 20%;
     left: 20%;
@@ -405,13 +358,10 @@ p {
     animation-delay: 1s;
 }
 
-.star-icon {
-    animation-delay: 0.5s;
-}
-
 .star-icon.star-1 {
     top: 10%;
     right: 30%;
+    animation-delay: 0.5s;
 }
 
 .star-icon.star-2 {
@@ -420,13 +370,10 @@ p {
     animation-delay: 1.5s;
 }
 
-.heart-icon {
-    animation-delay: 1s;
-}
-
 .heart-icon.heart-1 {
     top: 40%;
     left: 10%;
+    animation-delay: 1s;
 }
 
 .heart-icon.heart-2 {
@@ -1219,22 +1166,6 @@ p {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
-}
-
-/* Loading animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section {
-    animation: fadeInUp 0.8s ease-out;
 }
 
 /* Custom scrollbar */
