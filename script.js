@@ -711,6 +711,19 @@ function initImageLazyLoading() {
         img.classList.add('lazy');
         imageObserver.observe(img);
     });
+    
+    // Add loading animation to all images
+    const allImages = document.querySelectorAll('img');
+    allImages.forEach(img => {
+        img.addEventListener('load', () => {
+            img.classList.add('loaded');
+        });
+        
+        img.addEventListener('error', () => {
+            img.classList.add('error');
+            console.warn('Image failed to load:', img.src);
+        });
+    });
 }
 
 // ===== Typing Effect =====
