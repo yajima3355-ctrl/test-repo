@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420" fill="none">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7ec8ff"/>
+      <stop offset="100%" stop-color="#1e64b7"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="20%" r="30%">
+      <stop offset="0%" stop-color="#ffd65c"/>
+      <stop offset="100%" stop-color="#ffd65c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="520" height="420" rx="18" fill="#eaf6ff"/>
+  <circle cx="400" cy="90" r="70" fill="url(#sun)"/>
+  <path d="M0 280 C 80 300, 120 250, 200 270 C 280 290, 320 250, 400 270 C 480 290, 520 250, 520 250 L 520 420 L 0 420 Z" fill="url(#sea)" opacity="0.9"/>
+  <path d="M0 300 C 80 320, 120 270, 200 290 C 280 310, 320 270, 400 290 C 480 310, 520 270, 520 270 L 520 420 L 0 420 Z" fill="#ffffff" opacity="0.9"/>
+  <!-- Plumeria -->
+  <g transform="translate(80,120) scale(1.1)" opacity="0.9">
+    <path d="M0 -30 C 12 -10, 28 -8, 30 10 C 8 12, 0 0, 0 -30 Z" fill="#ffe3ed"/>
+    <path d="M0 -30 C -12 -10, -28 -8, -30 10 C -8 12, 0 0, 0 -30 Z" fill="#ffd65c"/>
+    <path d="M-30 10 C -10 12, -8 28, 10 30 C 12 8, 0 0, -30 10 Z" fill="#ffd65c"/>
+    <path d="M30 10 C 10 12, 8 28, -10 30 C -12 8, 0 0, 30 10 Z" fill="#ffe3ed"/>
+    <circle cx="0" cy="0" r="6" fill="#fff6a5"/>
+  </g>
+</svg>
