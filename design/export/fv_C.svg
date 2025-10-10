@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .headline { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 64px; font-weight: 700; fill: #1f1f1f; }
+      .brand { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 20px; font-weight: 600; fill: #666; letter-spacing: 0.08em; }
+      .sub { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 20px; font-weight: 500; fill: #3a3a3a; }
+      .badge { fill: #ffffff; stroke: #d9d9d9; stroke-width: 1; }
+      .badge-text { font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 18px; fill: #333333; font-weight: 600; }
+      .panel { fill: #f4f5f7; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1920" height="1080" fill="#ffffff"/>
+  <rect x="960" y="0" width="960" height="1080" class="panel"/>
+  <image href="../assets/doctor.jpg" x="0" y="0" width="960" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <text x="1040" y="100" class="brand">東京秘密クリニック</text>
+  <text x="1040" y="280" class="headline">“疲れてる？”と言われない私へ。</text>
+  <text x="1040" y="360" class="sub">院長の丁寧なカウンセリングと技術で、自然な印象へ</text>
+  <g transform="translate(1040, 420)">
+    <rect rx="24" ry="24" width="180" height="48" class="badge"/>
+    <text x="20" y="31" class="badge-text">院長が施術</text>
+  </g>
+  <g transform="translate(1230, 420)">
+    <rect rx="24" ry="24" width="200" height="48" class="badge"/>
+    <text x="20" y="31" class="badge-text">口コミ ★4.8</text>
+  </g>
+  <g transform="translate(1450, 420)">
+    <rect rx="24" ry="24" width="180" height="48" class="badge"/>
+    <text x="20" y="31" class="badge-text">明朗会計</text>
+  </g>
+</svg>
